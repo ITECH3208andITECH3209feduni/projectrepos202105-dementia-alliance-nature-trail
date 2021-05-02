@@ -1,0 +1,120 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  height: 100%;
+  background: #ffffff;
+  margin: 0;
+}
+
+header, footer{
+  background: #2dd5c4;
+}
+
+header {
+  display: flex;
+  min-height: 4rem;
+  border-bottom: .3rem solid #003349;
+}
+
+.flex_header_container {
+  display: flex;
+  align-items: center;
+}
+
+.menu_icon_container {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 1rem;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #003349;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 { 
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+main {
+  display: inline-flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+h1 {
+  color: #003349;
+  margin: auto .5rem;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: .4rem .4rem 1.1rem .4rem;
+}
+
+.animal_wrapper {
+  margin: .3rem;
+  flex: 1 0 30%;
+}
+
+.animal_wrapper img{
+  height: 100%;
+  width: 100%;
+}
+
+#qr-canvas {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 8.6rem);
+  bottom: 4.3rem;
+}
+
+.camera_button_wrapper {
+  position: absolute;
+  bottom: 1rem;
+}
+
+#btn-scan-qr {
+  cursor: pointer;
+}
+
+.camera_button {
+  height: 3rem;
+  padding: .2rem .5rem .5rem .5rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  border: .3rem solid #003349;
+}
+
+#qr_result_text {
+  font-size: 1.2em;
+  margin: .6rem 0 0 .6rem;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  min-height: 4rem;
+  border-top: .3rem solid #003349;
+}

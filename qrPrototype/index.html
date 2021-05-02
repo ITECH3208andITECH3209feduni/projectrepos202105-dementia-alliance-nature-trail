@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Dementia Alliance Prototype</title>
+<head>
+    <title>Dementia Alliance Prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script> <!--External JavaScript resource turns any camera into QR scanner-->
+</head>
 
-    </head>
-    <body>
-        
-        <p>Dementia Alliance Initial html template</p>
+<body>
+    <header>
+        <div class="flex_header_container">
+            <div class="menu_icon_container" onclick="menuOnclickEventHandler(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <h1>Bigger Hearts</h1>
+        </div>
+    </header>
 
-    </body>
+    <main>
+        <div id="qr_result_text" hidden=""> <!--Text is only displayed to the screen for prototype purposes-->
+            <b>QR code data:</b> <span id="outputData"></span>
+        </div>
+        <section> <!--There are only three animals setup to demonstrate PoC. The id for each animal_wrapper is used in the JavaScript code to update the animals accordingly-->
+            <article class="animal_wrapper" id="kangaroo">
+                <img src="assets/kangaroo.png">
+            </article>
+            <article class="animal_wrapper" id="koala">
+                <img src="assets/koala.png">
+            </article>
+            <article class="animal_wrapper" id="lizard">
+                <img src="assets/lizard.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/koala.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/lizard.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/kangaroo.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/lizard.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/kangaroo.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/koala.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/koala.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/kangaroo.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/lizard.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/kangaroo.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/lizard.png">
+            </article>
+            <article class="animal_wrapper">
+                <img src="assets/koala.png">
+            </article>
+        </section>
+        <canvas hidden="" id="qr-canvas"></canvas> <!--The canvas is only used for the camera video feed, otherwise it is-->
+    </main>
+
+    <footer>
+        <div class="camera_button_wrapper">
+            <a id="btn-scan-qr">
+                <img class="camera_button" src="assets/camera.svg">
+            </a>
+        </div>
+    </footer>
+
+    <script type="text/javascript" type="module" src="scripts/animal_updater.js"></script> <!--Bottom script order: 1-->
+    <script src="scripts/qr_app.js"></script> <!--Bottom script order: 2-->
+
+</body>
 </html>
