@@ -5,7 +5,22 @@ window.addEventListener("storage", storageListenerEventHandler);
   
 document.addEventListener('DOMContentLoaded', function() {
   createAnimalArray();
+
+  // Information found on the QRcode for a local device(replace with webiste URL) setup is: https://192.168.86.51:5500/qrPrototype/?animal=koala
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const animal = urlParams.get('animal')
+  if (animalArray.includes(animal)) {
+    window.localStorage.setItem(animal, true);
+  }
+
   updateAllAnimalPanels();
+
+  if (animalArray.includes(animal)){
+  alert("Animal pop-up for the: " + animal); // For testing purposes to imitate the popup
+  window.history.replaceState(null, null, window.location.pathname); // replace the url pathname to remove the parameters so the pop up doesn't show on refresh
+  }
+
 }, false);
 
 function createAnimalArray() {

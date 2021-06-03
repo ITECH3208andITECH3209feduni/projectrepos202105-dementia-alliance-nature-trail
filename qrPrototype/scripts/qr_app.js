@@ -10,18 +10,24 @@ let interativeTrailStorage = window.localStorage;
 
 qrcode.callback = res => {
   if (res) {
-    if (animalArray.includes(res)){
-      updateAnimals(res);
-    }
-    stopCamera();
 
+    resSplit = res.split("="); // used to split the qrcode information to extract the animal (updated to this approach so users don't need to have the website application already open)
+    if (resSplit.length == 2) {
+    resAnimal = resSplit[1];
+    }
+
+    if (animalArray.includes(resAnimal)){
+      updateAnimals(resAnimal);
+    }
+
+    stopCamera();
     qrResult.hidden = false; // used for demonstration in the prototype, will be removed in final product.
   }
 
   function updateAnimals(animal) {
     interativeTrailStorage.setItem(animal, true);
     outputData.innerText = animal; // used for demonstration in the prototype, will be removed in final product.
-    updateAnimalPanel(res);
+    updateAnimalPanel(animal);
   }
 };
 
