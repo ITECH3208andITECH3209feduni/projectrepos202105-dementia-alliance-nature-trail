@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dementia Alliance Adventure Trail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="scripts/jsqrcode/grid.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/version.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/detector.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/formatinf.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/errorlevel.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/bitmat.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/datablock.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/bmparser.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/datamask.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/rsdecoder.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/gf256poly.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/gf256.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/decoder.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/qrcode.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/findpat.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/alignpat.js"></script>
+    <script type="text/javascript" src="scripts/jsqrcode/databr.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="flex_header_container">
+            <div class="header_inner_container_outer">
+                <div class="menu_icon_container" onclick="menuOnclickEventHandler(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+            <div class="header_inner_container">
+                <img class="storybook_logo" src="assets/storybooklogo.svg" alt="storybook adventure trail logo" />
+             </div>
+            <div class="header_inner_container_outer">
+                <img id="bigger_hearts_logo" src="assets/biggerheartslogo.svg" alt="bigger hearts logo" />
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="flex_top_main_container">
+            <img id="map" src="assets/mapicon.svg">
+            <div class="flex_toggle_switch_container">
+                <img id="toggle_locked" class="toggle_switch_icon_small" src="assets/locked.svg">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <img id="toggle_unlocked" class="toggle_switch_icon_small" src="assets/unlocked.svg">
+            </div>
+        </div>
+        <section> <!--There are only three animals setup to demonstrate PoC. The id for each animal_wrapper is used in the JavaScript code to update the animals accordingly-->
+            <article class="animal_wrapper" id="kookaburra" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/unlocked.svg">
+                <img class="animal_image" src="assets/kookaburra.png">
+            </article>
+            <article class="animal_wrapper" id="koalawithbaby" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/koala.png">
+            </article>
+            <article class="animal_wrapper" id="magpie" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/koala.png">
+            </article>
+            <article class="animal_wrapper" id="magpie2" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/kookaburra.png">
+            </article>
+            <article class="animal_wrapper" id="kookaburra2" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/kangaroo.png">
+            </article>
+            <article class="animal_wrapper" id="wedgetailedeagle" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/kangaroo.png">
+            </article>
+            <article class="animal_wrapper" id="wedgetailedeagle2" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/koala.png">
+            </article>
+            <article class="animal_wrapper" id="brushtailedpossum" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/koala.png">
+            </article>
+            <article class="animal_wrapper" id="ringtailedpossum" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/kangaroo.png">
+            </article>
+            <article class="animal_wrapper" id="wombat" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/kookaburra.png">
+            </article>
+            <article class="animal_wrapper" id="kanagaroowithjoey" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/kangaroo.png">
+            </article>
+            <article class="animal_wrapper" id="ending" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image">
+            </article>
+        </section>
+        <canvas hidden="" id="qr-canvas"></canvas>
+    </main>
+   
+    <footer>
+        <div class="flex_footer_container">
+            <img class="footer_icon" src="assets/spot.svg">
+            <img class="footer_icon arrow" src="assets/arrow.svg">
+        
+            <div class="camera_button_wrapper">
+                <a id="btn-scan-qr">
+                    <img class="camera_button" src="assets/camera.svg">
+                </a>
+            </div>
+            <img class="footer_icon arrow" src="assets/arrow.svg">
+            <img class="footer_icon" src="assets/mobileqrscan.svg">
+        </div>
+    </footer>
+
+    <script type="text/javascript" type="module" src="scripts/animal_updater.js"></script> <!--Bottom script order: 1-->
+    <script src="scripts/qr_app.js"></script> <!--Bottom script order: 2-->
+    <script src="scripts/popups.js"></script> <!--Bottom script order: 3-->
+
+</body>
+</html>
