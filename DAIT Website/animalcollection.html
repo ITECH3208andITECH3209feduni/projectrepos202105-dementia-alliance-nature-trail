@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Dementia Alliance Adventure Trail</title>
+    <title>Animal Collection | Bigger Hearts Adventure Trail</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="icon" href="assets/favicon.svg" sizes="any" type="image/svg+xml">
     <script type="text/javascript" src="scripts/jsqrcode/grid.js"></script>
     <script type="text/javascript" src="scripts/jsqrcode/version.js"></script>
     <script type="text/javascript" src="scripts/jsqrcode/detector.js"></script>
@@ -35,7 +37,7 @@
             </div>
             <div class="header_inner_container">
                 <img class="storybook_logo" src="assets/storybooklogo.svg" alt="storybook adventure trail logo" />
-             </div>
+            </div>
             <div class="header_inner_container_outer">
                 <img id="bigger_hearts_logo" src="assets/biggerheartslogo.svg" alt="bigger hearts logo" />
             </div>
@@ -54,7 +56,8 @@
                 <img id="toggle_unlocked" class="toggle_switch_icon_small" src="assets/unlocked.svg">
             </div>
         </div>
-        <section> <!--There are only three animals setup to demonstrate PoC. The id for each animal_wrapper is used in the JavaScript code to update the animals accordingly-->
+        <section>
+            <!--There are only three animals setup to demonstrate PoC. The id for each animal_wrapper is used in the JavaScript code to update the animals accordingly-->
             <article class="animal_wrapper" id="kookaburra" onclick="displayPopup(this.id)">
                 <img class="lock_status" src="assets/unlocked.svg">
                 <img class="animal_image" src="assets/kookaburra.png">
@@ -105,13 +108,101 @@
             </article>
         </section>
         <canvas hidden="" id="qr-canvas"></canvas>
+
+        <!-- The Modal -->
+        <div id="modal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal_content" id="modal_content">
+                <img class="close" src="assets/close.svg">
+                <h2>You found me!</h2>
+                <div class="modal_animal_bio">
+
+                    <div class="modal_animal_image_wrapper">
+                        <img class="modal_animal_image" src="assets/kookaburra.png">
+                    </div>
+
+                    <div class="modal_animal_bio_wrapper">
+                        <li class="bold_bio_info">Animal: <span class="bio_info">Kookaburra</span></li>
+                       
+                        <li class="bold_bio_info">Wadawurrung name: <span class="bio_info">Kuwarrk</span></li>
+                        
+                        <li class="bold_bio_info">Scientific name: <span class="bio_info">Dacelo novaeguineae</span></li>
+                        
+                        <li class="bold_bio_info">Size Range: <span class="bio_info">40 - 45 cm</span></li>
+                       
+                        <li class="bold_bio_info">Weight: <span class="bio_info">0.31 - 0.38 kg</span></li>
+                    </div>
+                </div>
+                <div class="modal_sound_outer_wrapper">
+                    <div class="modal_sound_inner_wrapper">
+                        <div class="modal_sound_icons">
+                            <audio id="audio_animal">
+                                <source src="assets/audio/kookaburra.mp3" type="audio/mpeg">
+                            </audio>
+                            <img src="assets/hearsound.svg" onClick="toggleAnimalSound()" />
+                        </div>
+                        <div class="modal_sound_icon_text_wrapper">
+                            <p>Hear my <br>sound</p>
+                        </div>
+                    </div>
+                    <div class="modal_sound_inner_wrapper">
+                        <div class="modal_sound_icons">
+                            <audio id="audio_animal">
+                                <!-- Need to update this to story sounds-->
+                                <source src="assets/audio/kookaburra.mp3" type="audio/mpeg">
+                            </audio>
+                            <img src="assets/hearstory.svg" onClick="toggleAnimalSound()" />
+                        </div>
+                        <div class="modal_sound_icon_text_wrapper">
+                            <p>Hear my <br>story</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal_scrollable_content">
+                    <div class='scroll_blur_top'></div>
+
+                    <div class="modal_story">
+                        <h3>My Story</h3>
+                        <p class="p_top">
+                            Nanna Kookaburra was perched on a signpost waiting patiently for her friend to take her
+                            home.
+                            Nanna Kookaburra never got lost. She always knew where she was. But sometimes she needed a
+                            little help remembering where she was going.
+                        </p>
+                        <p>
+                            “Hello possum!” said Nanna Kookaburra, who called everyone possum, even if they weren’t.
+                            “I’m
+                            looking for my home, but I can’t quite remember where it is! Be a dear and help me find it
+                            will
+                            you.
+                        </p>
+                        <p>
+                            So, she perched on her friend’s shoulder, and off they went to ask all the animals they
+                            could
+                            find, just where Nanna Kookaburra might be going.
+                        </p>
+                    </div>
+                    <div class="modal_facts">
+                        <h3>Facts about me</h3>
+                        <p class="p_top">
+                            Laughing Kookaburras pair for life. The dad and mum take turns keeping eggs warm and
+                            sometimes
+                            the older brothers and sisters of a kookaburra chick will help with babysitting!
+                        </p>
+                    </div>
+                    <div class='scroll_blur'></div>
+                </div>
+            </div>
+
+        </div>
     </main>
-   
+
     <footer>
         <div class="flex_footer_container">
             <img class="footer_icon" src="assets/spot.svg">
             <img class="footer_icon arrow" src="assets/arrow.svg">
-        
+
             <div class="camera_button_wrapper">
                 <a id="btn-scan-qr">
                     <img class="camera_button" src="assets/camera.svg">
@@ -122,9 +213,13 @@
         </div>
     </footer>
 
-    <script type="text/javascript" type="module" src="scripts/animal_updater.js"></script> <!--Bottom script order: 1-->
-    <script src="scripts/qr_app.js"></script> <!--Bottom script order: 2-->
-    <script src="scripts/popups.js"></script> <!--Bottom script order: 3-->
+    <script type="text/javascript" type="module" src="scripts/animal_updater.js"></script>
+    <!--Bottom script order: 1-->
+    <script src="scripts/qr_app.js"></script>
+    <!--Bottom script order: 2-->
+    <script src="scripts/popups.js"></script>
+    <!--Bottom script order: 3-->
 
 </body>
+
 </html>
