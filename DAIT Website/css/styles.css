@@ -345,6 +345,7 @@ li {
 .modal_sound_icons {
   padding: .25rem;
   width: 30%;
+  cursor: pointer;
 }
 
 .modal_sound_icons > img {

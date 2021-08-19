@@ -23,6 +23,7 @@
     <script type="text/javascript" src="scripts/jsqrcode/findpat.js"></script>
     <script type="text/javascript" src="scripts/jsqrcode/alignpat.js"></script>
     <script type="text/javascript" src="scripts/jsqrcode/databr.js"></script>
+    <script type="text/javascript"src="scripts/animaldata.js"></script>
 </head>
 
 <body>
@@ -58,51 +59,51 @@
         </div>
         <section>
             <!--There are only three animals setup to demonstrate PoC. The id for each animal_wrapper is used in the JavaScript code to update the animals accordingly-->
-            <article class="animal_wrapper" id="kookaburra" onclick="displayPopup(this.id)">
+            <article class="animal_wrapper" id="nannakookaburra" onclick="displayPopup(this.id)">
                 <img class="lock_status" src="assets/unlocked.svg">
-                <img class="animal_image" src="assets/kookaburra.png">
+                <img class="animal_image" src="assets/nannakookaburra.png">
             </article>
-            <article class="animal_wrapper" id="koalawithbaby" onclick="displayPopup(this.id)">
+            <article class="animal_wrapper" id="motherkoalawithjoey" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/unlocked.svg">
+                <img class="animal_image" src="assets/motherkoalawithjoey.png">
+            </article>
+            <article class="animal_wrapper" id="auntiemagpie" onclick="displayPopup(this.id)">
                 <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/koala.png">
+                <img class="animal_image" src="assets/motherkoalawithjoey.png">
             </article>
-            <article class="animal_wrapper" id="magpie" onclick="displayPopup(this.id)">
+            <article class="animal_wrapper" id="unclemagpie" onclick="displayPopup(this.id)">
                 <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/koala.png">
+                <img class="animal_image" src="assets/nannakookaburra.png">
             </article>
-            <article class="animal_wrapper" id="magpie2" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/kookaburra.png">
-            </article>
-            <article class="animal_wrapper" id="kookaburra2" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/kangaroo.png">
-            </article>
-            <article class="animal_wrapper" id="wedgetailedeagle" onclick="displayPopup(this.id)">
+            <article class="animal_wrapper" id="granddaughterkookaburra" onclick="displayPopup(this.id)">
                 <img class="lock_status" src="assets/locked.svg">
                 <img class="animal_image" src="assets/kangaroo.png">
             </article>
-            <article class="animal_wrapper" id="wedgetailedeagle2" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/koala.png">
-            </article>
-            <article class="animal_wrapper" id="brushtailedpossum" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/koala.png">
-            </article>
-            <article class="animal_wrapper" id="ringtailedpossum" onclick="displayPopup(this.id)">
+            <article class="animal_wrapper" id="brotherwedgetailedeagle" onclick="displayPopup(this.id)">
                 <img class="lock_status" src="assets/locked.svg">
                 <img class="animal_image" src="assets/kangaroo.png">
             </article>
-            <article class="animal_wrapper" id="wombat" onclick="displayPopup(this.id)">
+            <article class="animal_wrapper" id="sisterwedgetailedeagle" onclick="displayPopup(this.id)">
                 <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/kookaburra.png">
+                <img class="animal_image" src="assets/motherkoalawithjoey.png">
+            </article>
+            <article class="animal_wrapper" id="cousinbrushtailpossum" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/motherkoalawithjoey.png">
+            </article>
+            <article class="animal_wrapper" id="cousinringtailpossum" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/kangaroo.png">
+            </article>
+            <article class="animal_wrapper" id="grandadwombat" onclick="displayPopup(this.id)">
+                <img class="lock_status" src="assets/locked.svg">
+                <img class="animal_image" src="assets/nannakookaburra.png">
             </article>
             <article class="animal_wrapper" id="kanagaroowithjoey" onclick="displayPopup(this.id)">
                 <img class="lock_status" src="assets/locked.svg">
                 <img class="animal_image" src="assets/kangaroo.png">
             </article>
-            <article class="animal_wrapper" id="ending" onclick="displayPopup(this.id)">
+            <article class="animal_wrapper" id="storyending" onclick="displayPopup(this.id)">
                 <img class="lock_status" src="assets/locked.svg">
                 <img class="animal_image">
             </article>
@@ -119,10 +120,10 @@
                 <div class="modal_animal_bio">
 
                     <div class="modal_animal_image_wrapper">
-                        <img class="modal_animal_image" src="assets/kookaburra.png">
+                        <img class="modal_animal_image" id="m_animal_img" src="assets/nannakookaburra.png">
                     </div>
 
-                    <div class="modal_animal_bio_wrapper">
+                    <div class="modal_animal_bio_wrapper" id="modal_animal_bio">
                         <li class="bold_bio_info">Animal: <span class="bio_info">Kookaburra</span></li>
                        
                         <li class="bold_bio_info">Wadawurrung name: <span class="bio_info">Kuwarrk</span></li>
@@ -136,23 +137,22 @@
                 </div>
                 <div class="modal_sound_outer_wrapper">
                     <div class="modal_sound_inner_wrapper">
-                        <div class="modal_sound_icons">
+                        <div class="modal_sound_icons" onClick="toggleAnimalSound()">
                             <audio id="audio_animal">
                                 <source src="assets/audio/kookaburra.mp3" type="audio/mpeg">
                             </audio>
-                            <img src="assets/hearsound.svg" onClick="toggleAnimalSound()" />
+                            <img src="assets/hearsound.svg"/>
                         </div>
                         <div class="modal_sound_icon_text_wrapper">
                             <p>Hear my <br>sound</p>
                         </div>
                     </div>
                     <div class="modal_sound_inner_wrapper">
-                        <div class="modal_sound_icons">
-                            <audio id="audio_animal">
-                                <!-- Need to update this to story sounds-->
-                                <source src="assets/audio/kookaburra.mp3" type="audio/mpeg">
+                        <div class="modal_sound_icons" onClick="toggleStorySound()" >
+                            <audio id="audio_animal_story">
+                                <source src="assets/audio/storynannakookaburra.mp3" type="audio/mpeg">
                             </audio>
-                            <img src="assets/hearstory.svg" onClick="toggleAnimalSound()" />
+                            <img src="assets/hearstory.svg"/>
                         </div>
                         <div class="modal_sound_icon_text_wrapper">
                             <p>Hear my <br>story</p>
@@ -162,7 +162,7 @@
                 <div class="modal_scrollable_content">
                     <div class='scroll_blur_top'></div>
 
-                    <div class="modal_story">
+                    <div class="modal_story" id="modal_story"> <!--TODO don't need class if using id-->
                         <h3>My Story</h3>
                         <p class="p_top">
                             Nanna Kookaburra was perched on a signpost waiting patiently for her friend to take her
@@ -183,7 +183,7 @@
                             find, just where Nanna Kookaburra might be going.
                         </p>
                     </div>
-                    <div class="modal_facts">
+                    <div class="modal_facts" id="modal_facts"> <!--TODO don't need class if using id-->
                         <h3>Facts about me</h3>
                         <p class="p_top">
                             Laughing Kookaburras pair for life. The dad and mum take turns keeping eggs warm and
@@ -215,9 +215,9 @@
 
     <script type="text/javascript" type="module" src="scripts/animal_updater.js"></script>
     <!--Bottom script order: 1-->
-    <script src="scripts/qr_app.js"></script>
+    <script type="text/javascript" src="scripts/qr_app.js"></script>
     <!--Bottom script order: 2-->
-    <script src="scripts/popups.js"></script>
+    <script type="text/javascript" src="scripts/popups.js"></script>
     <!--Bottom script order: 3-->
 
 </body>
