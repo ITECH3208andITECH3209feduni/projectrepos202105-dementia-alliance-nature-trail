@@ -427,8 +427,7 @@ h3 {
 }
 
 
-@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-
+@media screen and (min-width: 320px) and (max-width: 823px) and (orientation: landscape) {
 
   .animal_wrapper {
     flex: 1 0 15%;
@@ -444,4 +443,40 @@ h3 {
     justify-content: flex-end;
   }
 
+  .close {
+    max-width: 4%;
+  }
+
+  .modal_sound_icons {
+    padding: .25rem;
+    width: auto;
+    cursor: pointer;
+    height: 1rem;
+  }
+
+  .modal_animal_bio {
+    height: 5rem;
+    margin-top: 0rem;
+  }
+
+  h2 {
+    font-size: 100%;
+    margin-top: -1.4rem;
+  }
+
+  .modal_sound_icon_text_wrapper br {
+    display: none;
+  }
+
+  .modal_sound_icon_text_wrapper p {
+    margin: 0;
+  }
+
+  .modal_sound_icon_text_wrapper {
+    padding-right: .5rem;
+  }
+  
+  .modal_sound_outer_wrapper {
+    margin-top: -.5rem;
+  }
 }
