@@ -34,7 +34,7 @@ const animals = [
     {
         id: 3,
         name: "auntiemagpie",
-        image_src: "assets/.png",
+        image_src: "assets/auntiemagpie.png",
         bio_name: "Magpie",
         bio_wadawurrung_name: "Parrwang",
         bio_scientific_name: "Cracticus tibicen",
@@ -50,7 +50,7 @@ const animals = [
     {
         id: 4,
         name: "unclemagpie",
-        image_src: "assets/.png",
+        image_src: "assets/unclemagpie.png",
         bio_name: "Magpie",
         bio_wadawurrung_name: "Parrwang",
         bio_scientific_name: "Cracticus tibicen",
@@ -66,7 +66,7 @@ const animals = [
     {
         id: 5,
         name: "granddaughterkookaburra",
-        image_src: "assets/.png",
+        image_src: "assets/granddaughterkookaburra.png",
         bio_name: "Kookaburra",
         bio_wadawurrung_name: "Kuwarrk",
         bio_scientific_name: "Dacelo novaeguineae",
@@ -82,7 +82,7 @@ const animals = [
     {
         id: 3,
         name: "brotherwedgetailedeagle",
-        image_src: "assets/.png",
+        image_src: "assets/brotherwedgetailedeagle.png",
         bio_name: "Wedge-tailed Eagle",
         bio_wadawurrung_name: "Bundjil",
         bio_scientific_name: "Aquila audax",
@@ -98,7 +98,7 @@ const animals = [
     {
         id: 6,
         name: "sisterwedgetailedeagle",
-        image_src: "assets/.png",
+        image_src: "assets/sisterwedgetailedeagle.png",
         bio_name: "Wedge-tailed Eagle",
         bio_wadawurrung_name: "Bundjil",
         bio_scientific_name: "Aquila audax",
@@ -114,7 +114,7 @@ const animals = [
     {
         id: 7,
         name: "cousinbrushtailpossum",
-        image_src: "assets/.png",
+        image_src: "assets/cousinbrushtailpossum.png",
         bio_name: "Brushtail Possum",
         bio_wadawurrung_name: "Walert",
         bio_scientific_name: "Trichosurus vulpecula",
@@ -130,7 +130,7 @@ const animals = [
     {
         id: 8,
         name: "cousinringtailpossum",
-        image_src: "assets/.png",
+        image_src: "assets/cousinringtailpossum.png",
         bio_name: "Ringtail Possum",
         bio_wadawurrung_name: "Barnong",
         bio_scientific_name: "Pseudocheirus Peregrinus",
@@ -146,7 +146,7 @@ const animals = [
     {
         id: 9,
         name: "grandadwombat",
-        image_src: "assets/.png",
+        image_src: "assets/grandadwombat.png",
         bio_name: "Wombat",
         bio_wadawurrung_name: "Ngurr-ngurr",
         bio_scientific_name: "Vombatus ursinus",
