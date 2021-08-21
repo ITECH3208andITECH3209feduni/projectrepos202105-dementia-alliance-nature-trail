@@ -8,64 +8,17 @@ var modalAnimalStory = document.getElementById("modal_story");
 var modalAnimalFacts = document.getElementById("modal_facts");
 var modalBioInfo = document.getElementById("modal_animal_bio");
 
-function displayPopup(animal) {
+function displayPopup(animalName) {
 
-    if (animal != "" && window.localStorage.getItem(animal) == "true") {
-        getUnlockedPopupContent(animal);
+    if (animalName != "" && window.localStorage.getItem(animalName) == "true") {
+        const index = animals.findIndex(item => item.name === animalName);
+        setupUnlockedPopup(index);
+        modal.style.display = "block";
     }
     else {
-        displayAnimalHintPopup(animal);
+        displayAnimalHintPopup(animalName);
     }
 }
-
-
-function getUnlockedPopupContent(animal) {
-    switch (animal) {
-        case "nannakookaburra":
-            setupUnlockedPopup(0);
-            break;
-        case "motherkoalawithjoey":
-            setupUnlockedPopup(1);
-            //setupKoalaWithBabyPopup();
-            break;
-        case "auntiemagpie":
-            setupMagpiePopup();
-            break;
-        case "unclemagpie":
-            setupMagpiePopup();
-            break;
-        case "granddaughterkookaburra":
-            setupMagpiePopup();
-            break;
-        case "brotherwedgetailedeagle":
-            setupMagpiePopup();
-            break;
-        case "sisterwedgetailedeagle":
-            setupMagpiePopup();
-            break;
-        case "cousinbrushtailpossum":
-            setupMagpiePopup();
-            break;
-        case "cousinringtailpossum":
-            setupMagpiePopup();
-            break;
-        case "grandadwombat":
-            setupMagpiePopup();
-            break;
-        case "kanagaroowithjoey":
-            setupMagpiePopup();
-            break;
-        case "storyending":
-            setupMagpiePopup();
-            break;
-
-        default:
-        // code block
-    }
-
-    modal.style.display = "block";
-}
-
 
 function setupUnlockedPopup(animalIndex) {
    setupModalImage(animalIndex);
@@ -118,11 +71,6 @@ function setupAnimalFacts(animalIndex) {
     }
 }
 
-
-function setupMagpiePopup() {
-    alert("true Magpie");
-}
-
 function displayAnimalHintPopup(animal) {
 
     modalContent.innerHTML = "";
@@ -137,9 +85,8 @@ function displayAnimalHintPopup(animal) {
     modal.style.display = "block";
 }
 
-var close = document.getElementsByClassName("close")[0]; 
-// When the user clicks on <span> (x), close the modal 
-close.onclick = function() { // make this the x img
+var close = document.getElementsByClassName("close")[0]; //TODO make this an id maybe..
+close.onclick = function() {
   modal.style.display = "none";
 }
 
@@ -153,19 +100,15 @@ window.onclick = function(event) {
 
 function toggleAnimalSound() {
     let sound = document.getElementById('audio_animal'); //TODO can use the global instead...
-
-    if (sound.currentTime !== 0 && (sound.currentTime > 0 && sound.currentTime < sound.duration)) {
-        sound.pause();
-        sound.currentTime = 0;
-    }
-    else {
-        sound.play();
-    }
+    toggleSound(sound);
 }
 
 function toggleStorySound() {
     let sound = document.getElementById('audio_animal_story'); //TODO can use the global instead...
+    toggleSound(sound);
+}
 
+function toggleSound(sound) {
     if (sound.currentTime !== 0 && (sound.currentTime > 0 && sound.currentTime < sound.duration)) {
         sound.pause();
         sound.currentTime = 0;
@@ -174,7 +117,3 @@ function toggleStorySound() {
         sound.play();
     }
 }
-
-
-
-
