@@ -25,8 +25,8 @@ qrcode.callback = res => {
 
   function updateAnimals(animal) {
     interativeTrailStorage.setItem(animal, true);
-    outputData.innerText = animal; // used for demonstration in the prototype, will be removed in final product.
     updateAnimalPanel(animal);
+    displayPopup(animal);
   }
 };
 

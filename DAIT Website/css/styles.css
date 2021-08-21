@@ -131,7 +131,7 @@ main {
 section {
   display: flex;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content: center;
   margin: .8rem .4rem 1.6rem .4rem;
 }
 
@@ -139,6 +139,7 @@ section {
   flex: 1 0 29%;
   margin: .4rem;
   cursor: pointer;
+  position: relative;
 }
 
 .animal_image {
@@ -152,6 +153,7 @@ position: absolute;
 bottom: 3%;
 right: 3%;
 max-width: 20%;
+z-index: 10;
 }
 
 #qr-canvas {
