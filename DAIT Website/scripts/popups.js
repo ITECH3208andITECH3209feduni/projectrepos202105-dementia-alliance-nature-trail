@@ -1,4 +1,3 @@
-// Get the modal
 var modal = document.getElementById("modal");
 var modalUnlockedContent = document.getElementById("modal_unlocked_content");
 var modalLockedContent = document.getElementById("modal_locked_content");

@@ -161,12 +161,12 @@ z-index: 10;
   width: 100%;
   height: calc(100% - 10.6rem);
   bottom: 4.3rem;
-  z-index: 100;
+  z-index: 80;
 }
 
 .camera_button_wrapper {
   margin-bottom: 3rem;
-  z-index: 102;
+  z-index: 90;
 }
 
 #btn-scan-qr {

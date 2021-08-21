@@ -5,16 +5,24 @@ window.addEventListener("storage", storageListenerEventHandler);
   
 document.addEventListener('DOMContentLoaded', function() {
   createAnimalArray();
+  firstEncounterFlag = false;
+
+  if (window.localStorage.getItem(animals[0].name) != "true") { //TODO unsure if this is the right approach on handling starter animal
+    updateLocalStorageAnimal(animals[0].name);
+    firstEncounterFlag = true;
+    alert("Welcome to the trail, view starter story"); //TODO alert/popup will happen that has a button saying view starter story...
+  }
 
   // Information found on the QRcode for a local device(replace with webiste URL) setup is: https://192.168.86.51:5500/qrPrototype/?animal=koala
   const animalFromUrlParams = getUrlParams();
   updateLocalStorageAnimal(animalFromUrlParams);
-  updateLocalStorageAnimal(animalArray[0]);
   updateAllAnimalPanels();
 
   if (animalArray.includes(animalFromUrlParams)){
-  alert("Animal pop-up for the: " + animalFromUrlParams); // For testing purposes to imitate the popup
-  window.history.replaceState(null, null, window.location.pathname); // replace the url pathname to remove the parameters so the pop up doesn't show on refresh
+    if (firstEncounterFlag == false) {
+      displayPopup(animalFromUrlParams); // For testing purposes to imitate the popup
+    }
+    window.history.replaceState(null, null, window.location.pathname); // replace the url pathname to remove the parameters so the pop up doesn't show on refresh
   }
 
 }, false);
@@ -22,9 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function updateLocalStorageAnimal(animal) {
   if (animalArray.includes(animal) && window.localStorage.getItem(animal) != "true") {
     window.localStorage.setItem(animal, true);
-    if (animal == animals[0].name) { //TODO unsure if this is the right approach on handling starter animal
-      displayPopup(animal);
-    }
   }
 }
 
@@ -69,11 +74,13 @@ function updateAnimalPanel(id) {
     element.children[0].src = "assets/unlocked.svg";
   } else {
     element.children[1].style.filter = "grayscale(100%)";
-      element.children[0].src = "assets/locked.svg";
+    element.children[0].src = "assets/locked.svg";
   }    
 }
 
 function storageListenerEventHandler(event) {
   key = event.key;  
-  updateAnimalPanel(key)
+  if (animalArray.includes(key)){
+    updateAnimalPanel(key)
+  }
 }
