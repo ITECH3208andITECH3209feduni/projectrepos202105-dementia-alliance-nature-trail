@@ -113,10 +113,8 @@
 
         <!-- The Modal -->
         <div id="modal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal_content" id="modal_content">
-                <img class="close" src="assets/close.svg">
+            <div class="modal_content" id="modal_unlocked_content">
+                <img class="close" src="assets/close.svg" onclick="closeModal(true)">
                 <h2>You found me!</h2>
                 <div class="modal_animal_bio">
 
@@ -126,13 +124,9 @@
 
                     <div class="modal_animal_bio_wrapper" id="modal_animal_bio">
                         <li class="bold_bio_info">Animal: <span class="bio_info">Kookaburra</span></li>
-                       
-                        <li class="bold_bio_info">Wadawurrung name: <span class="bio_info">Kuwarrk</span></li>
-                        
-                        <li class="bold_bio_info">Scientific name: <span class="bio_info">Dacelo novaeguineae</span></li>
-                        
-                        <li class="bold_bio_info">Size Range: <span class="bio_info">40 - 45 cm</span></li>
-                       
+                        <li class="bold_bio_info">Wadawurrung name: <span class="bio_info">Kuwarrk</span></li>                        
+                        <li class="bold_bio_info">Scientific name: <span class="bio_info">Dacelo novaeguineae</span></li>                       
+                        <li class="bold_bio_info">Size Range: <span class="bio_info">40 - 45 cm</span></li>               
                         <li class="bold_bio_info">Weight: <span class="bio_info">0.31 - 0.38 kg</span></li>
                     </div>
                 </div>
@@ -196,6 +190,23 @@
                 </div>
             </div>
 
+            <!--Locked Modal-->
+            <div class="modal_content" id="modal_locked_content">
+                <img class="close" src="assets/close.svg" onclick="closeModal()">
+                <h2>Can't find me? Here's a clue!</h2>                  
+                <div class="modal_scrollable_content">
+                    <div class="modal_hint_wrapper">
+                    <div class='scroll_blur_top hiden_scroll_blur'></div>
+                      
+                            <img class="modal_hint_img modal_hint_img_top" id="m_hint_img" src="assets/hints/photohint.png">
+                       
+                       
+                            <img class="modal_hint_img" id="m_map_hint_img" src="assets/hints/maphint.png">
+                        
+                    </div>
+                    <div class='scroll_blur hiden_scroll_blur'></div>
+                </div>
+            </div>
         </div>
     </main>
 

@@ -13,7 +13,9 @@ const animals = [
         animal_story_para1: "Nanna Kookaburra was perched on a signpost waiting patiently for you to take her home. Nanna Kookaburra never got lost. She always knew where she was. But sometimes she needed a little help remembering where she was going.",
         animal_story_para2: "“Hello possum!” said Nanna Kookaburra, who called everyone possum, even if they weren’t. “I’m looking for my home, but I can’t quite remember where it is! Be a dear and help me find it will you.”",
         animal_story_para3: "So, she perched on your shoulder and off you both went to ask all the animals along the trail just where Nanna Kookaburra might be going.",
-        animal_facts: "Laughing Kookaburras pair for life. The dad and mum take turns keeping eggs warm and sometimes the older brothers and sisters of a kookaburra chick will help with babysitting!"
+        animal_facts: "Laughing Kookaburras pair for life. The dad and mum take turns keeping eggs warm and sometimes the older brothers and sisters of a kookaburra chick will help with babysitting!",
+        hint_photo: "assets/hints/photohint.png",
+        hint_map: "assets/hints/maphint.png"
     },
     {
         id: 2,
@@ -29,7 +31,9 @@ const animals = [
         animal_story_para1: "Nanna Kookaburra found Mother Koala and Joey Koala resting in some shade. “Where are you heading, Nanna Kookaburra?” asked Mother Koala. “Hello possums!” said Nanna Kookaburra. “I’m heading home love, but I can’t remember where it is.”",
         animal_story_para2: "“Hehe! We’re not possums! We’re Koalas,” giggled Joey Koala who lived inside her mother’s pouch. “It’s somewhere that feels like a hug, it is, it’s somewhere that feels like a hug.”",
         animal_story_para3: "Joey Koala gave Nanna Kookaburra a warm hug and Nanna Kookaburra continued along the trail.",
-        animal_facts: "Koalas can sleep for up to 20 hours a day! This is because they have a low energy diet, and use most of their energy eating the leaves they need to get energy!"
+        animal_facts: "Koalas can sleep for up to 20 hours a day! This is because they have a low energy diet, and use most of their energy eating the leaves they need to get energy!",
+        hint_photo: "assets/hints/photohint.png",
+        hint_map: "assets/hints/maphint.png"
     },
     {
         id: 3,
@@ -45,7 +49,9 @@ const animals = [
         animal_story_para1: "Nanna Kookaburra found Auntie Magpie hiding in some leaves. “Where are you heading, Nanna Kookaburra?” asked Auntie Magpie.",
         animal_story_para2: "“Hello possum!” said Nanna Kookaburra. “I’m heading home love, but I can’t remember where it is.” “Well,” warbled Auntie Magpie who lived in a tree, “It’s somewhere that’s always safe, it is, it’s somewhere that’s always safe.”",
         animal_story_para3: "Auntie Magpie gave Nanna Kookaburra a long green leaf and Nanna Kookaburra continued along the trail.",
-        animal_facts: "Females have grey and speckled feathers on the back of their necks, while males only have white on the back of their necks!"
+        animal_facts: "Females have grey and speckled feathers on the back of their necks, while males only have white on the back of their necks!",
+        hint_photo: "assets/hints/photohint.png",
+        hint_map: "assets/hints/maphint.png"
     },
     {
         id: 4,
@@ -61,7 +67,9 @@ const animals = [
         animal_story_para1: "Nanna Kookaburra found Uncle Magpie high in a tree. “Where are you heading, Nanna Kookaburra?” asked Uncle Magpie. ",
         animal_story_para2: "“Hello possum!” said Nanna kookaburra. “I’m heading home love, but I can’t remember where it is.” “Well,” sung Uncle Magpie as he spotted a worm. “It’s somewhere with the best grub, it is, it’s somewhere with the best grub.”",
         animal_story_para3: "Uncle Magpie gave Nanna Kookaburra a juicy worm and Nanna Kookaburra continued along the trail.",
-        animal_facts: "Much like cockatoos and parrots, magpies can mimic over 30 other birds! They can also mimic dogs barking, telephones ringing, police sirens and people!"
+        animal_facts: "Much like cockatoos and parrots, magpies can mimic over 30 other birds! They can also mimic dogs barking, telephones ringing, police sirens and people!",
+        hint_photo: "assets/hints/photohint.png",
+        hint_map: "assets/hints/maphint.png"
     },
     {
         id: 5,
@@ -77,7 +85,9 @@ const animals = [
         animal_story_para1: "Nanna Kookaburra found her Granddaughter Kookaburra perched on a tree, smiling down at her. “Where are you heading, Nanna Kookaburra?” asked Granddaughter Kookaburra.",
         animal_story_para2: "“Hello, my dear!” said Nanna kookaburra. “I’m heading home love, but I can’t remember where it is.” “Well,” laughed her Granddaughter. “It’s somewhere you never feel lost, it is, yeah it’s somewhere you never feel lost.”",
         animal_story_para3: "“I never feel lost around you, my dear,” squawked Nanna Kookaburra. “Okay! I’ll come with you then!” said Granddaughter Kookaburra and together they continued along the trail.",
-        animal_facts: "The Kookaburra’s brown and white feathers help it blend in with the environment, making it more challenging for predators or prey to see them!"
+        animal_facts: "The Kookaburra’s brown and white feathers help it blend in with the environment, making it more challenging for predators or prey to see them!",
+        hint_photo: "assets/hints/photohint.png",
+        hint_map: "assets/hints/maphint.png"
     },
     {
         id: 3,
@@ -93,7 +103,9 @@ const animals = [
         animal_story_para1: "Nanna Kookaburra found Brother Wedge-Tailed Eagle soaring through the trees. “Where are you heading, Nanna Kookaburra?” asked Brother Wedge-Tailed Eagle.",
         animal_story_para2: "“Hello possum!” said Nanna kookaburra. “I’m heading home love, but I can’t remember where it is.” “Well,” called Brother Wedge-Tailed Eagle, who lived in a nest. “It’s somewhere open and free, it is, it’s somewhere open and free.”",
         animal_story_para3: "Brother Wedge Tailed Eagle flapped his big wings and Nanna Kookaburra felt the gentle breeze blow across her beak. Then Nanna Kookaburra continued along the trail.",
-        animal_facts: "Unlike most people, whose hair turns white with age, Wedge Tailed Eagles are the opposite! When they are young their feathers are mostly light brown, and as they get older their feathers become more and more black!"
+        animal_facts: "Unlike most people, whose hair turns white with age, Wedge Tailed Eagles are the opposite! When they are young their feathers are mostly light brown, and as they get older their feathers become more and more black!",
+        hint_photo: "assets/hints/photohint.png",
+        hint_map: "assets/hints/maphint.png"
     },
     {
         id: 6,
@@ -109,7 +121,9 @@ const animals = [
         animal_story_para1: "Nanna Kookaburra found Sister Wedge-Tailed Eagle perched on a branch. “Where are you heading, Nanna Kookaburra?” asked Sister Wedge-Tailed Eagle.",
         animal_story_para2: "“Hello possum!” said Nanna kookaburra. “I’m heading home love, but I can’t remember where it is.” “Well,” called Sister Wedge-Tailed Eagle, who lived in a nest. “It’s somewhere nice and dry, it is, it’s somewhere nice and dry.”",
         animal_story_para3: "Sister Wedge-Tailed Eagle gave Nanna Kookaburra a grand feather and Nanna Kookaburra continued along the trail.",
-        animal_facts: "Wedge Tailed Eagles are very territorial. This means they chase off any other predators that come near their home. Wedge Tailed Eagles have even been known to attack people hang-gliding!"
+        animal_facts: "Wedge Tailed Eagles are very territorial. This means they chase off any other predators that come near their home. Wedge Tailed Eagles have even been known to attack people hang-gliding!",
+        hint_photo: "assets/hints/photohint.png",
+        hint_map: "assets/hints/maphint.png"
     },
     {
         id: 7,
@@ -125,7 +139,9 @@ const animals = [
         animal_story_para1: "Nanna Kookaburra found Cousin Brushtail Possum in the nook of a tree. “Where are you heading, Nanna Kookaburra?” asked Cousin Brushtail Possum.",
         animal_story_para2: "“Hello possum!” said Nanna kookaburra. “I’m heading home love, but I can’t remember where it is.” “Well,” rumbled Cousin  Brushtail Possum, who was proud she remembered his name, even though she didn’t. “It’s somewhere fun to play, it is, it’s somewhere fun to play.”",
         animal_story_para3: "Cousin Brushtail Possum gave Nanna Kookaburra some stringybark and Nanna Kookaburra continued along the trail.",
-        animal_facts: "Brushtailed Possums have prehensile tails. That means they can grasp and hold things with their tail as though it was another hand! They can use their tails to carry grass and twigs for their nests!"
+        animal_facts: "Brushtailed Possums have prehensile tails. That means they can grasp and hold things with their tail as though it was another hand! They can use their tails to carry grass and twigs for their nests!",
+        hint_photo: "assets/hints/photohint.png",
+        hint_map: "assets/hints/maphint.png"
     },
     {
         id: 8,
@@ -141,7 +157,9 @@ const animals = [
         animal_story_para1: "Nanna Kookaburra found Cousin Ringtail Possum climbing up a tree trunk. “Where are you heading, Nanna Kookaburra?” asked Cousin Ringtail Possum.",
         animal_story_para2: "“Hello possum!” said Nanna kookaburra. “I’m heading home love, but I can’t remember where it is.” “Well,” grinned Cousin Ringtail Possum as she swung on a branch by her tail. “It’s somewhere you can be yourself, it is, it’s somewhere you can be yourself.”",
         animal_story_para3: "Cousin Ringtail Possum showed Nanna Kookaburra her funniest face. Nanna Kookaburra laughed and continued along the trail.",
-        animal_facts: "A male possum is called a “Jack”, and a female possum is called a “Jill”!"
+        animal_facts: "A male possum is called a “Jack”, and a female possum is called a “Jill”!",
+        hint_photo: "assets/hints/photohint.png",
+        hint_map: "assets/hints/maphint.png"
     },
     {
         id: 9,
@@ -157,6 +175,8 @@ const animals = [
         animal_story_para1: "Nanna Kookaburra found Grandad Wombat scratching in the dirt. “Where are you heading, Nanna Kookaburra?” asked Grandad Wombat.",
         animal_story_para2: "“Hello possum!” said Nanna Kookaburra. “I’m heading home love, but I can’t remember where it is.” “Well,” grumped Grandad Wombat who lived in a burrow. “It’s somewhere quiet and cozy, it is, it’s somewhere quiet and cozy.”",
         animal_story_para3: "Grandad Wombat gave Nanna Kookaburra some soft fur and Nanna Kookaburra continued along the trail.",
-        animal_facts: "Wombats look big and slow, but they can actually run up to 40km an hour! That’s faster than most people!"
+        animal_facts: "Wombats look big and slow, but they can actually run up to 40km an hour! That’s faster than most people!",
+        hint_photo: "assets/hints/photohint.png",
+        hint_map: "assets/hints/maphint.png"
     }
 ];

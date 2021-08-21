@@ -1,7 +1,10 @@
 // Get the modal
 var modal = document.getElementById("modal");
-var modalContent = document.getElementById("modal_content");
+var modalUnlockedContent = document.getElementById("modal_unlocked_content");
+var modalLockedContent = document.getElementById("modal_locked_content");
 var modalAnimalImage = document.getElementById("m_animal_img");
+var modalHintImage = document.getElementById("m_hint_img");
+var modalMapHintImage = document.getElementById("m_map_hint_img");
 var modalAnimalSound = document.getElementById("audio_animal");
 var modalStorySound = document.getElementById("audio_animal_story");
 var modalAnimalStory = document.getElementById("modal_story");
@@ -9,15 +12,23 @@ var modalAnimalFacts = document.getElementById("modal_facts");
 var modalBioInfo = document.getElementById("modal_animal_bio");
 
 function displayPopup(animalName) {
+    const animalsIndex = animals.findIndex(item => item.name === animalName);
 
-    if (animalName != "" && window.localStorage.getItem(animalName) == "true") {
-        const index = animals.findIndex(item => item.name === animalName);
-        setupUnlockedPopup(index);
-        modal.style.display = "block";
+    if (animalName != "" && window.localStorage.getItem(animalName) == "true") {    
+        setupUnlockedPopup(animalsIndex);
+        modalUnlockedContent.style.display = "flex";
     }
     else {
-        displayAnimalHintPopup(animalName);
+        setupLockedPopup(animalsIndex);
+        modalLockedContent.style.display = "flex";
     }
+
+    modal.style.display = "block";
+}
+
+function setupLockedPopup(animalIndex) {
+    setupModalHintImage(animalIndex);
+    setupModalMapHintImage(animalIndex);
 }
 
 function setupUnlockedPopup(animalIndex) {
@@ -71,23 +82,22 @@ function setupAnimalFacts(animalIndex) {
     }
 }
 
-function displayAnimalHintPopup(animal) {
-
-    modalContent.innerHTML = "";
-    let h = document.createElement('h3');
-    h.textContent = "Can't find me? Here's a clue!"
-    modalContent.appendChild(h);
-
-    let p = document.createElement('p');
-        p.textContent = "hint for: " + animal;
-        modalContent.appendChild(p);
-
-    modal.style.display = "block";
+function setupModalHintImage(animalIndex) {
+    modalHintImage.src = animals[animalIndex].hint_photo;
 }
 
-var close = document.getElementsByClassName("close")[0]; //TODO make this an id maybe..
-close.onclick = function() {
+function setupModalMapHintImage(animalIndex) {
+    modalMapHintImage.src = animals[animalIndex].hint_map;
+}
+
+function closeModal(unlockedContent) {
   modal.style.display = "none";
+  if(unlockedContent) {
+      modalUnlockedContent.style.display = "none";
+  }
+  else {
+      modalLockedContent.style.display = "none";
+  }
 }
 
 // When the user clicks anywhere outside of the modal, close it

@@ -289,7 +289,7 @@ input:checked + .slider:before {
   padding: 1rem;
   border-radius: 1rem;
   max-height: calc(100% - 4rem);
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
@@ -399,9 +399,28 @@ li {
   margin-top: 1rem;
 }
 
-/* The Close Button */
+.modal_hint_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modal_hint_img {
+  width: calc(100% - 2px);
+  border-radius: 1rem;
+  border: 1px solid var(--theme-background-white);
+  margin: auto;
+}
+
+.modal_hint_img_top {
+  margin: 1rem 0;
+}
+
+.hiden_scroll_blur {
+  display: none;
+}
+
 .close {
-  color: #aaaaaa;
   max-width: 10%;
   margin-left: auto;
 }
@@ -444,7 +463,7 @@ h3 {
   }
 
   .close {
-    max-width: 4%;
+    max-width: 1.5rem;
   }
 
   .modal_sound_icons {
@@ -478,5 +497,19 @@ h3 {
   
   .modal_sound_outer_wrapper {
     margin-top: -.5rem;
+  }
+
+  #modal_locked_content {
+      width: 47%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  .modal_hint_img_top {
+    margin-top: .25rem;
+  }
+
+  .hiden_scroll_blur {
+    display: inherit;
   }
 }
