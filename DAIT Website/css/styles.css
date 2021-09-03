@@ -229,6 +229,15 @@ z-index: 10;
   z-index: 90;
 }
 
+.footer_button_wrapper {
+  margin-bottom: 4rem;
+}
+
+.footer_button {
+  height: 4rem;
+  cursor: pointer;
+}
+
 #btn-scan-qr {
   cursor: pointer;
 }
