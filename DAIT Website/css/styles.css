@@ -188,7 +188,7 @@ main {
   cursor: pointer;
  }
 
-section {
+ .animal_collection_wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
