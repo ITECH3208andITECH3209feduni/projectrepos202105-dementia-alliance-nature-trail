@@ -217,7 +217,16 @@ z-index: 10;
 }
 
 .trailmap {
-  height: 3rem;
+  max-width: 100%;
+  background-color: var(--theme-background-bluealpha);
+  border: 1px solid var(--theme-background-alt);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.trailmap_img {
+  max-width: 100%;
+  border-radius: 1rem;
 }
 
 .welcome_wander_wrapper {
