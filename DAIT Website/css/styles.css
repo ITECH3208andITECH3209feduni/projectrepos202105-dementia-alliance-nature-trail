@@ -229,6 +229,25 @@ z-index: 10;
   border-radius: 1rem;
 }
 
+.trailmap_legend {
+  display: flex;
+  flex-direction: column;
+}
+
+.trailmap_legend_item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.trailmap_legend_item img {
+  width: 20%;
+  margin-right: .5rem;
+}
+
+.trailmap_legend_item p {
+  margin-top: 0;
+}
+
 .welcome_wander_wrapper {
   display: flex;
   justify-content: flex-start;
