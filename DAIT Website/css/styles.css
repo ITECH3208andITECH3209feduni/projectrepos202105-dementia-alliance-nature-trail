@@ -156,7 +156,6 @@ main {
   flex-direction: column;
   overflow-y: auto;
   margin-bottom: auto;
-  height: 80%;
 }
 
 .flex_top_main_container {
@@ -216,12 +215,13 @@ max-width: 20%;
 z-index: 10;
 }
 
-.trailmap {
+.trailmap, .welcome_wander_wrapper {
   max-width: 100%;
   background-color: var(--theme-background-bluealpha);
   border: 1px solid var(--theme-background-alt);
   border-radius: 1rem;
   padding: 1rem;
+  margin: 1rem 0;
 }
 
 .trailmap_img {
@@ -237,22 +237,35 @@ z-index: 10;
 .trailmap_legend_item {
   display: flex;
   align-items: flex-start;
+  margin-bottom: 1rem;
 }
 
-.trailmap_legend_item img {
-  width: 20%;
+.trailmap_legend_item_icon {
+  height: 2rem;
+  width: 2rem;
   margin-right: .5rem;
 }
 
+.trailmap_legend_item_icon img {
+  width: 100%;
+}
+
 .trailmap_legend_item p {
-  margin-top: 0;
+  margin: 0;
+}
+
+.trailmap_legend_item_maintext {
+  padding-top: .4rem;
+}
+
+.trailmap_legend_item_subtext {
+  font-size: .8rem;
 }
 
 .welcome_wander_wrapper {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  width: 100%;
 }
 
 .welcome_wander_top_container {
