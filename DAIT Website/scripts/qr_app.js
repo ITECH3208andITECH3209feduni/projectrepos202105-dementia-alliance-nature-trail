@@ -72,12 +72,6 @@ function scan() {
   }
 }
 
-function menuOnclickEventHandler(x) {
-  x.classList.toggle("change");
-  document.querySelector(".nav").classList.toggle("change");
+menuOnclickEventHandler = (x) => {
+  document.getElementById("nav").classList.toggle("change");
 }
-
-document.querySelector(".nav_overlay").addEventListener("click", () => {
-  document.querySelector(".nav").classList.toggle("change");
-  document.querySelector(".menu_icon_container").classList.toggle("change");
-})
