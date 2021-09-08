@@ -237,16 +237,29 @@ z-index: 10;
   flex-direction: column;
 }
 
-.trailmap_legend_item {
+.trailmap_legend_item, .how_to_item {
   display: flex;
-  align-items: flex-start;
   margin-bottom: 1rem;
+}
+
+.trailmap_legend_item {
+  align-items: flex-start;
+}
+
+.how_to_item {
+  align-items: center;
 }
 
 .trailmap_legend_item_icon {
   height: 2rem;
   width: 2rem;
   margin-right: .5rem;
+}
+
+.how_to_item_icon {
+  height: 25%;
+  width: 25%;
+  margin-right: 1rem;
 }
 
 .trailmap_legend_trail_item {
@@ -267,6 +280,11 @@ z-index: 10;
 
 .trailmap_legend_item_maintext, .trailmap_legend_trail_item_maintext, .trailmap_legend_item_subtext {
   margin: 0;
+}
+
+.how_to_item_maintext {
+  margin: auto auto auto 0;
+  font-weight: bold;
 }
 
 .trailmap_legend_item_maintext {
@@ -593,7 +611,7 @@ li {
 }
 
 h2 {
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
 }
 
 h3 {
