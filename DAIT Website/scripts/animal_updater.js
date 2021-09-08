@@ -1,4 +1,5 @@
 const allAnimalElements = document.getElementsByClassName("animal_wrapper");
+const lockToggle = document.getElementById("lock_toggle");
 let animalArray = [];
 
 window.addEventListener("storage", storageListenerEventHandler);
@@ -24,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     window.history.replaceState(null, null, window.location.pathname); // replace the url pathname to remove the parameters so the pop up doesn't show on refresh
   }
+
+  setLockToggleStatus();
 
 }, false);
 
@@ -83,4 +86,33 @@ function storageListenerEventHandler(event) {
   if (animalArray.includes(key)){
     updateAnimalPanel(key)
   }
+}
+
+function setLockToggleStatus() {
+  let unlocked = true;
+
+  for(i = 0; i < animalArray.length; i++) {
+    if (window.localStorage.getItem(animalArray[i]) != "true") {
+      unlocked = false;
+      break;
+    }
+  }
+  if(unlocked) {
+    lockToggle.checked = unlocked;
+  }
+}
+
+function handleLockToggle () {
+  if (lockToggle.checked == true){
+    unlockAllAnimals();
+  } else {
+    //TODO
+  }
+}
+
+function unlockAllAnimals () {
+  animalArray.forEach(animal => {
+    updateLocalStorageAnimal(animal);
+  });
+  updateAllAnimalPanels();
 }
