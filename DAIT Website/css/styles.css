@@ -80,6 +80,7 @@ header {
   background: var(--theme-background-alt);
   transform: translateX(-45vw);
   transition: transform 0.3s;
+  visibility: hidden;
 }
 
 .nav_link {
@@ -91,7 +92,6 @@ header {
   color: var(--theme-background-alt);
   font-size: 1rem;
   text-decoration: none;
-  /*text-decoration: none; */
   padding: 0.5rem 1rem;
   background: transform 0.2s;
 }
@@ -123,33 +123,11 @@ header {
   padding: 1.5rem;
 }
 
-/*
-.bar1, .bar2, .bar3 {
-  width: 2.188rem;
-  height: 0.313rem;
-  background-color: var(--theme-background-alt);
-  margin: 0.375rem 0;
-  transition: 0.4s;
-}
-
-.change .bar1 {
-  -webkit-transform: rotate(-45deg) translate(-0.563rem, 0.375rem);
-  transform: rotate(-45deg) translate(-0.563rem, 0.375rem);
-}
-
-.change .bar2 { 
-  opacity: 0;
-}
-
-.change .bar3 {
-  -webkit-transform: rotate(45deg) translate(-0.5rem, -0.5rem);
-  transform: rotate(45deg) translate(-0.5rem, -0.5rem);
-}
-*/
-
 .change .nav_links {
   transform: translateX(0);
+  transition: transform 0.3s;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  visibility: visible;
 }
 
 .nav_overlay {
@@ -235,7 +213,7 @@ max-width: 20%;
 z-index: 10;
 }
 
-.trailmap, .welcome_wander_wrapper, .how_to_section_wrapper {
+.trailmap, .welcome_wander_wrapper {
   max-width: 100%;
   background-color: var(--theme-background-bluealpha);
   border: 1px solid var(--theme-background-alt);
@@ -244,11 +222,8 @@ z-index: 10;
   margin: 1rem 0;
 }
 
-.trailmap_img, .find_us_all_img {
-  width: 100%;
-}
-
 .trailmap_img {
+  max-width: 100%;
   border-radius: 1rem;
 }
 
@@ -257,29 +232,16 @@ z-index: 10;
   flex-direction: column;
 }
 
-.trailmap_legend_item, .how_to_item {
-  display: flex;
-  margin-bottom: 1rem;
-}
-
 .trailmap_legend_item {
+  display: flex;
   align-items: flex-start;
-}
-
-.how_to_item {
-  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .trailmap_legend_item_icon {
   height: 2rem;
   width: 2rem;
   margin-right: .5rem;
-}
-
-.how_to_item_icon {
-  height: 25%;
-  width: 25%;
-  margin-right: 1rem;
 }
 
 .trailmap_legend_trail_item {
@@ -300,11 +262,6 @@ z-index: 10;
 
 .trailmap_legend_item_maintext, .trailmap_legend_trail_item_maintext, .trailmap_legend_item_subtext {
   margin: 0;
-}
-
-.how_to_item_maintext {
-  margin: auto auto auto 0;
-  font-weight: bold;
 }
 
 .trailmap_legend_item_maintext {
@@ -344,7 +301,7 @@ font-size: .9rem;
   padding-right: .5rem;
 }
 
-.trailmap_wrapper, .how_to_wrapper {
+.trailmap_wrapper {
   margin: .8rem .8rem 1.6rem .8rem;
 }
 
@@ -631,7 +588,7 @@ li {
 }
 
 h2 {
-  margin: 0 auto 1rem auto;
+  margin: 0 auto;
 }
 
 h3 {
