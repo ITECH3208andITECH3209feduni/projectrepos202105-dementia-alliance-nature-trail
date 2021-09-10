@@ -5,18 +5,19 @@ let animalArray = [];
 window.addEventListener("storage", storageListenerEventHandler);
   
 document.addEventListener('DOMContentLoaded', function() {
-  createAnimalArray();
   firstEncounterFlag = false;
+  createAnimalArray();
+  populateLocalStorageWithAnimals();
 
-  if (window.localStorage.getItem(animals[0].name) != "true") { //TODO unsure if this is the right approach on handling starter animal
-    updateLocalStorageAnimal(animals[0].name);
+  if (window.localStorage.getItem(animals[0].name) != "true") {
+    updateLocalStorageAnimal(animals[0].name, true);
     firstEncounterFlag = true;
     alert("Welcome to the trail, view starter story"); //TODO alert/popup will happen that has a button saying view starter story...
   }
 
   // Information found on the QRcode for a local device(replace with webiste URL) setup is: https://192.168.86.51:5500/qrPrototype/?animal=koala
   const animalFromUrlParams = getUrlParams();
-  updateLocalStorageAnimal(animalFromUrlParams);
+  updateLocalStorageAnimal(animalFromUrlParams, true);
   updateAllAnimalPanels();
 
   if (animalArray.includes(animalFromUrlParams)){
@@ -30,9 +31,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 }, false);
 
-function updateLocalStorageAnimal(animal) {
-  if (animalArray.includes(animal) && window.localStorage.getItem(animal) != "true") {
-    window.localStorage.setItem(animal, true);
+function updateLocalStorageAnimal(animal, trueORfalse) {
+  if(animalArray.includes(animal)) {
+    if (trueORfalse == true && window.localStorage.getItem(animal) != "true") {
+      window.localStorage.setItem(animal, true);
+    }
+    else if (trueORfalse == false && window.localStorage.getItem(animal) != "false") {
+      window.localStorage.setItem(animal, false);
+    }
   }
 }
 
@@ -50,6 +56,14 @@ function createAnimalArray() {
     }
   });
 }  
+
+function populateLocalStorageWithAnimals() {
+  animalArray.forEach(animal => {
+    if (window.localStorage.getItem(animal) == null) {
+      updateLocalStorageAnimal(animal, false);
+    }
+  });
+}
 
 function updateAllAnimalPanels() {
    for(i = 0; i < allAnimalElements.length; i++) {
@@ -106,13 +120,22 @@ function handleLockToggle () {
   if (lockToggle.checked == true){
     unlockAllAnimals();
   } else {
-    //TODO
+    lockAllAnimals();
   }
 }
 
 function unlockAllAnimals () {
   animalArray.forEach(animal => {
-    updateLocalStorageAnimal(animal);
+    updateLocalStorageAnimal(animal, true);
+  });
+  updateAllAnimalPanels();
+}
+
+function lockAllAnimals () {
+  animalArray.forEach(animal => {
+    if (animal != animals[0].name) {
+      updateLocalStorageAnimal(animal, false);
+    }
   });
   updateAllAnimalPanels();
 }
