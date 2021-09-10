@@ -5,10 +5,11 @@ let animalArray = [];
 window.addEventListener("storage", storageListenerEventHandler);
   
 document.addEventListener('DOMContentLoaded', function() {
-  createAnimalArray();
   firstEncounterFlag = false;
+  createAnimalArray();
+  populateLocalStorageWithAnimals();
 
-  if (window.localStorage.getItem(animals[0].name) != "true") { //TODO unsure if this is the right approach on handling starter animal
+  if (window.localStorage.getItem(animals[0].name) != "true") {
     updateLocalStorageAnimal(animals[0].name, true);
     firstEncounterFlag = true;
     alert("Welcome to the trail, view starter story"); //TODO alert/popup will happen that has a button saying view starter story...
@@ -55,6 +56,14 @@ function createAnimalArray() {
     }
   });
 }  
+
+function populateLocalStorageWithAnimals() {
+  animalArray.forEach(animal => {
+    if (window.localStorage.getItem(animal) == null) {
+      updateLocalStorageAnimal(animal, false);
+    }
+  });
+}
 
 function updateAllAnimalPanels() {
    for(i = 0; i < allAnimalElements.length; i++) {
