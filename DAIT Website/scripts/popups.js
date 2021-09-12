@@ -1,6 +1,7 @@
 var modal = document.getElementById("modal");
 var modalUnlockedContent = document.getElementById("modal_unlocked_content");
 var modalLockedContent = document.getElementById("modal_locked_content");
+var modalExternalFirstScanContent = document.getElementById("modal_external_first_scan_content");
 var modalAnimalImage = document.getElementById("m_animal_img");
 var modalHintImage = document.getElementById("m_hint_img");
 var modalMapHintImage = document.getElementById("m_map_hint_img");
@@ -89,20 +90,29 @@ function setupModalMapHintImage(animalIndex) {
     modalMapHintImage.src = animals[animalIndex].hint_map;
 }
 
-function closeModal(unlockedContent) {
+function closeModal(contentType) {
   modal.style.display = "none";
-  if(unlockedContent) {
-      modalUnlockedContent.style.display = "none";
-  }
-  else {
-      modalLockedContent.style.display = "none";
+
+  switch(contentType) {
+    case "unlocked":
+        modalUnlockedContent.style.display = "none";
+      break;
+    case "locked":
+        modalLockedContent.style.display = "none";
+      break;
+    case "external first time":
+        modalExternalFirstScanContent.style.display = "none";
+    break;
   }
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// When the user clicks anywhere outside of the modal, close it and all modal contents
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    modalUnlockedContent.style.display = "none";
+    modalLockedContent.style.display = "none";
+    modalExternalFirstScanContent.style.display = "none";
   }
 }
 
@@ -125,4 +135,17 @@ function toggleSound(sound) {
     else {
         sound.play();
     }
+}
+
+function handleUserInput(inputValue) {
+    closeModal("external first time");
+    
+    if(inputValue == "View Starter Story") {
+        displayPopup(animals[0].name);
+    }
+}
+
+function displayExternalFirstScanPopup() {
+    modalExternalFirstScanContent.style.display = "flex";
+    modal.style.display = "block";
 }

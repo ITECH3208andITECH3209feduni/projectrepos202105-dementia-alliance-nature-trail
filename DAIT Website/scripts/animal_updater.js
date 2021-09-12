@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (window.localStorage.getItem(animals[0].name) != "true") {
     updateLocalStorageAnimal(animals[0].name, true);
     firstEncounterFlag = true;
-    alert("Welcome to the trail, view starter story"); //TODO alert/popup will happen that has a button saying view starter story...
+    displayExternalFirstScanPopup();
   }
 
   // Information found on the QRcode for a local device(replace with webiste URL) setup is: https://192.168.86.51:5500/qrPrototype/?animal=koala

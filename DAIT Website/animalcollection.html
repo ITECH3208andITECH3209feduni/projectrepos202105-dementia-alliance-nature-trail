@@ -126,7 +126,7 @@
         <!-- The Modal -->
         <div id="modal" class="modal">
             <div class="modal_content" id="modal_unlocked_content">
-                <img class="close" src="assets/close.svg" onclick="closeModal(true)">
+                <input class="close" type="image" value="unlocked" src="assets/close.svg" onclick="closeModal(this.value)">
                 <h2 class="modal_h2_heading">You found me!</h2>
                 <div class="modal_animal_bio">
 
@@ -204,7 +204,7 @@
 
             <!--Locked Modal-->
             <div class="modal_content" id="modal_locked_content">
-                <img class="close" src="assets/close.svg" onclick="closeModal()">
+                <input class="close" type="image" value="locked" src="assets/close.svg" onclick="closeModal(this.value)">
                 <h2 class="modal_h2_heading">Can't find me? Here's a clue!</h2>                  
                 <div class="modal_scrollable_content">
                     <div class="modal_hint_wrapper">
@@ -215,6 +215,28 @@
                        
                             <img class="modal_hint_img" id="m_map_hint_img" src="assets/hints/maphint.png">
                         
+                    </div>
+                    <div class='scroll_blur hiden_scroll_blur'></div>
+                </div>
+            </div>
+
+
+             <!--External First Time Vistor Modal-->
+             <div class="modal_content" id="modal_external_first_scan_content">
+                <input class="close" type="image" value="external first time" src="assets/close.svg" onclick="closeModal(this.value)">
+                <h2 class="modal_h2_heading">Welcome to the Adventure Trail</h2>                  
+                <div class="modal_scrollable_content">
+                    <div class="modal_hint_wrapper">
+                    <div class='scroll_blur_top hiden_scroll_blur'></div>
+                      
+                            <p>It appears to be your first time finding an animal in the Adventure Trail. 
+                                We reccomend viewing Nanna Kookaburra's story first <i>(starter story)</i>, 
+                                would you like to view the Nanna Kookaburra's story now?
+                            </p>
+                            <form>
+                                <input type="button" value="View Starter Story" onclick="handleUserInput(this.value)">
+                                <input type="button" value="No" onclick="handleUserInput(this.value)">
+                            </form>
                     </div>
                     <div class='scroll_blur hiden_scroll_blur'></div>
                 </div>
