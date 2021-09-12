@@ -140,7 +140,7 @@ function toggleSound(sound) {
 function handleUserInput(inputValue) {
     closeModal("external first time");
     
-    if(inputValue == "View Starter Story") {
+    if(inputValue == "Starter Story") {
         displayPopup(animals[0].name);
     }
 }

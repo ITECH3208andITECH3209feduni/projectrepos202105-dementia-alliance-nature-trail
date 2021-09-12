@@ -582,7 +582,7 @@ li {
   margin-top: 1rem;
 }
 
-.modal_hint_wrapper {
+.modal_hint_wrapper, .modal_first_scan_wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -626,6 +626,26 @@ h3 {
 
 .no_margin {
   margin: 0;
+}
+
+.user_input_form {
+  margin-left: auto;
+}
+
+.user_input_form_button {
+  padding: .8rem .5rem;
+  margin-left: .5rem;
+  margin-top: .5rem;
+  transition-duration: 0.4s;
+  background-color: var(--theme-background-alt);
+  border: 2px solid var(--theme-background-white);
+  color: #fff;
+  border-radius: .5rem;
+}
+
+.user_input_form_button:hover {
+  background-color: var(--theme-background-white); 
+  color: black;
 }
 
 .close:hover,
