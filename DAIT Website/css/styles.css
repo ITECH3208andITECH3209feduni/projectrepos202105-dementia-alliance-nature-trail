@@ -21,6 +21,7 @@ body {
   background: #ffffff;
   margin: 0;
 }
+/* Seths dev branch*/
 
 header, footer{
   background:  var(--theme-background);
