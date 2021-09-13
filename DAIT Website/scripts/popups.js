@@ -105,6 +105,8 @@ function closeModal(contentType) {
             modalExternalFirstScanContent.style.display = "none";
             break;
         case "lock status":
+            toggleLockStatus();
+        case "lock status confirmed":
             modalLockStatusConfirmationContent.style.display = "none";
             break;
     }
@@ -117,7 +119,9 @@ window.onclick = function(event) {
     modalUnlockedContent.style.display = "none";
     modalLockedContent.style.display = "none";
     modalExternalFirstScanContent.style.display = "none";
-    modalLockStatusConfirmationContent.style.display = "none";
+    if(modalLockStatusConfirmationContent.style.display != "none") {
+        closeModal("lock status");
+    }
   }
 }
 

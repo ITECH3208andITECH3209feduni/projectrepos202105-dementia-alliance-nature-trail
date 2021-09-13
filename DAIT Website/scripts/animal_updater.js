@@ -123,15 +123,19 @@ function handleLockToggle (confimation) {
     } else {
       lockAllAnimals();
     }
+    closeModal("lock status confirmed");
   }
-  else {
-    if (lockToggle.checked == true) {
-      lockToggle.checked = false;
-    } else {
-      lockToggle.checked = true;
-    }
+  else if (confimation == "Cancel") {
+    closeModal("lock status");
   }
-  closeModal("lock status");
+}
+
+function toggleLockStatus() {
+  if (lockToggle.checked == true) {
+    lockToggle.checked = false;
+  } else {
+    lockToggle.checked = true;
+  }
 }
 
 function unlockAllAnimals () {
