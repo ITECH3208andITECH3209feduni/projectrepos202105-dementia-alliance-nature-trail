@@ -291,7 +291,7 @@ z-index: 10;
   padding-top: 2rem;
 }
 
-.trailmap_legend_item_subtext {
+.trailmap_legend_item_subtext, .small_font {
   font-size: .8rem;
 }
 
@@ -627,7 +627,8 @@ h3 {
 }
 
 .user_input_form {
-  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .user_input_form_button {
