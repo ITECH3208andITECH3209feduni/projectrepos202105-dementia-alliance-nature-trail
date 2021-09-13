@@ -186,14 +186,12 @@ main {
  }
 
  .animal_collection_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
   margin: .8rem .4rem 1.6rem .4rem;
 }
 
 .animal_wrapper {
-  flex: 1 0 29%;
   margin: .4rem;
   cursor: pointer;
   position: relative;
@@ -657,12 +655,6 @@ h3 {
 
 
 @media screen and (min-width: 320px) and (max-width: 823px) and (orientation: landscape) {
-
-  .animal_wrapper {
-    flex: 1 0 15%;
-    margin: .4rem;
-    max-width: 20%;
-  }
 
   #qr-canvas {
     height: calc(100% - 4.3rem);
