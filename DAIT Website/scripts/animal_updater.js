@@ -1,5 +1,6 @@
 const allAnimalElements = document.getElementsByClassName("animal_wrapper");
 const lockToggle = document.getElementById("lock_toggle");
+const storyEnding = document.getElementById("storyending");
 let animalArray = [];
 
 window.addEventListener("storage", storageListenerEventHandler);
@@ -66,7 +67,7 @@ function populateLocalStorageWithAnimals() {
 }
 
 function updateAllAnimalPanels() {
-   for(i = 0; i < allAnimalElements.length; i++) {
+  for (i = 0; i < allAnimalElements.length; i++) {
     id = allAnimalElements[i].id;
 
     element = document.getElementById(id);
@@ -77,8 +78,9 @@ function updateAllAnimalPanels() {
     } else {
       element.children[1].style.filter = "grayscale(100%)";
       element.children[0].src = "assets/locked.svg";
-    }    
-  } 
+    }
+  }
+  updateFinalStoryPanel();
 }
 
 function updateAnimalPanel(id) {
@@ -86,13 +88,13 @@ function updateAnimalPanel(id) {
   element = document.getElementById(id);
 
   if (window.localStorage.getItem(id) == "true") {
-    console.log(element);
     element.children[1].style.filter = "grayscale(0%)";
     element.children[0].src = "assets/unlocked.svg";
   } else {
     element.children[1].style.filter = "grayscale(100%)";
     element.children[0].src = "assets/locked.svg";
-  }    
+  }
+  updateFinalStoryPanel();    
 }
 
 function storageListenerEventHandler(event) {
@@ -100,19 +102,39 @@ function storageListenerEventHandler(event) {
   if (animalArray.includes(key)){
     updateAnimalPanel(key)
   }
+  updateFinalStoryPanel();
+  setLockToggleStatus();
 }
 
-function setLockToggleStatus() {
-  let unlocked = true;
+function updateFinalStoryPanel() {
+  if (allAnimalsFound()) {
+    storyEnding.children[1].style.filter = "grayscale(0%)";
+    storyEnding.children[0].src = "assets/unlocked.svg";
+  }
+  else {
+    storyEnding.children[1].style.filter = "grayscale(100%)";
+    storyEnding.children[0].src = "assets/locked.svg";
+  }
+}
 
-  for(i = 0; i < animalArray.length; i++) {
+function allAnimalsFound() {
+  let allAnimalsFound = true;
+
+  for (i = 0; i < animalArray.length; i++) {
     if (window.localStorage.getItem(animalArray[i]) != "true") {
-      unlocked = false;
+      allAnimalsFound = false;
       break;
     }
   }
-  if(unlocked) {
-    lockToggle.checked = unlocked;
+  return allAnimalsFound
+}
+
+function setLockToggleStatus() {
+  if (allAnimalsFound()) {
+    lockToggle.checked = true;
+  }
+  else {
+    lockToggle.checked = false;
   }
 }
 

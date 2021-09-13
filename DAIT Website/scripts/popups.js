@@ -163,3 +163,8 @@ function displayLockStatusConfirmationPopup() {
     modalLockStatusConfirmationContent.style.display = "flex";
     modal.style.display = "block";
 }
+
+function displayStoryEndingPopup() {
+    /* TODO modal*******.style.display = "flex";
+    modal.style.display = "block";*/
+}
