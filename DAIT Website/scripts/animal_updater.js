@@ -116,12 +116,22 @@ function setLockToggleStatus() {
   }
 }
 
-function handleLockToggle () {
-  if (lockToggle.checked == true){
-    unlockAllAnimals();
-  } else {
-    lockAllAnimals();
+function handleLockToggle (confimation) {
+  if (confimation == "Confirm") {
+    if (lockToggle.checked == true) {
+      unlockAllAnimals();
+    } else {
+      lockAllAnimals();
+    }
   }
+  else {
+    if (lockToggle.checked == true) {
+      lockToggle.checked = false;
+    } else {
+      lockToggle.checked = true;
+    }
+  }
+  closeModal("lock status");
 }
 
 function unlockAllAnimals () {

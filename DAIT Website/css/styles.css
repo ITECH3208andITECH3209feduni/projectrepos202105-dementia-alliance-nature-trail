@@ -580,7 +580,7 @@ li {
   margin-top: 1rem;
 }
 
-.modal_hint_wrapper, .modal_first_scan_wrapper {
+.modal_hint_wrapper, .modal_first_scan_wrapper .modal_lock_toggle_confirmation_wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;

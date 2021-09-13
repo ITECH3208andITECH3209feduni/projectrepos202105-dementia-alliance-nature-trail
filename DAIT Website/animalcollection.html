@@ -63,7 +63,7 @@
             <div class="flex_toggle_switch_container">
                 <img id="toggle_locked" class="toggle_switch_icon_small" src="assets/locked.svg">
                 <label class="switch">
-                    <input type="checkbox" id="lock_toggle" onclick="handleLockToggle()">
+                    <input type="checkbox" id="lock_toggle" onclick="displayLockStatusConfirmationPopup()">
                     <span class="slider round"></span>
                 </label>
                 <img id="toggle_unlocked" class="toggle_switch_icon_small" src="assets/unlocked.svg">
@@ -211,8 +211,8 @@
             </div>
 
 
-             <!--External First Time Vistor Modal-->
-             <div class="modal_content" id="modal_external_first_scan_content">
+            <!--External First Time Vistor Modal-->
+            <div class="modal_content" id="modal_external_first_scan_content">
                 <input class="close" type="image" value="external first time" src="assets/close.svg" onclick="closeModal(this.value)">
                 <h2 class="modal_h2_heading">Welcome to the Adventure Trail</h2>                  
                 <div class="modal_scrollable_content">
@@ -224,6 +224,25 @@
                         <form class="user_input_form">
                             <input class="user_input_form_button" type="button" value="Starter Story" onclick="handleUserInput(this.value)">
                             <input class="user_input_form_button" type="button" value="How To Play" onclick="handleUserInput(this.value)">
+                        </form>
+                    </div>
+                    <div class='scroll_blur hiden_scroll_blur'></div>
+                </div>
+            </div>
+
+            <!--Lock Status Confirmation Modal-->
+            <div class="modal_content" id="modal_external_lock_status_confirmation_content">
+                <input class="close" type="image" value="lock status" src="assets/close.svg" onclick="closeModal(this.value)">
+                <h2 class="modal_h2_heading">Lock Status Confirmation</h2>                  
+                <div class="modal_scrollable_content">
+                    <div class="modal_lock_status_confirmation_wrapper">
+                        <div class='scroll_blur_top hiden_scroll_blur'></div>
+                        <p>It appears to be your first time finding an animal in the Adventure Trail. 
+                            We recommend viewing the starter story <i>(Nanna Kookaburra)</i> or
+                            learning how to play first.
+                        <form class="user_input_form">
+                            <input class="user_input_form_button" type="button" value="Confirm" onclick="handleLockToggle(this.value)">
+                            <input class="user_input_form_button" type="button" value="Cancel" onclick="handleLockToggle(this.value)">
                         </form>
                     </div>
                     <div class='scroll_blur hiden_scroll_blur'></div>
