@@ -516,11 +516,19 @@ li {
   justify-content: center;
 }
 
-.modal_sound_inner_wrapper {
+.modal_sound_ending_story_outer_wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal_sound_inner_wrapper, .modal_sound_ending_story_inner_wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
- 
+}
+
+.modal_sound_ending_story_inner_wrapper {
+  width: 50%;
 }
 
 .modal_sound_icons {
@@ -535,7 +543,7 @@ li {
   max-height: 100%;
 }
 
-.modal_sound_inner_wrapper p {
+.modal_sound_inner_wrapper p, .modal_sound_ending_story_inner_wrapper p {
   font-size: .75rem;
   padding: 0 .25rem;
 }
@@ -580,7 +588,7 @@ li {
   margin-top: 1rem;
 }
 
-.modal_hint_wrapper, .modal_first_scan_wrapper .modal_lock_toggle_confirmation_wrapper {
+.modal_hint_wrapper, .modal_first_scan_wrapper, .modal_lock_toggle_confirmation_wrapper, .modal_ending_story_wrapper {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -593,7 +601,7 @@ li {
   margin: auto;
 }
 
-.modal_hint_img_top {
+.modal_hint_img_top, .modal_ending_story_img_top {
   margin: 1rem 0;
 }
 
@@ -608,6 +616,7 @@ li {
 
 h2 {
   margin: 0 auto 1rem auto;
+  text-align: center;
 }
 
 h3 {
