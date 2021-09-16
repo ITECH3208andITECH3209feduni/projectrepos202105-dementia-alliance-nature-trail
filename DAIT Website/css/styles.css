@@ -757,7 +757,9 @@ h3 {
   .htsw2 {
     order: 3;
   }
+}
 
+@media screen and (min-width: 1024px) {
   .trailmap {
     display: flex;
     flex-wrap: wrap;
@@ -786,5 +788,12 @@ h3 {
 
   .trailmap_legend_trail_item {
     width: 33.32%;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+
+  .trailmap_legend_trail_item {
+    width: 16.66%;
   }
 }
