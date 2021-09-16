@@ -588,7 +588,7 @@ li {
   margin-top: 1rem;
 }
 
-.modal_hint_wrapper, .modal_first_scan_wrapper, .modal_lock_toggle_confirmation_wrapper, .modal_ending_story_wrapper {
+.modal_hint_wrapper, .modal_first_scan_wrapper, .modal_lock_toggle_confirmation_wrapper, .modal_ending_story_wrapper { /*modal_ending_story_wrapper can be removed?? not used?*/
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -616,6 +616,9 @@ li {
 
 h2 {
   margin: 0 auto 1rem auto;
+}
+
+.modal_h2_heading {
   text-align: center;
 }
 
