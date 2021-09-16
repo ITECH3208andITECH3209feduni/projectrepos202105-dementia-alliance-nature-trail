@@ -667,6 +667,7 @@ h3 {
 }
 
 
+
 @media screen and (min-width: 320px) and (max-width: 823px) and (orientation: landscape) {
 
   #qr-canvas {
@@ -726,5 +727,34 @@ h3 {
 
   .hiden_scroll_blur {
     display: inherit;
+  }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+
+  .how_to_main {
+    margin-top: auto;
+  }
+
+  .how_to_wrapper {
+    display: flex;
+  }
+
+  .find_us_all_img {
+    max-width: 40%;
+    order: 2;
+    padding: 0 1rem;
+  }
+
+  .how_to_section_wrapper {
+    width: 30%;
+  }
+
+  .htsw1 {
+    order: 1;
+  }
+
+  .htsw2 {
+    order: 3;
   }
 }
