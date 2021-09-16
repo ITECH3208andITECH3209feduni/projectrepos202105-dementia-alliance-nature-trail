@@ -757,4 +757,34 @@ h3 {
   .htsw2 {
     order: 3;
   }
+
+  .trailmap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .trailmap_img {
+    width: 100%;
+  }
+
+  .full_width {
+    width: 100%;
+  }
+
+  .trailmap_legend_items_wrapper, .trailmap_legend_trail_items_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .trailmap_legend_item {
+    width: 16.66%;
+  }
+
+  .trailmap_legend_item_maintext, .trailmap_legend_item_subtext, .trailmap_legend_trail_item_maintext, .trailmap_legend_item_subtext {
+    margin-right: 1rem;
+  }
+
+  .trailmap_legend_trail_item {
+    width: 33.32%;
+  }
 }
