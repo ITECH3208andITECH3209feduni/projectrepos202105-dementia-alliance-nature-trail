@@ -2,6 +2,7 @@ var modal = document.getElementById("modal");
 var modalUnlockedContent = document.getElementById("modal_unlocked_content");
 var modalLockedContent = document.getElementById("modal_locked_content");
 var modalEndingStoryContent = document.getElementById("modal_ending_story_content");
+var modalLockedEndingStoryContent = document.getElementById("modal_locked_ending_story_content");
 var modalExternalFirstScanContent = document.getElementById("modal_external_first_scan_content");
 var modalLockStatusConfirmationContent = document.getElementById("modal_external_lock_status_confirmation_content");
 var modalAnimalImage = document.getElementById("m_animal_img");
@@ -105,6 +106,9 @@ function closeModal(contentType) {
         case "ending story":
             modalEndingStoryContent.style.display = "none";
             break;
+        case "locked ending story":
+            modalLockedEndingStoryContent.style.display = "none";
+            break;
         case "external first time":
             modalExternalFirstScanContent.style.display = "none";
             break;
@@ -122,6 +126,8 @@ window.onclick = function(event) {
     modal.style.display = "none";
     modalUnlockedContent.style.display = "none";
     modalLockedContent.style.display = "none";
+    modalEndingStoryContent.style.display = "none";
+    modalLockedEndingStoryContent.style.display = "none";
     modalLockStatusConfirmationContent.style.display = "none";
     modalExternalFirstScanContent.style.display = "none";
     if(modalLockStatusConfirmationContent.style.display != "none") {
@@ -175,6 +181,11 @@ function displayLockStatusConfirmationPopup() {
 }
 
 function displayStoryEndingPopup() {
-    modalEndingStoryContent.style.display = "flex";
+    if (allAnimalsFound()) {
+        modalEndingStoryContent.style.display = "flex";
+    }
+    else {
+        modalLockedEndingStoryContent.style.display = "flex";
+    }
     modal.style.display = "block";
 }

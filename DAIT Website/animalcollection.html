@@ -270,6 +270,21 @@
                 </div>
             </div>
 
+            <!--Locked Ending Story Modal-->
+            <div class="modal_content" id="modal_locked_ending_story_content">
+                <input class="close" type="image" value="locked ending story" src="assets/close.svg" onclick="closeModal(this.value)">
+                <h2 class="modal_h2_heading">Ending Story Locked</h2>                  
+                <div class="modal_scrollable_content">
+                    <!-- <div class="modal_ending_story_wrapper">
+                    <img class="modal_ending_story_img modal_ending_story_img_top" src="assets/find_us_all.svg">
+                    </div> -->
+                    <div class="modal_first_scan_wrapper">
+                        <p>
+                            You will need to find and unlock all the animals in the trail to view the conclusion to the story.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
             <!--External First Time Vistor Modal-->
             <div class="modal_content" id="modal_external_first_scan_content">
@@ -279,7 +294,8 @@
                     <div class="modal_first_scan_wrapper">
                         <p>It appears to be your first time finding an animal in the Adventure Trail. 
                             We recommend viewing the starter story <i>(Nanna Kookaburra)</i> or
-                            learning how to play first.
+                            learning how to play first. 
+                        </p>
                         <form class="user_input_form">
                             <input class="user_input_form_button" type="button" value="Starter Story" onclick="handleUserInput(this.value)">
                             <input class="user_input_form_button" type="button" value="How To Play" onclick="handleUserInput(this.value)">
