@@ -181,14 +181,14 @@ main {
  }
 
  #map {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.23);
+  height: 3rem;
   cursor: pointer;
  }
 
  .animal_collection_wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
-  margin: .8rem .4rem 1.6rem .4rem;
+  margin: .4rem .4rem 1.6rem .4rem;
 }
 
 .animal_wrapper {
