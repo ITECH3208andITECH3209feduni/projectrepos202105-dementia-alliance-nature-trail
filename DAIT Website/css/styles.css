@@ -23,7 +23,7 @@ body {
 }
 
 header, footer{
-  background:  var(--theme-background);
+  background: var(--theme-background);
 }
 
 header {
@@ -478,7 +478,7 @@ input:checked + .slider:before {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: 1rem 0 0 0;
+  margin: 1rem 0 .5rem 0;
   height: 10rem;
 }
 
@@ -529,6 +529,11 @@ li {
 
 .modal_sound_ending_story_inner_wrapper {
   width: 50%;
+  justify-content: flex-end;
+}
+
+.modal_sound_icon_text_wrapper p {
+  margin: auto;
 }
 
 .modal_sound_icons {
@@ -553,26 +558,23 @@ li {
   border-radius: 1rem 1rem 0 0;
 }
 
-.scroll_blur_top {
+.scroll_blur_top, .scroll_blur {
   position: sticky;
-  top: 0;
   width: 100%;
-  padding: .25rem;
+  padding: .25rem 0;
   background-color: rgba(0, 51, 73, 0.5);
   backdrop-filter: blur(1px);
+}
+
+.scroll_blur_top {
+  top: 0;
 }
 
 .scroll_blur {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  padding: .25rem;
-  background-color: rgba(0, 51, 73, 0.5);
-  backdrop-filter: blur(1px);
+  bottom: 0px;
 }
 
 .modal_story, .modal_facts {
-  width: calc(100% - .5rem);
   color: #000;
   border-radius: 1rem;
   padding: .1rem 1.1rem;
@@ -588,10 +590,17 @@ li {
   margin-top: 1rem;
 }
 
-.modal_hint_wrapper, .modal_first_scan_wrapper, .modal_lock_toggle_confirmation_wrapper, .modal_ending_story_wrapper { /*modal_ending_story_wrapper can be removed?? not used?*/
+.modal_hint_wrapper, .modal_first_scan_wrapper, .modal_lock_toggle_confirmation_wrapper, .modal_ending_story_wrapper { 
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.modal_ending_story_wrapper {
+  background: var(--theme-background-alt);
+  background: linear-gradient(180deg, var(--theme-background-alt) 25%, var(--theme-background-white) 100%);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
 .modal_hint_img {
@@ -601,8 +610,12 @@ li {
   margin: auto;
 }
 
-.modal_hint_img_top, .modal_ending_story_img_top {
+.modal_hint_img_top { 
   margin: 1rem 0;
+}
+
+.modal_ending_story_img { 
+  padding: 0 2.5rem;
 }
 
 .hiden_scroll_blur {
@@ -666,8 +679,6 @@ h3 {
   cursor: pointer;
 }
 
-
-
 @media screen and (min-width: 320px) and (max-width: 823px) and (orientation: landscape) {
 
   #qr-canvas {
@@ -727,6 +738,15 @@ h3 {
 
   .hiden_scroll_blur {
     display: inherit;
+  }
+
+  .modal_ending_story_wrapper {
+    height: 7rem;
+  }
+
+  .modal_ending_story_img {
+    max-height: 100%;
+    display: block;
   }
 }
 

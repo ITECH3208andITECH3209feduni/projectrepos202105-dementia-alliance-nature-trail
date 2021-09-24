@@ -213,9 +213,7 @@
             <div class="modal_content" id="modal_ending_story_content">
                 <input class="close" type="image" value="ending story" src="assets/close.svg" onclick="closeModal(this.value)">
                 <h2 class="modal_h2_heading">Congratulations you found us all!</h2>
-                 <div class="modal_ending_story_wrapper">
-                    <img class="modal_ending_story_img modal_ending_story_img_top" src="assets/find_us_all_the_end.svg">
-                </div> 
+                 
                 <div class="modal_sound_ending_story_outer_wrapper">
                     <div class="modal_sound_ending_story_inner_wrapper">
                         <div class="modal_sound_icons" onClick="toggleEndingStorySound()" >
@@ -231,6 +229,9 @@
                 </div>                  
                 <div class="modal_scrollable_content">
                     <div class='scroll_blur_top'></div>
+                    <div class="modal_ending_story_wrapper">
+                        <img class="modal_ending_story_img" src="assets/find_us_all_the_end.svg">
+                    </div> 
                     <div class="modal_story">
                         <h3>Story Ending</h3>
                         <p class="p_top">
@@ -275,13 +276,14 @@
                 <h2 class="modal_h2_heading">Ending Story Locked</h2>                  
                 <div class="modal_scrollable_content">
                     <div class="modal_ending_story_wrapper">
-                    <img class="modal_ending_story_img modal_ending_story_img_top" src="assets/find_us_all.svg">
+                    <img class="modal_ending_story_img" src="assets/find_us_all.svg">
                     </div>
                     <div class="modal_first_scan_wrapper">
-                        <p>
+                        <p class="p_top">
                             You will need to find and unlock all the animals in the trail to view the conclusion to the story.
                         </p>
                     </div>
+                    <div class='scroll_blur'></div>
                 </div>
             </div>
 
