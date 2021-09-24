@@ -10,6 +10,7 @@ var modalHintImage = document.getElementById("m_hint_img");
 var modalMapHintImage = document.getElementById("m_map_hint_img");
 var modalAnimalSound = document.getElementById("audio_animal");
 var modalStorySound = document.getElementById("audio_animal_story");
+var modalEndingStorySound = document.getElementById("audio_ending_story");
 var modalAnimalStory = document.getElementById("modal_story");
 var modalAnimalFacts = document.getElementById("modal_facts");
 var modalBioInfo = document.getElementById("modal_animal_bio");
@@ -99,12 +100,15 @@ function closeModal(contentType) {
     switch (contentType) {
         case "unlocked":
             modalUnlockedContent.style.display = "none";
+            stopSound(modalStorySound);
+            stopSound(modalAnimalSound);
             break;
         case "locked":
             modalLockedContent.style.display = "none";
             break;
         case "ending story":
             modalEndingStoryContent.style.display = "none";
+            stopSound(modalEndingStorySound);
             break;
         case "locked ending story":
             modalLockedEndingStoryContent.style.display = "none";
@@ -121,45 +125,52 @@ function closeModal(contentType) {
 }
 
 // When the user clicks anywhere outside of the modal, close it and all modal contents
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    modalUnlockedContent.style.display = "none";
-    modalLockedContent.style.display = "none";
-    modalEndingStoryContent.style.display = "none";
-    modalLockedEndingStoryContent.style.display = "none";
-    modalLockStatusConfirmationContent.style.display = "none";
-    modalExternalFirstScanContent.style.display = "none";
-    if(modalLockStatusConfirmationContent.style.display != "none") {
-        closeModal("lock status");
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        if (modalUnlockedContent.style.display != "none") {
+            closeModal("unlocked");
+        }
+        if (modalEndingStoryContent.style.display != "none") {
+            closeModal("ending story");
+        }
+        if (modalLockStatusConfirmationContent.style.display != "none") {
+            closeModal("lock status");
+        }
+        modalLockedContent.style.display = "none";
+        modalLockedEndingStoryContent.style.display = "none";
+        modalLockStatusConfirmationContent.style.display = "none";
+        modalExternalFirstScanContent.style.display = "none";
     }
-  }
 }
 
 
 function toggleAnimalSound() {
-    let sound = document.getElementById('audio_animal'); //TODO can use the global instead...
-    toggleSound(sound);
+    toggleSound(modalAnimalSound);
 }
 
 function toggleStorySound() {
-    let sound = document.getElementById('audio_animal_story'); //TODO can use the global instead...
-    toggleSound(sound);
+    toggleSound(modalStorySound);
 }
 
 function toggleEndingStorySound() {
-    let sound = document.getElementById('audio_ending_story'); //TODO can use the global instead...
-    toggleSound(sound);
+    toggleSound(modalEndingStorySound);
 }
 
 function toggleSound(sound) {
+    if (stopSound(sound) == false) {
+        sound.play();
+    }
+}
+
+function stopSound(sound) {
+    let soundStoped = false;
     if (sound.currentTime !== 0 && (sound.currentTime > 0 && sound.currentTime < sound.duration)) {
         sound.pause();
         sound.currentTime = 0;
+        soundStoped = true;
     }
-    else {
-        sound.play();
-    }
+    return soundStoped;
 }
 
 function handleUserInput(inputValue) {
