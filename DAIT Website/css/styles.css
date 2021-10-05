@@ -24,7 +24,7 @@ body {
 /* Seths dev branch*/
 
 header, footer{
-  background:  var(--theme-background);
+  background: var(--theme-background);
 }
 
 header {
@@ -182,14 +182,14 @@ main {
  }
 
  #map {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.23);
+  height: 3rem;
   cursor: pointer;
  }
 
  .animal_collection_wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
-  margin: .8rem .4rem 1.6rem .4rem;
+  margin: .4rem .4rem 1.6rem .4rem;
 }
 
 .animal_wrapper {
@@ -292,7 +292,7 @@ z-index: 10;
   padding-top: 2rem;
 }
 
-.trailmap_legend_item_subtext {
+.trailmap_legend_item_subtext, .small_font {
   font-size: .8rem;
 }
 
@@ -479,7 +479,7 @@ input:checked + .slider:before {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  margin: 1rem 0 0 0;
+  margin: 1rem 0 .5rem 0;
   height: 10rem;
 }
 
@@ -517,11 +517,24 @@ li {
   justify-content: center;
 }
 
-.modal_sound_inner_wrapper {
+.modal_sound_ending_story_outer_wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal_sound_inner_wrapper, .modal_sound_ending_story_inner_wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
- 
+}
+
+.modal_sound_ending_story_inner_wrapper {
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.modal_sound_icon_text_wrapper p {
+  margin: auto;
 }
 
 .modal_sound_icons {
@@ -536,7 +549,7 @@ li {
   max-height: 100%;
 }
 
-.modal_sound_inner_wrapper p {
+.modal_sound_inner_wrapper p, .modal_sound_ending_story_inner_wrapper p {
   font-size: .75rem;
   padding: 0 .25rem;
 }
@@ -546,26 +559,23 @@ li {
   border-radius: 1rem 1rem 0 0;
 }
 
-.scroll_blur_top {
+.scroll_blur_top, .scroll_blur {
   position: sticky;
-  top: 0;
   width: 100%;
-  padding: .25rem;
+  padding: .25rem 0;
   background-color: rgba(0, 51, 73, 0.5);
   backdrop-filter: blur(1px);
+}
+
+.scroll_blur_top {
+  top: 0;
 }
 
 .scroll_blur {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  padding: .25rem;
-  background-color: rgba(0, 51, 73, 0.5);
-  backdrop-filter: blur(1px);
+  bottom: 0px;
 }
 
 .modal_story, .modal_facts {
-  width: calc(100% - .5rem);
   color: #000;
   border-radius: 1rem;
   padding: .1rem 1.1rem;
@@ -581,10 +591,17 @@ li {
   margin-top: 1rem;
 }
 
-.modal_hint_wrapper, .modal_first_scan_wrapper .modal_lock_toggle_confirmation_wrapper {
+.modal_hint_wrapper, .modal_first_scan_wrapper, .modal_lock_toggle_confirmation_wrapper, .modal_ending_story_wrapper { 
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+
+.modal_ending_story_wrapper {
+  background: var(--theme-background-alt);
+  background: linear-gradient(180deg, var(--theme-background-alt) 25%, var(--theme-background-white) 100%);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
 .modal_hint_img {
@@ -594,8 +611,12 @@ li {
   margin: auto;
 }
 
-.modal_hint_img_top {
+.modal_hint_img_top { 
   margin: 1rem 0;
+}
+
+.modal_ending_story_img { 
+  padding: 0 2.5rem;
 }
 
 .hiden_scroll_blur {
@@ -609,6 +630,10 @@ li {
 
 h2 {
   margin: 0 auto 1rem auto;
+}
+
+.modal_h2_heading {
+  text-align: center;
 }
 
 h3 {
@@ -628,7 +653,8 @@ h3 {
 }
 
 .user_input_form {
-  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .user_input_form_button {
@@ -653,7 +679,6 @@ h3 {
   text-decoration: none;
   cursor: pointer;
 }
-
 
 @media screen and (min-width: 320px) and (max-width: 823px) and (orientation: landscape) {
 
@@ -714,5 +739,82 @@ h3 {
 
   .hiden_scroll_blur {
     display: inherit;
+  }
+
+  .modal_ending_story_wrapper {
+    height: 7rem;
+  }
+
+  .modal_ending_story_img {
+    max-height: 100%;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+
+  .how_to_main {
+    margin-top: auto;
+  }
+
+  .how_to_wrapper {
+    display: flex;
+  }
+
+  .find_us_all_img {
+    max-width: 40%;
+    order: 2;
+    padding: 0 1rem;
+  }
+
+  .how_to_section_wrapper {
+    width: 30%;
+  }
+
+  .htsw1 {
+    order: 1;
+  }
+
+  .htsw2 {
+    order: 3;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .trailmap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .trailmap_img {
+    width: 100%;
+  }
+
+  .full_width {
+    width: 100%;
+  }
+
+  .trailmap_legend_items_wrapper, .trailmap_legend_trail_items_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .trailmap_legend_item {
+    width: 16.66%;
+  }
+
+  .trailmap_legend_item_maintext, .trailmap_legend_item_subtext, .trailmap_legend_trail_item_maintext, .trailmap_legend_item_subtext {
+    margin-right: 1rem;
+  }
+
+  .trailmap_legend_trail_item {
+    width: 33.32%;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+
+  .trailmap_legend_trail_item {
+    width: 16.66%;
   }
 }
