@@ -23,7 +23,8 @@
     <script type="text/javascript" src="scripts/jsqrcode/findpat.js"></script>
     <script type="text/javascript" src="scripts/jsqrcode/alignpat.js"></script>
     <script type="text/javascript" src="scripts/jsqrcode/databr.js"></script>
-    <script type="text/javascript"src="scripts/animaldata.js"></script>
+    <script type="text/javascript" src="scripts/animaldata.js"></script>
+    <script type="text/javascript" src="navigation.js"></script>
 </head>
 
 <body>
@@ -31,86 +32,88 @@
         <div class="flex_header_container">
             <div class="header_inner_container_outer">
                 <div class="menu_icon_container" onclick="menuOnclickEventHandler(this)">
-                    <img id="burgerMenu" src="assets/burgerMenu.svg">
+                    <img id="burgerMenu" src="assets/burgerMenu.svg" alt="A button to open the navigation menu">
                 </div>
                 <nav class="nav" id="nav">
                     <div class="nav_links">
-                        <img id="burgerCross" src="assets/burgerCross.svg" onclick="menuOnclickEventHandler(this)">
+                        <img id="burgerCross" src="assets/burgerCross.svg" onclick="menuOnclickEventHandler(this)" alt="A button to close the navigation menu">
                         <a href="howtoplay.html" class="nav_link">How To Play</a>
                         <a href="trailmap.html" class="nav_link">Trail Map</a>
-                        <a href="#" class="nav_link nav_link_active">Animal Collection</a>
+                        <a href="animalcollection.html" class="nav_link nav_link_active">Animal Collection</a>
                         <a href="#" class="nav_link">Bigger Hearts Home Page</a>
                         <a href="#" class="nav_link">Contact Us</a>
-                        <img class="biggerHearts_icon" src="assets/trailmap/bigger_hearts_icon_white.svg" alt="bigger hearts icon" />
+                        <img class="biggerHearts_icon" src="assets/trailmap/bigger_hearts_icon_white.svg" alt="The Bigger Hearts icon of two hands holding a heart" />
                     </div>
                     <div class="nav_overlay" onclick="menuOnclickEventHandler(this)">
                     </div>
                 </nav>
             </div>
             <div class="header_inner_container">
-                <img class="storybook_logo" src="assets/storybooklogo.svg" alt="storybook adventure trail logo" />
+                <img class="storybook_logo" src="assets/storybooklogo.svg" alt="storybook adventure trail logo which says 'Story Book' with a cartoon kangaroo between the two words" />
             </div>
             <div class="header_inner_container_outer">
-                <img id="bigger_hearts_logo" src="assets/biggerheartslogo.svg" alt="bigger hearts logo" />
+                <img id="bigger_hearts_logo" src="assets/biggerheartslogo.svg" alt="The bigger hearts logo which says 'Bigger Hearts' and is surrounded by hearts of different sizes" />
             </div>
         </div>
     </header>
 
     <main>
         <div class="flex_top_main_container">
-            <img id="map" src="assets/map.svg">
+            <a href="trailmap.html">
+                <img id="map" src="assets/map.svg" alt="a little cartoon map which will open the trail map page when clicked">
+            </a>
             <div class="flex_toggle_switch_container">
-                <img id="toggle_locked" class="toggle_switch_icon_small" src="assets/locked.svg">
+                <img id="toggle_locked" class="toggle_switch_icon_small" src="assets/locked.svg" alt="A switch for unlocking or locking all the animal pages, currently locked">
                 <label class="switch">
                     <input type="checkbox" id="lock_toggle" onclick="displayLockStatusConfirmationPopup()">
                     <span class="slider round"></span>
                 </label>
-                <img id="toggle_unlocked" class="toggle_switch_icon_small" src="assets/unlocked.svg">
+                <img id="toggle_unlocked" class="toggle_switch_icon_small" src="assets/unlocked.svg" alt="A switch for unlocking or locking all the animal pages, currently unlocked">
             </div>
         </div>
         <section class="animal_collection_wrapper">
             <article class="animal_wrapper" id="nannakookaburra" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/unlocked.svg">
-                <img class="animal_image" src="assets/nannakookaburra.png">
+                <img class="lock_status" src="assets/unlocked.svg" alt="a picture of a lock to show that Nanna Kookabura has not yet been found">
+                <img class="animal_image" src="assets/nannakookaburra.png" alt="A picture of the Nanna Kookaburra statue hiding along the trail">
             </article>
             <article class="animal_wrapper" id="motherkoalawithjoey" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/motherkoalawithjoey.png">
+                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Mother Koala and her Joey have not yet been found">
+                <img class="animal_image" src="assets/motherkoalawithjoey.png" alt="A picture of the Koala and Joey statue hiding along the trail">
             </article>
             <article class="animal_wrapper" id="auntiemagpie" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/auntiemagpie.png">
+                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Auntie Magpie has not yet been found">
+                <img class="animal_image" src="assets/auntiemagpie.png" alt="A picture of the Antie Magpie statue hiding along the trail">
             </article>
             <article class="animal_wrapper" id="unclemagpie" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/unclemagpie.png">
+                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Uncle Magpie has not yet been found">
+                <img class="animal_image" src="assets/unclemagpie.png" alt="A picture of the Uncle Magpie statue hiding along the trail">
             </article>
             <article class="animal_wrapper" id="granddaughterkookaburra" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/granddaughterkookaburra.png">
+                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Grandaughter Kookaburra has not yet been found">
+                <img class="animal_image" src="assets/granddaughterkookaburra.png" alt="A picture of the Grandaughter Kookaburra statue hiding along the trail">
             </article>
             <article class="animal_wrapper" id="brotherwedgetailedeagle" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/brotherwedgetailedeagle.png">
+                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Brother Wedge-Tail Eagle has not yet been found">
+                <img class="animal_image" src="assets/brotherwedgetailedeagle.png" alt="A picture of the Brother Wedge-Tail Eagle statue hiding along the trail">
             </article>
             <article class="animal_wrapper" id="sisterwedgetailedeagle" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/sisterwedgetailedeagle.png">
+                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Sister Wedge-Tail Eagle has not yet been found">
+                <img class="animal_image" src="assets/sisterwedgetailedeagle.png" alt="A picture of the Sister Wedge-Tail Eagle statue hiding along the trail">
             </article>
             <article class="animal_wrapper" id="cousinbrushtailpossum" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/cousinbrushtailpossum.png">
+                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Cousin Brushtail Possum has not yet been found">
+                <img class="animal_image" src="assets/cousinbrushtailpossum.png" alt="A picture of the Brushtail Possum statue hiding along the trail">
             </article>
             <article class="animal_wrapper" id="cousinringtailpossum" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/cousinringtailpossum.png">
+                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Cousin Ringtail Possum has not yet been found">
+                <img class="animal_image" src="assets/cousinringtailpossum.png" alt="A picture of the Ringtail Possum statue hiding along the trail">
             </article>
             <article class="animal_wrapper" id="grandadwombat" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg">
-                <img class="animal_image" src="assets/grandadwombat.png">
+                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Grandadwombat has not yet been found">
+                <img class="animal_image" src="assets/grandadwombat.png" alt="A picture of the Wombat statue hiding along the trail">
             </article>
             <article class="animal_wrapper" id="storyending" onclick="displayStoryEndingPopup()">
-                <img class="lock_status" src="assets/locked.svg">
+                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that the Story Ending has not yet been unlocked">
                 <img class="animal_image" src="assets/find_us_all.svg" style="border:black; border-width:1px; border-style:solid;">
             </article>
         </section>
@@ -119,12 +122,12 @@
         <!-- The Modal -->
         <div id="modal" class="modal">
             <div class="modal_content" id="modal_unlocked_content">
-                <input class="close" type="image" value="unlocked" src="assets/close.svg" onclick="closeModal(this.value)">
+                <input class="close" type="image" value="unlocked" src="assets/close.svg" onclick="closeModal(this.value)" alt="A button that closes the animal screen when clicked">
                 <h2 class="modal_h2_heading">You found me!</h2>
                 <div class="modal_animal_bio">
 
                     <div class="modal_animal_image_wrapper">
-                        <img class="modal_animal_image" id="m_animal_img" src="assets/nannakookaburra.png">
+                        <img class="modal_animal_image" id="m_animal_img" src="assets/nannakookaburra.png" alt="Nanna Kookaburra laughs joyously">
                     </div>
 
                     <div class="modal_animal_bio_wrapper" id="modal_animal_bio">
@@ -141,7 +144,7 @@
                             <audio id="audio_animal">
                                 <source src="assets/audio/kookaburra.mp3" type="audio/mpeg">
                             </audio>
-                            <img src="assets/hearsound.svg"/>
+                            <img src="assets/hearsound.svg" alt="A button to listen to the animal's call"/>
                         </div>
                         <div class="modal_sound_icon_text_wrapper">
                             <p>Hear my <br>sound</p>
@@ -152,7 +155,7 @@
                             <audio id="audio_animal_story">
                                 <source src="assets/audio/storynannakookaburra.mp3" type="audio/mpeg">
                             </audio>
-                            <img src="assets/hearstory.svg"/>
+                            <img src="assets/hearstory.svg" alt="A button to listen to the story being read aloud"/>
                         </div>
                         <div class="modal_sound_icon_text_wrapper">
                             <p>Hear my <br>story</p>
@@ -197,7 +200,7 @@
 
             <!--Locked Modal-->
             <div class="modal_content" id="modal_locked_content">
-                <input class="close" type="image" value="locked" src="assets/close.svg" onclick="closeModal(this.value)">
+                <input class="close" type="image" value="locked" src="assets/close.svg" onclick="closeModal(this.value)" alt="A button to close this animal clue page">
                 <h2 class="modal_h2_heading">Can't find me? Here's a clue!</h2>                  
                 <div class="modal_scrollable_content">
                     <div class='scroll_blur_top hiden_scroll_blur'></div>
