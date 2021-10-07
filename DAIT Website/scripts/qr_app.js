@@ -72,6 +72,6 @@ function scan() {
   }
 }
 
-menuOnclickEventHandler = (x) => {
-  document.getElementById("nav").classList.toggle("change");
-}
+//menuOnclickEventHandler = (x) => {
+  //document.getElementById("nav").classList.toggle("change");
+//}
