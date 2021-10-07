@@ -46,6 +46,7 @@ function setupUnlockedPopup(animalIndex) {
 
 function setupModalImage(animalIndex) {
     modalAnimalImage.src = animals[animalIndex].image_src;
+    modalAnimalImage.alt = animals[animalIndex].image_alt;
 }
 
 function setupAnimalSound(animalIndex) {
@@ -88,10 +89,12 @@ function setupAnimalFacts(animalIndex) {
 
 function setupModalHintImage(animalIndex) {
     modalHintImage.src = animals[animalIndex].hint_photo;
+    modalHintImage.alt = animals[animalIndex].hint_alt;
 }
 
 function setupModalMapHintImage(animalIndex) {
     modalMapHintImage.src = animals[animalIndex].hint_map;
+    modalMapHintImage.alt = animals[animalIndex].map_alt;
 }
 
 function closeModal(contentType) {
