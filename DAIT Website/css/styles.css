@@ -192,7 +192,7 @@ main {
 
  .animal_collection_wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
   margin: .4rem .4rem 1.6rem .4rem;
 }
 
@@ -263,7 +263,7 @@ z-index: 10;
   margin-right: 1rem;
 }
 
-.trailmap_legend_trail_item {
+.trailmap_legend_trail_item, .animal_collection_trailmap_legend_trail_item {
   position: relative;
   margin-bottom: 1rem;
 }
@@ -753,6 +753,10 @@ h3 {
     max-height: 100%;
     display: block;
   }
+
+  .animal_collection_wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  }
 }
 
 @media screen and (min-width: 1024px) and (orientation: landscape) {
@@ -797,11 +801,11 @@ h3 {
     border-radius: 1rem;
     padding: 1rem;
     margin: .8rem 0 2rem .8rem;
+    align-self: stretch;
   }
 
   .animal_collection_wrapper {
     max-width: 50%;
-    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   }
 
   .animal_collection_trailmap_legend_item {
@@ -841,7 +845,7 @@ h3 {
     margin-right: 1rem;
   }
 
-  .trailmap_legend_trail_item {
+  .trailmap_legend_trail_item, .animal_collection_trailmap_legend_trail_item {
     width: 33.32%;
   }
 }
@@ -850,5 +854,8 @@ h3 {
 
   .trailmap_legend_trail_item {
     width: 16.66%;
+  }
+  .animal_collection_wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   }
 }
