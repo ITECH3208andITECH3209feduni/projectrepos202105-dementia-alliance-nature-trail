@@ -71,52 +71,154 @@
                 <img id="toggle_unlocked" class="toggle_switch_icon_small" src="assets/unlocked.svg" alt="A switch for unlocking or locking all the animal pages, currently unlocked">
             </div>
         </div>
-        <section class="animal_collection_wrapper">
-            <article class="animal_wrapper" id="nannakookaburra" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/unlocked.svg" alt="a picture of a lock to show that Nanna Kookabura has not yet been found">
-                <img class="animal_image" src="assets/nannakookaburra.png" alt="A picture of the Nanna Kookaburra statue hiding along the trail">
-            </article>
-            <article class="animal_wrapper" id="motherkoalawithjoey" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Mother Koala and her Joey have not yet been found">
-                <img class="animal_image" src="assets/motherkoalawithjoey.png" alt="A picture of the Koala and Joey statue hiding along the trail">
-            </article>
-            <article class="animal_wrapper" id="auntiemagpie" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Auntie Magpie has not yet been found">
-                <img class="animal_image" src="assets/auntiemagpie.png" alt="A picture of the Antie Magpie statue hiding along the trail">
-            </article>
-            <article class="animal_wrapper" id="unclemagpie" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Uncle Magpie has not yet been found">
-                <img class="animal_image" src="assets/unclemagpie.png" alt="A picture of the Uncle Magpie statue hiding along the trail">
-            </article>
-            <article class="animal_wrapper" id="granddaughterkookaburra" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Grandaughter Kookaburra has not yet been found">
-                <img class="animal_image" src="assets/granddaughterkookaburra.png" alt="A picture of the Grandaughter Kookaburra statue hiding along the trail">
-            </article>
-            <article class="animal_wrapper" id="brotherwedgetailedeagle" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Brother Wedge-Tail Eagle has not yet been found">
-                <img class="animal_image" src="assets/brotherwedgetailedeagle.png" alt="A picture of the Brother Wedge-Tail Eagle statue hiding along the trail">
-            </article>
-            <article class="animal_wrapper" id="sisterwedgetailedeagle" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Sister Wedge-Tail Eagle has not yet been found">
-                <img class="animal_image" src="assets/sisterwedgetailedeagle.png" alt="A picture of the Sister Wedge-Tail Eagle statue hiding along the trail">
-            </article>
-            <article class="animal_wrapper" id="cousinbrushtailpossum" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Cousin Brushtail Possum has not yet been found">
-                <img class="animal_image" src="assets/cousinbrushtailpossum.png" alt="A picture of the Brushtail Possum statue hiding along the trail">
-            </article>
-            <article class="animal_wrapper" id="cousinringtailpossum" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Cousin Ringtail Possum has not yet been found">
-                <img class="animal_image" src="assets/cousinringtailpossum.png" alt="A picture of the Ringtail Possum statue hiding along the trail">
-            </article>
-            <article class="animal_wrapper" id="grandadwombat" onclick="displayPopup(this.id)">
-                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Grandadwombat has not yet been found">
-                <img class="animal_image" src="assets/grandadwombat.png" alt="A picture of the Wombat statue hiding along the trail">
-            </article>
-            <article class="animal_wrapper" id="storyending" onclick="displayStoryEndingPopup()">
-                <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that the Story Ending has not yet been unlocked">
-                <img class="animal_image" src="assets/find_us_all.svg" style="border:black; border-width:1px; border-style:solid;" alt="A picture of a Kangaroo, Koala, Wombat, Kookaburra and Magpie sitting under a banner that reads 'The End'">
-            </article>
-        </section>
+        <div class="animal_collection_and_map_wrapper">
+            <section class="animal_collection_trailmap">
+                <h2 class="full_width">Trail Map</h2>
+                <img class="trailmap_img" src="assets/trailmap/trail_map.svg" alt="Welcome Wander dementia friendly forest and sensory trail map">
+            
+                <div class="trailmap_legend">
+                    <h3>Legend</h3>
+                    <div class="trailmap_legend_items_wrapper">
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/sensory_trail.svg" alt="">
+                            <p class="trailmap_legend_item_maintext">Dementia friendly forest & sensory trail</p>
+                        </div>
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/welcome_shelter.svg" alt="">
+                            <div>
+                                <p class="trailmap_legend_item_maintext">Welcome shelter</p>
+                                <p class="trailmap_legend_item_subtext">A gathering space to plan your wander or trek</p>
+                            </div>
+                        </div>
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/conversation_nook.svg" alt="">
+                            <div>
+                                <p class="trailmap_legend_item_maintext">Conversation Nooks</p>
+                                <p class="trailmap_legend_item_subtext">Resting spaces to talk, listen and remember</p>
+                            </div>
+                        </div>
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/all_accessible.svg" alt="">
+                            <p class="trailmap_legend_item_maintext">All accessible</p>
+                        </div>
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/shared_path.svg" alt="">
+                            <p class="trailmap_legend_item_maintext">Shared path</p>
+                        </div>
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/dogs_on_lead.svg" alt="">
+                            <p class="trailmap_legend_item_maintext">Dogs on lead</p>
+                        </div>
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/take_rubbish.svg" alt="">
+                            <p class="trailmap_legend_item_maintext">Please take your rubbish home</p>
+                        </div>
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/information.svg" alt="">
+                            <p class="trailmap_legend_item_maintext">Direction information</p>
+                        </div>
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/carpark.svg" alt="">
+                            <p class="trailmap_legend_item_maintext">Distance to carpark</p>
+                        </div>
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/trail_rider.svg" alt="">
+                            <p class="trailmap_legend_item_maintext">TrailRider</p>
+                        </div>
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/no_horses.svg" alt="">
+                            <p class="trailmap_legend_item_maintext">No horses</p>
+                        </div>
+                        <div class="animal_collection_trailmap_legend_item">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/speed_limit.svg" alt="">
+                            <p class="trailmap_legend_item_maintext">Speed limit</p>
+                        </div>
+                    </div>
+                    <div class="trailmap_legend_trail_items_wrapper">
+                        <div class="trailmap_legend_trail_item">
+                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/welcome_wander_trail.svg" alt="">
+                            <div class="trailmap_legend_item_text_wrapper">
+                                <p class="trailmap_legend_trail_item_maintext">Welcome Wander</p>
+                            </div>
+                        </div>
+                        <div class="trailmap_legend_trail_item">
+                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/wetland_walk_trail.svg" alt="">
+                            <div class="trailmap_legend_item_text_wrapper">
+                                <p class="trailmap_legend_trail_item_maintext">Wetland Walk</p>
+                                <p class="trailmap_legend_item_subtext">95 metres</p>
+                            </div>
+                        </div>
+                        <div class="trailmap_legend_trail_item">
+                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/stone_circle_trail.svg" alt="">
+                            <div class="trailmap_legend_item_text_wrapper">
+                                <p class="trailmap_legend_trail_item_maintext">Stone Circle</p>
+                                <p class="trailmap_legend_item_subtext">190 metres</p>
+                            </div>
+                        </div>
+                        <div class="trailmap_legend_trail_item">
+                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/bush_window_trail.svg" alt="">
+                            <div class="trailmap_legend_item_text_wrapper">
+                                <p class="trailmap_legend_trail_item_maintext">Bush Window</p>
+                                <p class="trailmap_legend_item_subtext">270 metres</p>
+                            </div>
+                        </div>
+                        <div class="trailmap_legend_trail_item">
+                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/wrens_rest_trail.svg" alt="">
+                            <div class="trailmap_legend_item_text_wrapper">
+                                <p class="trailmap_legend_trail_item_maintext">Wrens Rest</p>
+                                <p class="trailmap_legend_item_subtext">450 metres</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="animal_collection_wrapper">
+                <article class="animal_wrapper" id="nannakookaburra" onclick="displayPopup(this.id)">
+                    <img class="lock_status" src="assets/unlocked.svg" alt="a picture of a lock to show that Nanna Kookabura has not yet been found">
+                    <img class="animal_image" src="assets/nannakookaburra.png" alt="A picture of the Nanna Kookaburra statue hiding along the trail">
+                </article>
+                <article class="animal_wrapper" id="motherkoalawithjoey" onclick="displayPopup(this.id)">
+                    <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Mother Koala and her Joey have not yet been found">
+                    <img class="animal_image" src="assets/motherkoalawithjoey.png" alt="A picture of the Koala and Joey statue hiding along the trail">
+                </article>
+                <article class="animal_wrapper" id="auntiemagpie" onclick="displayPopup(this.id)">
+                    <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Auntie Magpie has not yet been found">
+                    <img class="animal_image" src="assets/auntiemagpie.png" alt="A picture of the Antie Magpie statue hiding along the trail">
+                </article>
+                <article class="animal_wrapper" id="unclemagpie" onclick="displayPopup(this.id)">
+                    <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Uncle Magpie has not yet been found">
+                    <img class="animal_image" src="assets/unclemagpie.png" alt="A picture of the Uncle Magpie statue hiding along the trail">
+                </article>
+                <article class="animal_wrapper" id="granddaughterkookaburra" onclick="displayPopup(this.id)">
+                    <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Grandaughter Kookaburra has not yet been found">
+                    <img class="animal_image" src="assets/granddaughterkookaburra.png" alt="A picture of the Grandaughter Kookaburra statue hiding along the trail">
+                </article>
+                <article class="animal_wrapper" id="brotherwedgetailedeagle" onclick="displayPopup(this.id)">
+                    <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Brother Wedge-Tail Eagle has not yet been found">
+                    <img class="animal_image" src="assets/brotherwedgetailedeagle.png" alt="A picture of the Brother Wedge-Tail Eagle statue hiding along the trail">
+                </article>
+                <article class="animal_wrapper" id="sisterwedgetailedeagle" onclick="displayPopup(this.id)">
+                    <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Sister Wedge-Tail Eagle has not yet been found">
+                    <img class="animal_image" src="assets/sisterwedgetailedeagle.png" alt="A picture of the Sister Wedge-Tail Eagle statue hiding along the trail">
+                </article>
+                <article class="animal_wrapper" id="cousinbrushtailpossum" onclick="displayPopup(this.id)">
+                    <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Cousin Brushtail Possum has not yet been found">
+                    <img class="animal_image" src="assets/cousinbrushtailpossum.png" alt="A picture of the Brushtail Possum statue hiding along the trail">
+                </article>
+                <article class="animal_wrapper" id="cousinringtailpossum" onclick="displayPopup(this.id)">
+                    <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Cousin Ringtail Possum has not yet been found">
+                    <img class="animal_image" src="assets/cousinringtailpossum.png" alt="A picture of the Ringtail Possum statue hiding along the trail">
+                </article>
+                <article class="animal_wrapper" id="grandadwombat" onclick="displayPopup(this.id)">
+                    <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that Grandadwombat has not yet been found">
+                    <img class="animal_image" src="assets/grandadwombat.png" alt="A picture of the Wombat statue hiding along the trail">
+                </article>
+                <article class="animal_wrapper" id="storyending" onclick="displayStoryEndingPopup()">
+                    <img class="lock_status" src="assets/locked.svg" alt="a picture of a lock to show that the Story Ending has not yet been unlocked">
+                    <img class="animal_image" src="assets/find_us_all.svg" style="border:black; border-width:1px; border-style:solid;" alt="A picture of a Kangaroo, Koala, Wombat, Kookaburra and Magpie sitting under a banner that reads 'The End'">
+                </article>
+            </section>
+        </div>
         <canvas hidden="" id="qr-canvas"></canvas>
 
         <!-- The Modal -->

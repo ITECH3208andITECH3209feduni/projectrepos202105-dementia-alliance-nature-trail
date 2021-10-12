@@ -186,6 +186,10 @@ main {
   cursor: pointer;
  }
 
+ .animal_collection_trailmap {
+   display: none;
+ }
+
  .animal_collection_wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
@@ -778,6 +782,36 @@ h3 {
   .htsw2 {
     order: 3;
   }
+
+  .animal_collection_and_map_wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .animal_collection_trailmap {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    background-color: var(--theme-background-bluealpha);
+    border: 1px solid var(--theme-background-alt);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: .8rem 0 2rem .8rem;
+  }
+
+  .animal_collection_wrapper {
+    max-width: 50%;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  }
+
+  .animal_collection_trailmap_legend_item {
+    display: flex;
+    align-items: flex-start;
+    width: 33%;
+    margin-bottom: 1rem;
+  }
+
+  
 }
 
 @media screen and (min-width: 1024px) {
