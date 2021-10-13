@@ -7,6 +7,7 @@ window.addEventListener("storage", storageListenerEventHandler);
   
 document.addEventListener('DOMContentLoaded', function() {
   firstEncounterFlag = false;
+  hideAllModals();
   createAnimalArray();
   populateLocalStorageWithAnimals();
 

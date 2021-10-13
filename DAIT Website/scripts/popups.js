@@ -4,7 +4,7 @@ var modalLockedContent = document.getElementById("modal_locked_content");
 var modalEndingStoryContent = document.getElementById("modal_ending_story_content");
 var modalLockedEndingStoryContent = document.getElementById("modal_locked_ending_story_content");
 var modalExternalFirstScanContent = document.getElementById("modal_external_first_scan_content");
-var modalLockStatusConfirmationContent = document.getElementById("modal_external_lock_status_confirmation_content");
+var modalLockStatusConfirmationContent = document.getElementById("modal_lock_status_confirmation_content");
 var modalAnimalImage = document.getElementById("m_animal_img");
 var modalHintImage = document.getElementById("m_hint_img");
 var modalMapHintImage = document.getElementById("m_map_hint_img");
@@ -27,7 +27,7 @@ function displayPopup(animalName) {
         modalLockedContent.style.display = "flex";
     }
 
-    modal.style.display = "block";
+    modal.style.display = "flex";
 }
 
 function setupLockedPopup(animalIndex) {
@@ -130,23 +130,29 @@ function closeModal(contentType) {
 // When the user clicks anywhere outside of the modal, close it and all modal contents
 window.onclick = function (event) {
     if (event.target == modal) {
-        modal.style.display = "none";
-        if (modalUnlockedContent.style.display != "none") {
-            closeModal("unlocked");
-        }
-        if (modalEndingStoryContent.style.display != "none") {
-            closeModal("ending story");
-        }
-        if (modalLockStatusConfirmationContent.style.display != "none") {
-            closeModal("lock status");
-        }
-        modalLockedContent.style.display = "none";
-        modalLockedEndingStoryContent.style.display = "none";
-        modalLockStatusConfirmationContent.style.display = "none";
-        modalExternalFirstScanContent.style.display = "none";
+        hideAllModals();
     }
 }
 
+
+function hideAllModals() {
+    modal.style.display = "none";
+    if (modalUnlockedContent.style.display != "none") {
+        closeModal("unlocked");
+    }
+    if (modalEndingStoryContent.style.display != "none") {
+        closeModal("ending story");
+    }
+    if (modalLockStatusConfirmationContent.style.display != "none") {
+        closeModal("lock status");
+    }
+    else {
+        closeModal("lock status confirmed");
+    }
+    modalLockedContent.style.display = "none";
+    modalLockedEndingStoryContent.style.display = "none";
+    modalExternalFirstScanContent.style.display = "none";
+}
 
 function toggleAnimalSound() {
     toggleSound(modalAnimalSound);
@@ -186,12 +192,12 @@ function handleUserInput(inputValue) {
 
 function displayExternalFirstScanPopup() {
     modalExternalFirstScanContent.style.display = "flex";
-    modal.style.display = "block";
+    modal.style.display = "flex";
 }
 
 function displayLockStatusConfirmationPopup() {
     modalLockStatusConfirmationContent.style.display = "flex";
-    modal.style.display = "block";
+    modal.style.display = "flex";
 }
 
 function displayStoryEndingPopup() {
@@ -201,5 +207,5 @@ function displayStoryEndingPopup() {
     else {
         modalLockedEndingStoryContent.style.display = "flex";
     }
-    modal.style.display = "block";
+    modal.style.display = "flex";
 }
