@@ -154,6 +154,7 @@ main {
   flex-direction: column;
   overflow-y: auto;
   margin-bottom: auto;
+  min-height: 6rem;
 }
 
 .flex_top_main_container {
