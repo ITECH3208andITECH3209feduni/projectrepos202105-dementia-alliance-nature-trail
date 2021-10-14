@@ -21,7 +21,6 @@ body {
   background: #ffffff;
   margin: 0;
 }
-/* Seths dev branch*/
 
 header, footer{
   background: var(--theme-background);
@@ -155,6 +154,7 @@ main {
   flex-direction: column;
   overflow-y: auto;
   margin-bottom: auto;
+  min-height: 6rem;
 }
 
 .flex_top_main_container {
@@ -186,9 +186,13 @@ main {
   cursor: pointer;
  }
 
+ .animal_collection_trailmap {
+   display: none;
+ }
+
  .animal_collection_wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
   margin: .4rem .4rem 1.6rem .4rem;
 }
 
@@ -259,7 +263,7 @@ z-index: 10;
   margin-right: 1rem;
 }
 
-.trailmap_legend_trail_item {
+.trailmap_legend_trail_item, .animal_collection_trailmap_legend_trail_item {
   position: relative;
   margin-bottom: 1rem;
 }
@@ -352,7 +356,7 @@ font-size: .9rem;
   cursor: pointer;
 }
 
-.camera_button {
+#camera_icon {
   width: 4rem;
   display: block;
   padding: .4rem;
@@ -377,14 +381,36 @@ footer {
   padding: .4rem;
 }
 
+.footer_container_inner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  font-size: 80%;
+}
+
+.footer_container_instruction {
+  display: flex;
+  margin: 0 auto;
+}
+
 .footer_icon {
-  margin: auto;
   max-height: 100%;
+}
+
+.footer_text {
+  margin: 0 .2rem 0 0;
+  font-size: 100%;
+  font-family: serif;
+  font-weight: bold;
 }
 
 .arrow {
   max-height: 50%;
   margin: 0 auto auto auto;
+}
+
+.footer_tablet_version {
+  display: none;
 }
 
 .switch {
@@ -439,7 +465,6 @@ input:checked + .slider:before {
   transform: translateX(0.975rem);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 2.125rem;
 }
@@ -448,31 +473,31 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 100; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 100;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
+  background-color: rgba(0,0,0,0.6);
   backdrop-filter: blur(6px);
   justify-content: center;
+  padding: 1rem;
 }
 
-/* Modal Content */
 .modal_content { 
   background-color: var(--theme-background-alt);
   color:  var(--theme-background-white);
   border: 1px solid var(--theme-background-white);
-  margin: 1rem;
   padding: 1rem;
   border-radius: 1rem;
-  max-height: calc(100% - 4rem);
+  max-height: calc(100% - 2rem);
+  max-width: 45rem;
   display: none;
   flex-direction: column;
+  align-self: center;
 }
 
 .modal_animal_bio {
@@ -529,7 +554,7 @@ li {
 }
 
 .modal_sound_ending_story_inner_wrapper {
-  width: 50%;
+  max-width: 50%;
   justify-content: flex-end;
 }
 
@@ -617,6 +642,12 @@ li {
 
 .modal_ending_story_img { 
   padding: 0 2.5rem;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#modal_lock_status_confirmation_content, #modal_external_first_scan_content, #modal_locked_ending_story_content, #modal_locked_content {
+  display: none;
 }
 
 .hiden_scroll_blur {
@@ -745,9 +776,15 @@ h3 {
     height: 7rem;
   }
 
-  .modal_ending_story_img {
-    max-height: 100%;
-    display: block;
+  .animal_collection_wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  }
+}
+
+@media screen and (min-height: 0px) and (max-height: 266px) { 
+  #qr-canvas {
+    top: 0;
+    height: 100%;
   }
 }
 
@@ -778,6 +815,49 @@ h3 {
   .htsw2 {
     order: 3;
   }
+
+  .animal_collection_and_map_wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .animal_collection_trailmap {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    background-color: var(--theme-background-bluealpha);
+    border: 1px solid var(--theme-background-alt);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: .8rem 0 2rem .8rem;
+    align-self: stretch;
+  }
+
+  .animal_collection_wrapper {
+    max-width: 50%;
+  }
+
+  .animal_collection_trailmap_legend_item {
+    display: flex;
+    align-items: flex-start;
+    width: 33%;
+    margin-bottom: 1rem;
+  }
+
+  .modal_ending_story_wrapper {
+    height: 21rem;
+  }
+  
+}
+
+@media screen and (min-width: 824px) {
+   .footer_tablet_version {
+    display: flex;
+  }
+
+  .footer_mobile_version {
+    display:none;
+  } 
 }
 
 @media screen and (min-width: 1024px) {
@@ -807,14 +887,17 @@ h3 {
     margin-right: 1rem;
   }
 
-  .trailmap_legend_trail_item {
+  .trailmap_legend_trail_item, .animal_collection_trailmap_legend_trail_item {
     width: 33.32%;
-  }
+  }  
 }
 
 @media screen and (min-width: 1366px) {
 
   .trailmap_legend_trail_item {
     width: 16.66%;
+  }
+  .animal_collection_wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   }
 }

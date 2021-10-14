@@ -4,8 +4,10 @@ const canvas = canvasElement.getContext("2d");
 const qrResult = document.getElementById("qr_result_text");
 const outputData = document.getElementById("outputData");
 const btnScanQR = document.getElementById("btn-scan-qr");
+const cameraIcon = document.getElementById("camera_icon");
 let scanning = false;
 let interativeTrailStorage = window.localStorage;
+let timeOut;
 
 
 qrcode.callback = res => {
@@ -39,6 +41,8 @@ btnScanQR.onclick = () => {
       .then(function(stream) {
         scanning = true;
         canvasElement.hidden = false;
+        cameraIcon.src = "assets/close.svg";
+        timeOut = setTimeout(cameraTimeout, 30000);
         video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
         video.srcObject = stream;
         video.play();
@@ -51,6 +55,8 @@ btnScanQR.onclick = () => {
 function stopCamera() {
   scanning = false;
   canvasElement.hidden = true;
+  clearTimeout(timeOut);
+  cameraIcon.src = "assets/camera.svg";
   video.srcObject.getTracks().forEach(track => {
     track.stop();
   });
@@ -70,6 +76,10 @@ function scan() {
   } catch (e) {
     setTimeout(scan, 300);
   }
+}
+
+function cameraTimeout () {
+  stopCamera();
 }
 
 //menuOnclickEventHandler = (x) => {
