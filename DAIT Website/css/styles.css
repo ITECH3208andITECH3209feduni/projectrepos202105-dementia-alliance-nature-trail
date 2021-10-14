@@ -208,12 +208,17 @@ main {
   height: 100%;
 }
 
+#storyending {
+  padding: .4rem;
+  background-color: var(--theme-background-bluealpha);
+}
+
 .lock_status {
-position: absolute;
-bottom: 3%;
-right: 3%;
-max-width: 20%;
-z-index: 10;
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  max-width: 20%;
+  z-index: 10;
 }
 
 .trailmap, .welcome_wander_wrapper, .how_to_section_wrapper {
