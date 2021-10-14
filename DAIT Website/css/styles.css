@@ -498,6 +498,7 @@ input:checked + .slider:before {
   display: none;
   flex-direction: column;
   align-self: center;
+  overflow-y: auto;
 }
 
 .modal_animal_bio {
@@ -582,6 +583,7 @@ li {
 .modal_scrollable_content {
   overflow-y: auto;
   border-radius: 1rem 1rem 0 0;
+  min-height: 6rem;
 }
 
 .scroll_blur_top, .scroll_blur {
@@ -713,8 +715,21 @@ h3 {
 
 @media screen and (min-width: 320px) and (max-width: 823px) and (orientation: landscape) {
 
+  header {
+    height: 5rem;
+  }
+
+  footer {
+    height: 3rem;
+  }
+  
+  #camera_icon {
+    width: 3rem;
+  }
+
   #qr-canvas {
-    height: calc(100% - 4.3rem);
+    bottom: 3.3rem;
+    height: calc(100% - 2.3rem);
   }
 
   .modal_sound_outer_wrapper {
@@ -758,6 +773,10 @@ h3 {
     margin-top: -.5rem;
   }
 
+  .modal_scrollable_content {
+    min-height: 3.5rem;
+  }  
+
   #modal_locked_content {
       width: 47%;
       margin-left: auto;
@@ -785,6 +804,12 @@ h3 {
   #qr-canvas {
     top: 0;
     height: 100%;
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 615px) { 
+  .modal_h2_heading {
+    margin: 0 auto .4rem auto;
   }
 }
 
