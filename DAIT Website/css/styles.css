@@ -356,7 +356,7 @@ font-size: .9rem;
   cursor: pointer;
 }
 
-.camera_button {
+#camera_icon {
   width: 4rem;
   display: block;
   padding: .4rem;
