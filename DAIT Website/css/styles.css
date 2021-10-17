@@ -230,6 +230,14 @@ main {
   margin: 1rem 0;
 }
 
+.how_to_section_wrapper {
+  width: 100%;
+}
+
+.how_to_section_wrapper_h2 {
+  margin-left: 0;
+}
+
 .trailmap_img, .find_us_all_img {
   width: 100%;
 }
@@ -264,8 +272,8 @@ main {
 }
 
 .how_to_item_icon {
-  height: 25%;
-  width: 25%;
+  height: 4rem;
+  width: 4rem;
   margin-right: 1rem;
 }
 
@@ -323,6 +331,11 @@ font-size: .9rem;
 
 .trailmap_wrapper, .how_to_wrapper {
   margin: .8rem .8rem 1.6rem .8rem;
+}
+
+.how_to_wrapper {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #qr-canvas {
@@ -824,7 +837,7 @@ h3 {
   }
 
   .how_to_wrapper {
-    display: flex;
+    flex-direction: row;
   }
 
   .find_us_all_img {
@@ -892,6 +905,22 @@ h3 {
   .trailmap_legend_item_maintext, .trailmap_legend_item_subtext, .trailmap_legend_trail_item_maintext, .trailmap_legend_item_subtext {
     margin-right: 1rem;
   }
+
+  .htsw1 {
+    width: calc(50% - 2.2rem);
+  }
+
+  .htsw2 {
+    width: calc(50% - 3rem);
+    margin-left: .8rem;
+  }
+
+.how_to_section_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
 }
 
 @media screen and (min-width: 824px) {
