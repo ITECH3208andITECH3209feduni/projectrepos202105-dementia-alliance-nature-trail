@@ -16,9 +16,9 @@ const animals = [
         animal_facts: "Laughing Kookaburras pair for life. The dad and mum take turns keeping eggs warm and sometimes the older brothers and sisters of a kookaburra chick will help with babysitting!",
         hint_photo: "assets/hints/kookaburra.png",
         hint_map: "assets/hints/kookaburra_map.svg",
-        image_alt: "EXAMPLE Nanna Kookaburra laughs joyously from a tree",
-        hint_alt: "EXAMPLE Nanna Kookaburra is hiding in a place",
-        map_alt: "EXAMPLE: A picture of the trail map showing ANIMAL whereabouts. She's near the thing"
+        image_alt: "The Nanna Kookaburra purched high in a tree",
+        hint_alt: "A hint showing a view of the hills to the north",
+        map_alt: "The trail map showing Nanna Kookaburra's whereabouts. She's to the left of the Wren's Rest"
     },
     {
         id: 2,
@@ -37,9 +37,9 @@ const animals = [
         animal_facts: "Koalas can sleep for up to 20 hours a day! This is because they have a low energy diet, and use most of their energy eating the leaves they need to get energy!",
         hint_photo: "assets/hints/koala_hint.png",
         hint_map: "assets/hints/koala_map.svg",
-        image_alt: "EXAMPLE Mother Koala and Joey do a thing",
-        hint_alt: "EXAMPLE Mother Koala and Joey are hiding in a place",
-        map_alt: "EXAMPLE: A picture of the trail map showing ANIMAL whereabouts. She's near the thing"
+        image_alt: "The Koala and Joey statue resting in a tree nook",
+        hint_alt: "A hint showing some large stones where the Wetland Walk meets the Stone Circle walk",
+        map_alt: "The trail map showing Mother Koala and Joey's whereabouts. They're close to where the Wetland Walk meets the Stone Circle walk"
     },
     {
         id: 3,
@@ -58,9 +58,9 @@ const animals = [
         animal_facts: "Females have grey and speckled feathers on the back of their necks, while males only have white on the back of their necks!",
         hint_photo: "assets/hints/auntiemagpie_hint.png",
         hint_map: "assets/hints/magpie_map.svg",
-        image_alt: "EXAMPLE Auntie Magpie does a thing",
-        hint_alt: "EXAMPLE Auntie Magpie is hiding in a place",
-        map_alt: "EXAMPLE: A picture of the trail map showing ANIMAL whereabouts. She's near the thing"
+        image_alt: "The Antie Magpie statue on a branch, watching the sky",
+        hint_alt: "A hint showing four tall posts along the side of the track",
+        map_alt: "The trail map showing Auntie Magpie's whereabouts. She's to the right of the stone circle"
     },
     {
         id: 4,
@@ -79,9 +79,9 @@ const animals = [
         animal_facts: "Much like cockatoos and parrots, magpies can mimic over 30 other birds! They can also mimic dogs barking, telephones ringing, police sirens and people!",
         hint_photo: "assets/hints/unclemagpie_hint.png",
         hint_map: "assets/hints/magpie_map.svg",
-        image_alt: "EXAMPLE Uncle Magpie does a thing",
-        hint_alt: "EXAMPLE Uncle Magpie is hiding in a place",
-        map_alt: "EXAMPLE: A picture of the trail map showing ANIMAL whereabouts. She's near the thing"
+        image_alt: "The Uncle Magpie statue standing proudly on a branch",
+        hint_alt: "A hint showing some native grass trees and tall bending gums",
+        map_alt: "The trail map showing Uncle Magpie's whereabouts. He's to the right of the stone circle"
     },
     {
         id: 5,
@@ -100,9 +100,9 @@ const animals = [
         animal_facts: "The Kookaburra’s brown and white feathers help it blend in with the environment, making it more challenging for predators or prey to see them!",
         hint_photo: "assets/hints/kookaburra_hint.png",
         hint_map: "assets/hints/kookaburra_map.svg",
-        image_alt: "EXAMPLE Grandaughter Kookaburra does a thing",
-        hint_alt: "EXAMPLE Grandaughter Kookaburra is hiding in a place",
-        map_alt: "EXAMPLE: A picture of the trail map showing ANIMAL whereabouts. She's near the thing"
+        image_alt: "The Grandaughter Kookaburra statue hiding in a tree",
+        hint_alt: "A hint showing a view of the hills to the north",
+        map_alt: "The trail map showing Granddaughter Kookaburra's whereabouts. She's to the left of the Wren's Rest"
     },
     {
         id: 3,
@@ -121,9 +121,9 @@ const animals = [
         animal_facts: "Unlike most people, whose hair turns white with age, Wedge Tailed Eagles are the opposite! When they are young their feathers are mostly light brown, and as they get older their feathers become more and more black!",
         hint_photo: "assets/hints/brothereagle_hint.png",
         hint_map: "assets/hints/eagle_map.svg",
-        image_alt: "EXAMPLE Brother Wedge-Tail Eagle does a thing",
-        hint_alt: "EXAMPLE Brother Wedgy is hiding in a place",
-        map_alt: "EXAMPLE: A picture of the trail map showing ANIMAL whereabouts. She's near the thing"
+        image_alt: "The Brother Wedge-Tail Eagle statue keenly looks for prey",
+        hint_alt: "A hint showing a railing along the side of the track",
+        map_alt: "The trail map showing Brother Wedge-tailed Eagle's whereabouts. He's's to the left of the stone circle"
     },
     {
         id: 6,
@@ -142,9 +142,9 @@ const animals = [
         animal_facts: "Wedge Tailed Eagles are very territorial. This means they chase off any other predators that come near their home. Wedge Tailed Eagles have even been known to attack people hang-gliding!",
         hint_photo: "assets/hints/sistereagle_hint.png",
         hint_map: "assets/hints/eagle_map.svg",
-        image_alt: "EXAMPLE Sister Wedge-Tail Eagle does a thing",
-        hint_alt: "EXAMPLE Sister Wedgy is hiding in a place",
-        map_alt: "EXAMPLE: A picture of the trail map showing ANIMAL whereabouts. She's near the thing"
+        image_alt: "The Sister Wedge-Tail Eagle statue perched on a branch",
+        hint_alt: "A hint showing four large stones in front of many native grass trees",
+        map_alt: "The trail map showing sister Wedge-tailed Eagle's whereabouts. She's to the left of the stone circle"
     },
     {
         id: 7,
@@ -163,9 +163,9 @@ const animals = [
         animal_facts: "Brushtailed Possums have prehensile tails. That means they can grasp and hold things with their tail as though it was another hand! They can use their tails to carry grass and twigs for their nests!",
         hint_photo: "assets/hints/brushtail_hint.png",
         hint_map: "assets/hints/brushtail_map.svg",
-        image_alt: "EXAMPLE Brushtail possum does a thing",
-        hint_alt: "EXAMPLE Brushtail Possum is hiding in a place",
-        map_alt: "EXAMPLE: A picture of the trail map showing ANIMAL whereabouts. She's near the thing"
+        image_alt: "The Brushtail Possum statue hugs a branch and enjoys the sun",
+        hint_alt: "The hint shows some sapling trees near a fork in the path",
+        map_alt: "The trail map showing Brushtail Possum's whereabouts. He's near the fork in the trail just past the turn off for the Bush Window track"
     },
     {
         id: 8,
@@ -184,9 +184,9 @@ const animals = [
         animal_facts: "A male possum is called a “Jack”, and a female possum is called a “Jill”!",
         hint_photo: "assets/hints/ringtail_hint.png",
         hint_map: "assets/hints/ringtail_map.svg",
-        image_alt: "EXAMPLE Ringtail Possum does a thing",
-        hint_alt: "EXAMPLE NRingtail Possum is hiding in a place",
-        map_alt: "EXAMPLE: A picture of the trail map showing ANIMAL whereabouts. She's near the thing"
+        image_alt: "The Ringtail Possum statue hugs and tree trunk in the shade",
+        hint_alt: "The hint shows the Bush Window picture frame",
+        map_alt: "The trail map showing Ringtail Possum's whereabouts. She's near the Bush Window"
     },
     {
         id: 9,
@@ -205,8 +205,8 @@ const animals = [
         animal_facts: "Wombats look big and slow, but they can actually run up to 40km an hour! That’s faster than most people!",
         hint_photo: "assets/hints/photohint.png",
         hint_map: "assets/hints/wombat_notfinal_map.svg",
-        image_alt: "EXAMPLE Grandad Wombat does a thing",
-        hint_alt: "EXAMPLE Grandad Wombat is hiding in a place",
-        map_alt: "EXAMPLE: A picture of the trail map showing ANIMAL whereabouts. She's near the thing"
+        image_alt: "The Wombat statue peeks out from his burrow under the walkway",
+        hint_alt: "The hint shows the walkway in the Wetland Walk area",
+        map_alt: "The trail map showing Grandad Wombat's whereabouts. He's near the walkway in the Wetlands Walk area"
     }
 ];
