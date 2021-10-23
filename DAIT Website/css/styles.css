@@ -421,7 +421,7 @@ footer {
 }
 
 .footer_text {
-  margin: 0 .2rem 0 0;
+  margin: 0 .2rem 0 auto;
   font-size: 100%;
   font-family: serif;
   font-weight: bold;
