@@ -13,20 +13,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (window.localStorage.getItem(animals[0].name) != "true") {
     updateLocalStorageAnimal(animals[0].name, true);
-    firstEncounterFlag = true;
-    displayExternalFirstScanPopup();
+    firstEncounterFlag = true
   }
 
-  // Information found on the QRcode for a local device(replace with webiste URL) setup is: https://192.168.86.51:5500/qrPrototype/?animal=koala
+  // Information found on the QRcode for a local device(replace with webiste URL) setup is: https://192.168.115.51:5500/DAIT%20Website/animalcollection.html?animal=unclemagpie
   const animalFromUrlParams = getUrlParams();
   updateLocalStorageAnimal(animalFromUrlParams, true);
   updateAllAnimalPanels();
 
   if (animalArray.includes(animalFromUrlParams)){
     if (firstEncounterFlag == false) {
-      displayPopup(animalFromUrlParams); // For testing purposes to imitate the popup
+      displayPopup(animalFromUrlParams);
     }
-    window.history.replaceState(null, null, window.location.pathname); // replace the url pathname to remove the parameters so the pop up doesn't show on refresh
+    else {
+      displayExternalFirstScanPopup();
+    }
+    window.history.replaceState(null, null, window.location.pathname);
   }
 
   setLockToggleStatus();
