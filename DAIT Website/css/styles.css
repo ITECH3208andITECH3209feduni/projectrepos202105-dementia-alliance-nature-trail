@@ -546,14 +546,14 @@ input:checked + .slider:before {
   display: block;
 }
 
-li {
+.bold_bio_info {
   list-style-type: none;
   font-weight: bold;
   font-size: .75rem;
 }
 
 .bio_info {
-  font-weight: normal;  
+  font-weight: normal; 
 }
 
 .modal_animal_bio_wrapper {
