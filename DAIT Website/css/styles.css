@@ -414,10 +414,12 @@ footer {
 .footer_container_instruction {
   display: flex;
   margin: 0 auto;
+  height: 100%;
 }
 
 .footer_icon {
   max-height: 100%;
+  max-width: 100%;
 }
 
 .footer_text {
