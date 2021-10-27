@@ -188,6 +188,9 @@ function handleUserInput(inputValue) {
     if(inputValue == "Starter Story") {
         displayPopup(animals[0].name);
     }
+    else if (inputValue == "How To Play") {
+        location.href = "howtoplay.html";
+    }
 }
 
 function displayExternalFirstScanPopup() {
