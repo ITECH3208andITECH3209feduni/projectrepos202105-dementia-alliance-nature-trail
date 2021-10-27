@@ -29,6 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
       displayExternalFirstScanPopup();
     }
     window.history.replaceState(null, null, window.location.pathname);
+  } else if (firstEncounterFlag == true) {
+    displayPopup(animals[0].name);
   }
 
   setLockToggleStatus();
