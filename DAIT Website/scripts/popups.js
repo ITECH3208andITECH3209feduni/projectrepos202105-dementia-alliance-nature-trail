@@ -98,33 +98,40 @@ function setupModalMapHintImage(animalIndex) {
 }
 
 function closeModal(contentType) {
-    modal.style.display = "none";
-
+    let openModal = null;
+    
     switch (contentType) {
         case "unlocked":
-            modalUnlockedContent.style.display = "none";
+            openModal = modalUnlockedContent;
             stopSound(modalStorySound);
             stopSound(modalAnimalSound);
             break;
         case "locked":
-            modalLockedContent.style.display = "none";
+            openModal = modalLockedContent;
             break;
         case "ending story":
-            modalEndingStoryContent.style.display = "none";
+            openModal = modalEndingStoryContent;
             stopSound(modalEndingStorySound);
             break;
         case "locked ending story":
-            modalLockedEndingStoryContent.style.display = "none";
+            openModal = modalLockedEndingStoryContent;
             break;
         case "external first time":
-            modalExternalFirstScanContent.style.display = "none";
+            openModal = modalExternalFirstScanContent;
             break;
-        case "lock status":
+        case "lock status cancel toggle":
             toggleLockStatus();
-        case "lock status confirmed":
-            modalLockStatusConfirmationContent.style.display = "none";
+        case "lock status":
+            openModal = modalLockStatusConfirmationContent;
             break;
     }
+    
+    if (openModal != null) {
+        openModal.getElementsByClassName("modal_scrollable_content")[0].scroll({top:0});
+        openModal.style.display = "none";
+    }
+
+    modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it and all modal contents
@@ -136,22 +143,29 @@ window.onclick = function (event) {
 
 
 function hideAllModals() {
-    modal.style.display = "none";
     if (modalUnlockedContent.style.display != "none") {
         closeModal("unlocked");
     }
+
+    if (modalLockedContent.style.display != "none") {
+        closeModal("locked");
+    }
+
     if (modalEndingStoryContent.style.display != "none") {
         closeModal("ending story");
     }
+
+    if (modalLockedEndingStoryContent.style.display != "none") {
+        closeModal("locked ending story");
+    }
+
+    if (modalExternalFirstScanContent.style.display != "none") {
+        closeModal("external first time");
+    }
+
     if (modalLockStatusConfirmationContent.style.display != "none") {
-        closeModal("lock status");
-    }
-    else {
-        closeModal("lock status confirmed");
-    }
-    modalLockedContent.style.display = "none";
-    modalLockedEndingStoryContent.style.display = "none";
-    modalExternalFirstScanContent.style.display = "none";
+        closeModal("lock status cancel toggle");
+    } 
 }
 
 function toggleAnimalSound() {

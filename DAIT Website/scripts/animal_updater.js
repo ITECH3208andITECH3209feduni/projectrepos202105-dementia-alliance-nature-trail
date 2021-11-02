@@ -150,10 +150,10 @@ function handleLockToggle (confimation) {
     } else {
       lockAllAnimals();
     }
-    closeModal("lock status confirmed");
+    closeModal("lock status");
   }
   else if (confimation == "Cancel") {
-    closeModal("lock status");
+    closeModal("lock status cancel toggle");
   }
 }
 
