@@ -14,6 +14,24 @@ html {
   height: 100%;
 }
 
+button {
+  display: inline-block;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  background: transparent;
+  -webkit-appearance: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -105,6 +123,8 @@ header {
   text-decoration: none;
   padding: 0.5rem 1rem;
   background: transform 0.2s;
+  display: block;
+  max-width: 100%;
 }
 
 .biggerHearts_icon {
@@ -113,7 +133,8 @@ header {
 }
 
 .nav_link_active,
-.nav_link:hover {
+.nav_link:hover,
+.nav_link:focus {
   color: var(--theme-background-active);
   text-decoration: underline;
   border-color: var(--theme-background-alt);
@@ -380,6 +401,7 @@ font-size: .9rem;
 
 #camera_icon {
   width: 4rem;
+  max-height: 4rem;
   display: block;
   padding: .4rem;
   background-color:var(--theme-background-white);
@@ -728,12 +750,11 @@ h3 {
 .user_input_form_button:hover {
   background-color: var(--theme-background-white); 
   color: black;
+  cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
-  text-decoration: none;
   cursor: pointer;
 }
 
@@ -762,6 +783,7 @@ h3 {
   
   #camera_icon {
     width: 2rem;
+    max-height: 2rem;
   }
 
   .camera_button_wrapper {

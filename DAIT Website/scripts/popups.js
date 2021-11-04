@@ -134,6 +134,13 @@ function closeModal(contentType) {
     modal.style.display = "none";
 }
 
+function keyDownCloseModal (e, contentType) {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        closeModal(contentType);
+    }
+}
+
 // When the user clicks anywhere outside of the modal, close it and all modal contents
 window.onclick = function (event) {
     if (event.target == modal) {
@@ -210,6 +217,14 @@ function handleUserInput(inputValue) {
 function displayExternalFirstScanPopup() {
     modalExternalFirstScanContent.style.display = "flex";
     modal.style.display = "flex";
+}
+
+function keyDownDisplayLockStatusConfirmationPopup(e) {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        toggleLockStatus();
+        displayLockStatusConfirmationPopup();
+    }
 }
 
 function displayLockStatusConfirmationPopup() {

@@ -81,7 +81,3 @@ function scan() {
 function cameraTimeout () {
   stopCamera();
 }
-
-//menuOnclickEventHandler = (x) => {
-  //document.getElementById("nav").classList.toggle("change");
-//}

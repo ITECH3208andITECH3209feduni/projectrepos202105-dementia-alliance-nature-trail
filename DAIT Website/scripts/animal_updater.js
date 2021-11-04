@@ -157,6 +157,13 @@ function handleLockToggle (confimation) {
   }
 }
 
+function keyDownHandleLockToggle (e, confimation) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    handleLockToggle(confimation);
+  }
+}
+
 function toggleLockStatus() {
   if (lockToggle.checked == true) {
     lockToggle.checked = false;

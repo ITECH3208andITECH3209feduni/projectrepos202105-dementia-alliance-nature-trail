@@ -31,21 +31,24 @@
     <header>
         <div class="flex_header_container">
             <div class="header_inner_container_outer">
-                <div class="menu_icon_container" onclick="menuOnclickEventHandler(this)">
+                <button class="menu_icon_container" id="menu" onclick="menuOnclickEventHandler(this)" aria-haspopup="true" aria-controls="nav_links">
                     <img id="burgerMenu" src="assets/burgerMenu.svg" alt="A button to open the navigation menu">
-                </div>
+                </button>
                 <nav class="nav" id="nav">
-                    <div id="nav_links">
-                        <div class="burger_cross_wrapper">
-                            <img id="burgerCross" src="assets/burgerCross.svg" onclick="menuOnclickEventHandler(this)" alt="A button to close the navigation menu">
-                        </div>
-                        <a href="howtoplay.html" class="nav_link">How To Play</a>
-                        <a href="trailmap.html" class="nav_link">Trail Map</a>
-                        <a href="animalcollection.html" class="nav_link nav_link_active">Animal Collection</a>
-                        <a href="#" class="nav_link">Bigger Hearts Home Page</a>
-                        <a href="#" class="nav_link margin_bottom">Contact Us</a>
+                 
+                    <ul id="nav_links">
+                        <li class="burger_cross_wrapper">
+                            <button onKeyDown="keyDownMenuOnclickEventHandler(window.event)">
+                                <img id="burgerCross" src="assets/burgerCross.svg" onclick="menuOnclickEventHandler(this)" alt="A button to close the navigation menu">
+                            </button>
+                        </li>
+                        <li><a href="howtoplay.html" class="nav_link">How To Play</a></li>
+                        <li><a href="trailmap.html" class="nav_link">Trail Map</a></li>
+                        <li><a href="animalcollection.html" class="nav_link nav_link_active">Animal Collection</a></li>
+                        <li><a href="#" class="nav_link">Bigger Hearts Home Page</a></li>
+                        <li><a href="#" class="nav_link margin_bottom">Contact Us</a></li>
                         <img class="biggerHearts_icon" src="assets/trailmap/bigger_hearts_icon_white.svg" alt="Two hands cupping a heart makes up the Bigger Hearts Icon" />
-                    </div>
+                    </ul>
                     <div class="nav_overlay" onclick="menuOnclickEventHandler(this)">
                     </div>
                 </nav>
@@ -67,7 +70,7 @@
             <div class="flex_toggle_switch_container">
                 <img id="toggle_locked" class="toggle_switch_icon_small" src="assets/locked.svg" alt="A switch for unlocking or locking all the animal pages, currently locked">
                 <label class="switch">
-                    <input type="checkbox" id="lock_toggle" onclick="displayLockStatusConfirmationPopup()">
+                    <input type="checkbox" role="button" id="lock_toggle" onKeyDown="keyDownDisplayLockStatusConfirmationPopup(window.event)" onclick="displayLockStatusConfirmationPopup()">
                     <span class="slider round"></span>
                 </label>
                 <img id="toggle_unlocked" class="toggle_switch_icon_small" src="assets/unlocked.svg" alt="A switch for unlocking or locking all the animal pages, currently unlocked">
@@ -444,14 +447,14 @@
 
             <!--Lock Status Confirmation Modal-->
             <div class="modal_content" id="modal_lock_status_confirmation_content">
-                <input class="close" type="image" value="lock status cancel toggle" src="assets/close.svg" onclick="closeModal(this.value)">
+                <input class="close" type="image" role="button" value="lock status cancel toggle" src="assets/close.svg" onKeyDown="keyDownCloseModal(window.event, this.value)" onclick="closeModal(this.value)">
                 <h2 class="modal_h2_heading">Lock Status Confirmation</h2>                  
                 <div class="modal_scrollable_content">
                     <div class="modal_lock_status_confirmation_wrapper">
                         <p>Are you sure you would like to change the lock status? <i class="small_font">(action overwrites all progression)</i></p>
                         <form class="user_input_form">
-                            <input class="user_input_form_button" type="button" value="Confirm" onclick="handleLockToggle(this.value)">
-                            <input class="user_input_form_button" type="button" value="Cancel" onclick="handleLockToggle(this.value)">
+                            <input class="user_input_form_button" type="button" role="button" value="Confirm" onKeyDown="keyDownHandleLockToggle(window.event, this.value)" onclick="handleLockToggle(this.value)">
+                            <input class="user_input_form_button" type="button" role="button" value="Cancel" onKeyDown="keyDownHandleLockToggle(window.event, this.value)" onclick="handleLockToggle(this.value)">
                         </form>
                     </div>
                 </div>
@@ -480,9 +483,9 @@
             </div>
         
             <div class="camera_button_wrapper">
-                <a id="btn-scan-qr">
+                <button id="btn-scan-qr">
                     <img id="camera_icon" src="assets/camera.svg" alt="A camera icon">
-                </a>
+                </button>
             </div>
           
             <div class="footer_container_inner">
