@@ -1,19 +1,22 @@
-var modal = document.getElementById("modal");
-var modalUnlockedContent = document.getElementById("modal_unlocked_content");
-var modalLockedContent = document.getElementById("modal_locked_content");
-var modalEndingStoryContent = document.getElementById("modal_ending_story_content");
-var modalLockedEndingStoryContent = document.getElementById("modal_locked_ending_story_content");
-var modalExternalFirstScanContent = document.getElementById("modal_external_first_scan_content");
-var modalLockStatusConfirmationContent = document.getElementById("modal_lock_status_confirmation_content");
-var modalAnimalImage = document.getElementById("m_animal_img");
-var modalHintImage = document.getElementById("m_hint_img");
-var modalMapHintImage = document.getElementById("m_map_hint_img");
-var modalAnimalSound = document.getElementById("audio_animal");
-var modalStorySound = document.getElementById("audio_animal_story");
-var modalEndingStorySound = document.getElementById("audio_ending_story");
-var modalAnimalStory = document.getElementById("modal_story");
-var modalAnimalFacts = document.getElementById("modal_facts");
-var modalBioInfo = document.getElementById("modal_animal_bio");
+const modal = document.getElementById("modal");
+const modalUnlockedContent = document.getElementById("modal_unlocked_content");
+const modalLockedContent = document.getElementById("modal_locked_content");
+const modalEndingStoryContent = document.getElementById("modal_ending_story_content");
+const modalLockedEndingStoryContent = document.getElementById("modal_locked_ending_story_content");
+const modalExternalFirstScanContent = document.getElementById("modal_external_first_scan_content");
+const modalLockStatusConfirmationContent = document.getElementById("modal_lock_status_confirmation_content");
+const modalAnimalImage = document.getElementById("m_animal_img");
+const modalHintImage = document.getElementById("m_hint_img");
+const modalMapHintImage = document.getElementById("m_map_hint_img");
+const modalAnimalSound = document.getElementById("audio_animal");
+const modalStorySound = document.getElementById("audio_animal_story");
+const modalEndingStorySound = document.getElementById("audio_ending_story");
+const modalAnimalStory = document.getElementById("modal_story");
+const modalAnimalFacts = document.getElementById("modal_facts");
+const modalBioInfo = document.getElementById("modal_animal_bio");
+const menu = document.getElementById("menu");
+const storyending = document.getElementById("storyending");
+var elementToFocus;
 
 function displayPopup(animalName) {
     const animalsIndex = animals.findIndex(item => item.name === animalName);
@@ -28,6 +31,20 @@ function displayPopup(animalName) {
     }
 
     modal.style.display = "flex";
+    elementToFocus = document.getElementById(animalName);
+    setTabIndexValue (-1);
+}
+
+function setTabIndexValue (value) {
+    let elementArray = [];
+    elementArray = document.getElementsByClassName("tabIndexToggle");
+
+    for (let index = 0; index < elementArray.length; index++) {
+        elementArray[index].tabIndex = value;
+    }
+    if (value === 0) {
+        elementToFocus.focus();
+    }
 }
 
 function setupLockedPopup(animalIndex) {
@@ -112,23 +129,31 @@ function closeModal(contentType) {
         case "ending story":
             openModal = modalEndingStoryContent;
             stopSound(modalEndingStorySound);
+            elementToFocus = storyending;
             break;
         case "locked ending story":
             openModal = modalLockedEndingStoryContent;
+            elementToFocus = storyending;
             break;
         case "external first time":
             openModal = modalExternalFirstScanContent;
+            elementToFocus = menu;
             break;
         case "lock status cancel toggle":
             toggleLockStatus();
         case "lock status":
             openModal = modalLockStatusConfirmationContent;
+            elementToFocus = lockToggle;
             break;
     }
     
     if (openModal != null) {
         openModal.getElementsByClassName("modal_scrollable_content")[0].scroll({top:0});
         openModal.style.display = "none";
+        
+        if (elementToFocus != null) {
+            setTabIndexValue (0);
+        }
     }
 
     modal.style.display = "none";
@@ -217,6 +242,7 @@ function handleUserInput(inputValue) {
 function displayExternalFirstScanPopup() {
     modalExternalFirstScanContent.style.display = "flex";
     modal.style.display = "flex";
+    setTabIndexValue (-1);
 }
 
 function keyDownDisplayLockStatusConfirmationPopup(e) {
@@ -230,6 +256,7 @@ function keyDownDisplayLockStatusConfirmationPopup(e) {
 function displayLockStatusConfirmationPopup() {
     modalLockStatusConfirmationContent.style.display = "flex";
     modal.style.display = "flex";
+    setTabIndexValue (-1);
 }
 
 function displayStoryEndingPopup() {
@@ -240,4 +267,5 @@ function displayStoryEndingPopup() {
         modalLockedEndingStoryContent.style.display = "flex";
     }
     modal.style.display = "flex";
+    setTabIndexValue (-1);
 }

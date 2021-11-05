@@ -31,7 +31,7 @@
     <header>
         <div class="flex_header_container">
             <div class="header_inner_container_outer">
-                <button class="menu_icon_container" id="menu" onclick="menuOnclickEventHandler(this)" aria-haspopup="true" aria-controls="nav_links">
+                <button class="menu_icon_container tabIndexToggle" id="menu" onclick="menuOnclickEventHandler(this)" aria-haspopup="true" aria-controls="nav_links">
                     <img id="burgerMenu" src="assets/burgerMenu.svg" alt="A button to open the navigation menu">
                 </button>
                 <nav class="nav" id="nav">
@@ -64,13 +64,13 @@
 
     <main>
         <div class="flex_top_main_container">
-            <a href="trailmap.html">
+            <a class="tabIndexToggle" href="trailmap.html">
                 <img id="map" src="assets/map.svg" alt="a little cartoon map which will open the trail map page when clicked">
             </a>
             <div class="flex_toggle_switch_container">
                 <img id="toggle_locked" class="toggle_switch_icon_small" src="assets/locked.svg" alt="A switch for unlocking or locking all the animal pages, currently locked">
                 <label class="switch">
-                    <input type="checkbox" role="button" id="lock_toggle" onKeyDown="keyDownDisplayLockStatusConfirmationPopup(window.event)" onclick="displayLockStatusConfirmationPopup()">
+                    <input class="tabIndexToggle" type="checkbox" role="button" id="lock_toggle" onKeyDown="keyDownDisplayLockStatusConfirmationPopup(window.event)" onclick="displayLockStatusConfirmationPopup()">
                     <span class="slider round"></span>
                 </label>
                 <img id="toggle_unlocked" class="toggle_switch_icon_small" src="assets/unlocked.svg" alt="A switch for unlocking or locking all the animal pages, currently unlocked">
@@ -178,50 +178,50 @@
                 </div>
             </section>
             <section class="animal_collection_wrapper">
-                <article class="animal_wrapper" id="nannakookaburra" onclick="displayPopup(this.id)">
+                <button class="animal_wrapper tabIndexToggle" id="nannakookaburra" aria-haspopup="true" aria-controls="modal_unlocked_content" onclick="displayPopup(this.id)">
                     <img class="lock_status" src="assets/unlocked.svg" alt="A lock to show that Nanna Kookabura has not yet been found">
                     <img class="animal_image" src="assets/nannakookaburra.png" alt="The Nanna Kookaburra purched high in a tree">
-                </article>
-                <article class="animal_wrapper" id="motherkoalawithjoey" onclick="displayPopup(this.id)">
+                </button>
+                <button class="animal_wrapper tabIndexToggle" id="motherkoalawithjoey" onclick="displayPopup(this.id)">
                     <img class="lock_status" src="assets/locked.svg" alt="A lock to show that Mother Koala and her Joey have not yet been found">
                     <img class="animal_image" src="assets/motherkoalawithjoey.png" alt="The Koala and Joey statue resting in a tree nook">
-                </article>
-                <article class="animal_wrapper" id="auntiemagpie" onclick="displayPopup(this.id)">
+                </button>
+                <button class="animal_wrapper tabIndexToggle" id="auntiemagpie" onclick="displayPopup(this.id)">
                     <img class="lock_status" src="assets/locked.svg" alt="A lock to show that Auntie Magpie has not yet been found">
                     <img class="animal_image" src="assets/auntiemagpie.png" alt="The Antie Magpie statue on a branch, watching the sky">
-                </article>
-                <article class="animal_wrapper" id="unclemagpie" onclick="displayPopup(this.id)">
+                </button>
+                <button class="animal_wrapper tabIndexToggle" id="unclemagpie" onclick="displayPopup(this.id)">
                     <img class="lock_status" src="assets/locked.svg" alt="A lock to show that Uncle Magpie has not yet been found">
                     <img class="animal_image" src="assets/unclemagpie.png" alt="The Uncle Magpie statue standing proudly on a branch">
-                </article>
-                <article class="animal_wrapper" id="granddaughterkookaburra" onclick="displayPopup(this.id)">
+                </button>
+                <button class="animal_wrapper tabIndexToggle" id="granddaughterkookaburra" onclick="displayPopup(this.id)">
                     <img class="lock_status" src="assets/locked.svg" alt="A lock to show that Grandaughter Kookaburra has not yet been found">
                     <img class="animal_image" src="assets/granddaughterkookaburra.png" alt="The Grandaughter Kookaburra statue hiding in a tree">
-                </article>
-                <article class="animal_wrapper" id="brotherwedgetailedeagle" onclick="displayPopup(this.id)">
+                </button>
+                <button class="animal_wrapper tabIndexToggle" id="brotherwedgetailedeagle" onclick="displayPopup(this.id)">
                     <img class="lock_status" src="assets/locked.svg" alt="A lock to show that Brother Wedge-Tail Eagle has not yet been found">
                     <img class="animal_image" src="assets/brotherwedgetailedeagle.png" alt="The Brother Wedge-Tail Eagle statue keenly looks for prey">
-                </article>
-                <article class="animal_wrapper" id="sisterwedgetailedeagle" onclick="displayPopup(this.id)">
+                </button>
+                <button class="animal_wrapper tabIndexToggle" id="sisterwedgetailedeagle" onclick="displayPopup(this.id)">
                     <img class="lock_status" src="assets/locked.svg" alt="A lock to show that Sister Wedge-Tail Eagle has not yet been found">
                     <img class="animal_image" src="assets/sisterwedgetailedeagle.png" alt="The Sister Wedge-Tail Eagle statue perched on a branch">
-                </article>
-                <article class="animal_wrapper" id="cousinbrushtailpossum" onclick="displayPopup(this.id)">
+                </button>
+                <button class="animal_wrapper tabIndexToggle" id="cousinbrushtailpossum" onclick="displayPopup(this.id)">
                     <img class="lock_status" src="assets/locked.svg" alt="A lock to show that Cousin Brushtail Possum has not yet been found">
                     <img class="animal_image" src="assets/cousinbrushtailpossum.png" alt="The Brushtail Possum statue hugs a branch and enjoys the sun">
-                </article>
-                <article class="animal_wrapper" id="cousinringtailpossum" onclick="displayPopup(this.id)">
+                </button>
+                <button class="animal_wrapper tabIndexToggle" id="cousinringtailpossum" onclick="displayPopup(this.id)">
                     <img class="lock_status" src="assets/locked.svg" alt="A lock to show that Cousin Ringtail Possum has not yet been found">
                     <img class="animal_image" src="assets/cousinringtailpossum.png" alt="The Ringtail Possum statue hugs and tree trunk in the shade">
-                </article>
-                <article class="animal_wrapper" id="grandadwombat" onclick="displayPopup(this.id)">
+                </button>
+                <button class="animal_wrapper tabIndexToggle" id="grandadwombat" onclick="displayPopup(this.id)">
                     <img class="lock_status" src="assets/locked.svg" alt="A lock to show that Grandadwombat has not yet been found">
                     <img class="animal_image" src="assets/grandadwombat.png" alt="The Wombat statue peeks out from his burrow under the walkway">
-                </article>
-                <article class="animal_wrapper" id="storyending" onclick="displayStoryEndingPopup()">
+                </button>
+                <button class="animal_wrapper tabIndexToggle" id="storyending" onclick="displayStoryEndingPopup()">
                     <img class="lock_status" src="assets/locked.svg" alt="A lock to show that the Story Ending has not yet been unlocked">
                     <img class="animal_image" src="assets/find_us_all.svg" alt="A picture of a Kangaroo, Koala, Wombat, Kookaburra and Magpie sitting under a banner that reads 'Find Us All'">
-                </article>
+                </button>
             </section>
         </div>
         <canvas hidden="" id="qr-canvas"></canvas>
@@ -229,7 +229,7 @@
         <!-- The Modal -->
         <div id="modal" class="modal">
             <div class="modal_content" id="modal_unlocked_content">
-                <input class="close" type="image" value="unlocked" src="assets/close.svg" onclick="closeModal(this.value)" alt="A button that closes the animal screen when clicked">
+                <input class="close" id="test" type="image" role="button" value="unlocked" src="assets/close.svg" onclick="closeModal(this.value)" alt="A button that closes the animal screen when clicked">
                 <h2 class="modal_h2_heading">You found me!</h2>
                 <div class="modal_animal_bio">
 
@@ -247,23 +247,23 @@
                 </div>
                 <div class="modal_sound_outer_wrapper">
                     <div class="modal_sound_inner_wrapper">
-                        <div class="modal_sound_icons" onClick="toggleAnimalSound()">
+                        <button class="modal_sound_icons" onClick="toggleAnimalSound()">
                             <audio id="audio_animal">
                                 <source src="assets/audio/kookaburra.mp3" type="audio/mpeg">
                             </audio>
                             <img src="assets/hearsound.svg" alt="A button to listen to the animal's call"/>
-                        </div>
+                        </button>
                         <div class="modal_sound_icon_text_wrapper">
                             <p onClick="toggleAnimalSound()">Hear my <br>sound</p>
                         </div>
                     </div>
                     <div class="modal_sound_inner_wrapper">
-                        <div class="modal_sound_icons" onClick="toggleStorySound()" >
+                        <button class="modal_sound_icons" onClick="toggleStorySound()">
                             <audio id="audio_animal_story">
                                 <source src="assets/audio/storynannakookaburra.mp3" type="audio/mpeg">
                             </audio>
                             <img src="assets/hearstory.svg" alt="A button to listen to the story being read aloud"/>
-                        </div>
+                        </button>
                         <div class="modal_sound_icon_text_wrapper">
                             <p>Hear my <br>story</p>
                         </div>
@@ -321,17 +321,17 @@
 
             <!--Ending Story Modal-->
             <div class="modal_content" id="modal_ending_story_content">
-                <input class="close" type="image" value="ending story" src="assets/close.svg" onclick="closeModal(this.value)">
+                <input class="close" type="image" role="button" value="ending story" src="assets/close.svg" onclick="closeModal(this.value)">
                 <h2 class="modal_h2_heading">Congratulations! You found us all!</h2>
                  
                 <div class="modal_sound_ending_story_outer_wrapper">
                     <div class="modal_sound_ending_story_inner_wrapper">
-                        <div class="modal_sound_icons" onClick="toggleEndingStorySound()" >
+                        <button class="modal_sound_icons" onClick="toggleEndingStorySound()" >
                             <audio id="audio_ending_story">
                                 <source src="assets/audio/storyend.mp3" type="audio/mpeg">
                             </audio>
                             <img src="assets/hearstory.svg" alt="A button to listen to the Story Ending being read aloud"/>
-                        </div>
+                        </button>
                         <div class="modal_sound_icon_text_wrapper">
                             <p>Hear the <br>story</p>
                         </div>
@@ -385,13 +385,13 @@
                             <b>Anne Tudor OAM</b> - Founder and Chair of Bigger Hearts Dementia Alliance Ballarat, Artistic Director and Visionary
                         </p>
                         <p>
-                            <b>Kurt Horsley</b> - Developer, UX/UI Designer and Developer, Story Editor<br>
+                            <b>Kurt Horsley</b> - Developer, UX/UI Designer and Developer, Story Editor
                         </p>
                         <p>
                             <b>Seth Leslie</b> - Story Author, Narrator, UX/UI Designer and Developer, Graphic Design
                         </p>
                         <p>
-                            <b>Muhammad Shehram</b> - Iconography, Testing<br>
+                            <b>Muhammad Shehram</b> - Digital Design, Testing
                         </p>
                         <p>
                             <b>Siobhan Rogan</b> - Parks Victoria Area Chief Ranger and Project Consultant
@@ -412,7 +412,7 @@
 
             <!--Locked Ending Story Modal-->
             <div class="modal_content" id="modal_locked_ending_story_content">
-                <input class="close" type="image" value="locked ending story" src="assets/close.svg" onclick="closeModal(this.value)">
+                <input class="close" type="image" role="button" value="locked ending story" src="assets/close.svg" onclick="closeModal(this.value)">
                 <h2 class="modal_h2_heading">Ending Story Locked</h2>                  
                 <div class="modal_scrollable_content">
                     <div class="modal_ending_story_wrapper">
@@ -429,7 +429,7 @@
 
             <!--External First Time Vistor Modal-->
             <div class="modal_content" id="modal_external_first_scan_content">
-                <input class="close" type="image" value="external first time" src="assets/close.svg" onclick="closeModal(this.value)">
+                <input class="close" type="image" role="button" value="external first time" src="assets/close.svg" onclick="closeModal(this.value)">
                 <h2 class="modal_h2_heading">Welcome to the Adventure Trail</h2>                  
                 <div class="modal_scrollable_content">
                     <div class="modal_first_scan_wrapper">
@@ -483,7 +483,7 @@
             </div>
         
             <div class="camera_button_wrapper">
-                <button id="btn-scan-qr">
+                <button class="tabIndexToggle" id="btn-scan-qr">
                     <img id="camera_icon" src="assets/camera.svg" alt="A camera icon">
                 </button>
             </div>
