@@ -398,7 +398,7 @@ font-size: .9rem;
 
 #camera_icon {
   width: 4rem;
-  max-height: 4rem;
+  max-height: 3.355rem;
   display: block;
   padding: .4rem;
   background-color:var(--theme-background-white);
@@ -784,7 +784,7 @@ h3 {
   
   #camera_icon {
     width: 2rem;
-    max-height: 2rem;
+    max-height: 1.677rem;
   }
 
   .camera_button_wrapper {
