@@ -1,11 +1,13 @@
 const allAnimalElements = document.getElementsByClassName("animal_wrapper");
 const lockToggle = document.getElementById("lock_toggle");
 const storyEnding = document.getElementById("storyending");
+var setupCompleted;
 let animalArray = [];
 
 window.addEventListener("storage", storageListenerEventHandler);
   
 document.addEventListener('DOMContentLoaded', function() {
+  setupCompleted = false;
   firstEncounterFlag = false;
   hideAllModals();
   createAnimalArray();
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   setLockToggleStatus();
+  setupCompleted = true;
 
 }, false);
 

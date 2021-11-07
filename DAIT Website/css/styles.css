@@ -93,10 +93,6 @@ header {
   top: 0;
 }
 
-.margin_bottom {
-  margin-bottom: 2rem;
-}
-
 #nav_links {
   display: flex;
   flex-direction: column;
@@ -116,15 +112,14 @@ header {
 
 .nav_link {
   background-color: var(--theme-background-white) ;
-  border-style: solid;
-  border-left-color: var(--theme-background);
+  border-left: solid .2rem var(--theme-background);
   color: var(--theme-background-alt);
-  font-size: 1rem;
   text-decoration: none;
   padding: 0.5rem 1rem;
   background: transform 0.2s;
   display: block;
   max-width: 100%;
+  margin: 0.2rem 0;
 }
 
 .biggerHearts_icon {
@@ -132,14 +127,16 @@ header {
   width: 2rem;
 }
 
-.nav_link_active,
+.nav_link_active { 
+  border-left-color: var(--theme-background-active);
+}
+
 .nav_link:hover,
 .nav_link:focus {
   color: var(--theme-background-active);
   text-decoration: underline;
   border-color: var(--theme-background-alt);
   border-left-color: var(--theme-background-active);
-  color: var(--theme-background-active);
 }
 
 #burgerMenu {
@@ -729,6 +726,10 @@ h3 {
 
 .no_margin {
   margin: 0;
+}
+
+.margin_bottom {
+  margin-bottom: 2rem;
 }
 
 .user_input_form {

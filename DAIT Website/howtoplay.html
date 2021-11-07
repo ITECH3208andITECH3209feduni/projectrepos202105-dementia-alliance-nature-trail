@@ -6,37 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="icon" href="assets/favicon.svg" sizes="any" type="image/svg+xml">
-    <script type="text/javascript" src="scripts/navigation.js"></script>
 </head>
 
 <body>
     <header>
         <div class="flex_header_container">
             <div class="header_inner_container_outer">
-                <div class="menu_icon_container" onclick="menuOnclickEventHandler(this)">
-                    <img id="burgerMenu" src="assets/burgerMenu.svg" alt="A button to open the navigation menu"/>
-                </div>
+                <button class="menu_icon_container tabIndexToggle" id="menu" onclick="menuOnclickEventHandler(this)"
+                    aria-haspopup="true" aria-controls="nav_links">
+                    <img id="burgerMenu" src="assets/burgerMenu.svg" alt="A button to open the navigation menu">
+                </button>
                 <nav class="nav" id="nav">
-                    <div id="nav_links">
-                        <div class="burger_cross_wrapper">
-                            <img id="burgerCross" src="assets/burgerCross.svg" onclick="menuOnclickEventHandler(this)" alt="A button to close the navigation menu">
-                        </div>
-                        <a href="howtoplay.html" class="nav_link nav_link_active">How To Play</a>
-                        <a href="trailmap.html" class="nav_link">Trail Map</a>
-                        <a href="animalcollection.html" class="nav_link">Animal Collection</a>
-                        <a href="#" class="nav_link">Bigger Hearts Home Page</a>
-                        <a href="#" class="nav_link margin_bottom">Contact Us</a>
-                        <img class="biggerHearts_icon" src="assets/trailmap/bigger_hearts_icon_white.svg" alt="Two hands cupping a heart makes up the Bigger Hearts Icon" />
-                    </div>
+                    <ul id="nav_links">
+                        <li class="burger_cross_wrapper">
+                            <button onclick="menuOnclickEventHandler(this)">
+                                <img id="burgerCross" src="assets/burgerCross.svg"
+                                    alt="A button to close the navigation menu">
+                            </button>
+                        </li>
+                        <li><a href="howtoplay.html" class="nav_link nav_link_active">How To Play</a></li>
+                        <li><a href="trailmap.html" class="nav_link">Trail Map</a></li>
+                        <li><a href="animalcollection.html" class="nav_link">Animal Collection</a></li>
+                        <li><a href="#" class="nav_link">Bigger Hearts Home Page</a></li>
+                        <li><a href="#" class="nav_link margin_bottom">Contact Us</a></li>
+                        <img class="biggerHearts_icon" src="assets/trailmap/bigger_hearts_icon_white.svg"
+                            alt="Two hands cupping a heart makes up the Bigger Hearts Icon" />
+                    </ul>
                     <div class="nav_overlay" onclick="menuOnclickEventHandler(this)">
                     </div>
                 </nav>
             </div>
             <div class="header_inner_container">
-                <img class="storybook_logo" src="assets/storybooklogo.svg" alt="storybook adventure trail logo which says 'Story Book' with a cartoon kangaroo between the two words"/>
+                <img class="storybook_logo" src="assets/storybooklogo.svg"
+                    alt="storybook adventure trail logo which says 'Story Book' with a cartoon kangaroo between the two words" />
             </div>
             <div class="header_inner_container_outer">
-                <img id="bigger_hearts_logo" src="assets/biggerheartslogo.svg" alt="The bigger hearts logo which says 'Bigger Hearts' and is surrounded by hearts of different sizes"/>
+                <img id="bigger_hearts_logo" src="assets/biggerheartslogo.svg"
+                    alt="The bigger hearts logo which says 'Bigger Hearts' and is surrounded by hearts of different sizes" />
             </div>
         </div>
     </header>
@@ -84,14 +90,15 @@
     <footer>
         <div class="flex_footer_container">
             <div class="footer_button_wrapper">
-                <a href="animalcollection.html">
+                <a class="tabIndexToggle" role=”button” href="animalcollection.html">
                     <img class="footer_button" src="assets/startbutton.svg" alt="A green button that will start the game when pushed">
                 </a>
             </div>
         </div>
     </footer>
 
-
+    <script type="text/javascript" src="scripts/navigation.js"></script>
+    
 </body>
 
 </html>

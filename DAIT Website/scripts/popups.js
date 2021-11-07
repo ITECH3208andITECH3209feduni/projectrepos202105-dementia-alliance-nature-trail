@@ -14,9 +14,7 @@ const modalEndingStorySound = document.getElementById("audio_ending_story");
 const modalAnimalStory = document.getElementById("modal_story");
 const modalAnimalFacts = document.getElementById("modal_facts");
 const modalBioInfo = document.getElementById("modal_animal_bio");
-const menu = document.getElementById("menu");
-const storyending = document.getElementById("storyending");
-var elementToFocus;
+const storyEndingButton = document.getElementById("storyending");
 
 function displayPopup(animalName) {
     const animalsIndex = animals.findIndex(item => item.name === animalName);
@@ -33,18 +31,7 @@ function displayPopup(animalName) {
     modal.style.display = "flex";
     elementToFocus = document.getElementById(animalName);
     setTabIndexValue (-1);
-}
-
-function setTabIndexValue (value) {
-    let elementArray = [];
-    elementArray = document.getElementsByClassName("tabIndexToggle");
-
-    for (let index = 0; index < elementArray.length; index++) {
-        elementArray[index].tabIndex = value;
-    }
-    if (value === 0) {
-        elementToFocus.focus();
-    }
+    document.activeElement.blur();
 }
 
 function setupLockedPopup(animalIndex) {
@@ -129,11 +116,11 @@ function closeModal(contentType) {
         case "ending story":
             openModal = modalEndingStoryContent;
             stopSound(modalEndingStorySound);
-            elementToFocus = storyending;
+            elementToFocus = storyEndingButton;
             break;
         case "locked ending story":
             openModal = modalLockedEndingStoryContent;
-            elementToFocus = storyending;
+            elementToFocus = storyEndingButton;
             break;
         case "external first time":
             openModal = modalExternalFirstScanContent;
@@ -151,7 +138,7 @@ function closeModal(contentType) {
         openModal.getElementsByClassName("modal_scrollable_content")[0].scroll({top:0});
         openModal.style.display = "none";
         
-        if (elementToFocus != null) {
+        if (elementToFocus != null && setupCompleted) {
             setTabIndexValue (0);
         }
     }
@@ -173,8 +160,8 @@ window.onclick = function (event) {
     }
 }
 
-
 function hideAllModals() {
+
     if (modalUnlockedContent.style.display != "none") {
         closeModal("unlocked");
     }

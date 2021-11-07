@@ -12,6 +12,7 @@ let timeOut;
 
 qrcode.callback = res => {
   if (res) {
+    let resAnimal = "";
 
     resSplit = res.split("="); // used to split the qrcode information to extract the animal (updated to this approach so users don't need to have the website application already open)
     if (resSplit.length == 2) {
@@ -20,6 +21,8 @@ qrcode.callback = res => {
 
     if (animalArray.includes(resAnimal)){
       updateAnimals(resAnimal);
+    } else {
+      setTabIndexValue(0);
     }
 
     stopCamera();
@@ -35,7 +38,10 @@ qrcode.callback = res => {
 btnScanQR.onclick = () => {
   if (scanning){
     stopCamera();
+    setTabIndexValue(0);
   }else{
+    setTabIndexValue (-1);
+    btnScanQR.tabIndex = 0;
     navigator.mediaDevices
       .getUserMedia({ video: { facingMode: "environment" } })
       .then(function(stream) {
@@ -50,6 +56,7 @@ btnScanQR.onclick = () => {
         scan();
       });
   }
+  elementToFocus = btnScanQR;
 };
 
 function stopCamera() {
@@ -80,4 +87,5 @@ function scan() {
 
 function cameraTimeout () {
   stopCamera();
+  setTabIndexValue(0);
 }
