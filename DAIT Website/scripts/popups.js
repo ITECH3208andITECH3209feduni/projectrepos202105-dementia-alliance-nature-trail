@@ -31,7 +31,6 @@ function displayPopup(animalName) {
     modal.style.display = "flex";
     elementToFocus = document.getElementById(animalName);
     setTabIndexValue (-1);
-    document.activeElement.blur();
 }
 
 function setupLockedPopup(animalIndex) {
