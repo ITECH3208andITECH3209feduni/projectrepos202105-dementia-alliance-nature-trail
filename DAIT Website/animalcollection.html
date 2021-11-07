@@ -26,7 +26,7 @@
     <script type="text/javascript" src="scripts/animaldata.js"></script>
 </head>
 
-<body id="test">
+<body>
     <header>
         <div class="flex_header_container">
             <div class="header_inner_container_outer">
@@ -232,8 +232,11 @@
         <!-- The Modal -->
         <div id="modal" class="modal">
             <div class="modal_content" id="modal_unlocked_content">
-                <input class="close" id="test" type="image" role="button" value="unlocked" src="assets/close.svg" onclick="closeModal(this.value)" alt="A button that closes the animal screen when clicked">
+                <button class="close" value="unlocked" onclick="closeModal(this.value)">
+                    <img src="assets/close.svg" alt="A button that closes the animal screen when clicked">
+                </button>
                 <h2 class="modal_h2_heading">You found me!</h2>
+                </button>
                 <div class="modal_animal_bio">
 
                     <div class="modal_animal_image_wrapper">
@@ -310,7 +313,9 @@
 
             <!--Locked Modal-->
             <div class="modal_content" id="modal_locked_content">
-                <input class="close" type="image" value="locked" src="assets/close.svg" onclick="closeModal(this.value)" alt="A button to close this animal clue page">
+                <button class="close" value="locked" onclick="closeModal(this.value)">
+                    <img src="assets/close.svg" alt="A button to close this animal clue page">
+                </button>
                 <h2 class="modal_h2_heading">Can't find me? Here's a clue!</h2>                  
                 <div class="modal_scrollable_content">
                     <div class='scroll_blur_top hiden_scroll_blur'></div>
@@ -324,7 +329,9 @@
 
             <!--Ending Story Modal-->
             <div class="modal_content" id="modal_ending_story_content">
-                <input class="close" type="image" role="button" value="ending story" src="assets/close.svg" onclick="closeModal(this.value)">
+                <button class="close" value="ending story" onclick="closeModal(this.value)">
+                    <img src="assets/close.svg" alt="A button to close this final ending story page">
+                </button>
                 <h2 class="modal_h2_heading">Congratulations! You found us all!</h2>
                  
                 <div class="modal_sound_ending_story_outer_wrapper">
@@ -415,7 +422,9 @@
 
             <!--Locked Ending Story Modal-->
             <div class="modal_content" id="modal_locked_ending_story_content">
-                <input class="close" type="image" role="button" value="locked ending story" src="assets/close.svg" onclick="closeModal(this.value)">
+                <button class="close" value="locked ending story" onclick="closeModal(this.value)">
+                    <img src="assets/close.svg" alt="A button to close this locked final ending story page">
+                </button>
                 <h2 class="modal_h2_heading">Ending Story Locked</h2>                  
                 <div class="modal_scrollable_content">
                     <div class="modal_ending_story_wrapper">
@@ -432,7 +441,9 @@
 
             <!--External First Time Vistor Modal-->
             <div class="modal_content" id="modal_external_first_scan_content">
-                <input class="close" type="image" role="button" value="external first time" src="assets/close.svg" onclick="closeModal(this.value)">
+                <button class="close" value="external first time" onclick="closeModal(this.value)">
+                    <img src="assets/close.svg" alt="A button to close this informational popup">
+                </button>
                 <h2 class="modal_h2_heading">Welcome to the Adventure Trail</h2>                  
                 <div class="modal_scrollable_content">
                     <div class="modal_first_scan_wrapper">
@@ -450,7 +461,9 @@
 
             <!--Lock Status Confirmation Modal-->
             <div class="modal_content" id="modal_lock_status_confirmation_content">
-                <input class="close" type="image" role="button" value="lock status cancel toggle" src="assets/close.svg" onKeyDown="keyDownCloseModal(window.event, this.value)" onclick="closeModal(this.value)">
+                <button class="close" value="lock status cancel toggle" onKeyDown="keyDownCloseModal(window.event, this.value)" onclick="closeModal(this.value)">
+                    <img src="assets/close.svg" alt="A button to close this lock status informational popup">
+                </button>
                 <h2 class="modal_h2_heading">Lock Status Confirmation</h2>                  
                 <div class="modal_scrollable_content">
                     <div class="modal_lock_status_confirmation_wrapper">
