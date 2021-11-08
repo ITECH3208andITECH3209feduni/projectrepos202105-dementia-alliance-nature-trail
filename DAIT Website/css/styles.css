@@ -702,6 +702,8 @@ input:checked + .slider:before {
 .close {
   max-width: 10%;
   margin-left: auto;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
 }
 
 .close img {
