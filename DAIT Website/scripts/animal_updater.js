@@ -140,9 +140,11 @@ function allAnimalsFound() {
 function setLockToggleStatus() {
   if (allAnimalsFound()) {
     lockToggle.checked = true;
+    lockToggle.setAttribute('aria-checked', "true");
   }
   else {
     lockToggle.checked = false;
+    lockToggle.setAttribute('aria-checked', "false");
   }
 }
 
@@ -180,6 +182,7 @@ function unlockAllAnimals () {
     updateLocalStorageAnimal(animal, true);
   });
   updateAllAnimalPanels();
+  lockToggle.setAttribute('aria-checked', "true");
 }
 
 function lockAllAnimals () {
@@ -189,4 +192,5 @@ function lockAllAnimals () {
     }
   });
   updateAllAnimalPanels();
+  lockToggle.setAttribute('aria-checked', "false");
 }

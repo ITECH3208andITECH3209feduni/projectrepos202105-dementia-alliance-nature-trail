@@ -84,7 +84,7 @@ header {
 .menu_icon_container {
   cursor: pointer;
   margin: auto auto auto 0;
-  padding-left: .4rem;
+  margin-left: .4rem;
 }
 
 .burger_cross_wrapper {
@@ -661,7 +661,7 @@ input:checked + .slider:before {
   margin-top: 1rem;
 }
 
-.modal_hint_wrapper, .modal_first_scan_wrapper, .modal_lock_toggle_confirmation_wrapper, .modal_ending_story_wrapper { 
+.modal_hint_wrapper, .modal_first_scan_wrapper, .modal_lock_toggle_confirmation_wrapper, .modal_ending_story_wrapper, .modal_ending_story_bottom_wrapper { 
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -920,12 +920,12 @@ h3 {
   }
 
   .htsw1 {
-    width: calc(50% - 2.2rem);
+    width: calc(50% - 2.525rem);
   }
 
   .htsw2 {
-    width: calc(50% - 3rem);
-    margin-left: .8rem;
+    width: calc(50% - 2.525rem);
+    margin-left: auto;
   }
 
 .how_to_section_wrapper {

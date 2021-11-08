@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Animal Collection | Bigger Hearts Adventure Trail</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1" />
+    <meta name="description"  content="Bigger Hearts Dementia Alliance Ballarat's story book adventure trail. 
+    The animal collection page allows vistors to scan QR codes so they can hear the animals’ calls, learn facts, 
+    and unlock an exciting and moving story designed to share a better understanding of dementia">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="icon" href="assets/favicon.svg" sizes="any" type="image/svg+xml">
     <script type="text/javascript" src="scripts/jsqrcode/grid.js"></script>
@@ -65,7 +68,7 @@
         </div>
     </header>
 
-    <main>
+    <main tabindex="-1">
         <div class="flex_top_main_container">
             <a class="tabIndexToggle" href="trailmap.html">
                 <img id="map" src="assets/map.svg"
@@ -75,7 +78,7 @@
                 <img id="toggle_locked" class="toggle_switch_icon_small" src="assets/locked.svg"
                     alt="A switch for unlocking or locking all the animal pages, currently locked">
                 <label class="switch">
-                    <input class="tabIndexToggle" type="checkbox" role="button" id="lock_toggle"
+                    <input class="tabIndexToggle" type="checkbox" role="checkbox" id="lock_toggle"
                         onKeyDown="keyDownDisplayLockStatusConfirmationPopup(window.event)"
                         onclick="displayLockStatusConfirmationPopup()">
                     <span class="slider round"></span>
@@ -90,101 +93,101 @@
                 <img class="trailmap_img" src="assets/trailmap/trail_map.svg"
                     alt="Welcome Wander dementia friendly forest and sensory trail map">
 
-                <div class="animal_collection_trailmap_legend">
+                <article class="animal_collection_trailmap_legend">
                     <h3>Legend</h3>
                     <div class="trailmap_legend_items_wrapper">
                         <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/sensory_trail.svg">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/sensory_trail.svg" alt="">
                             <p class="trailmap_legend_item_maintext">Dementia friendly forest & sensory trail</p>
                         </div>
-                        <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/welcome_shelter.svg">
+                        <div class="animal_collection_trailmap_legend_item" >
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/welcome_shelter.svg" alt="">
                             <div>
                                 <p class="trailmap_legend_item_maintext">Welcome shelter</p>
                                 <p class="trailmap_legend_item_subtext">A gathering space to plan your wander or trek</p>
                             </div>
                         </div>
                         <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/conversation_nook.svg">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/conversation_nook.svg" alt="">
                             <div>
                                 <p class="trailmap_legend_item_maintext">Conversation Nooks</p>
                                 <p class="trailmap_legend_item_subtext">Resting spaces to talk, listen and remember</p>
                             </div>
                         </div>
                         <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/all_accessible.svg">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/all_accessible.svg" alt="">
                             <p class="trailmap_legend_item_maintext">All accessible</p>
                         </div>
                         <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/shared_path.svg">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/shared_path.svg" alt="">
                             <p class="trailmap_legend_item_maintext">Shared path</p>
                         </div>
                         <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/dogs_on_lead.svg">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/dogs_on_lead.svg" alt="">
                             <p class="trailmap_legend_item_maintext">Dogs on lead</p>
                         </div>
                         <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/take_rubbish.svg">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/take_rubbish.svg" alt="">
                             <p class="trailmap_legend_item_maintext">Please take your rubbish home</p>
                         </div>
                         <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/information.svg">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/information.svg" alt="">
                             <p class="trailmap_legend_item_maintext">Direction information</p>
                         </div>
                         <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/carpark.svg">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/carpark.svg" alt="">
                             <p class="trailmap_legend_item_maintext">Distance to carpark</p>
                         </div>
                         <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/trail_rider.svg">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/trail_rider.svg" alt="">
                             <p class="trailmap_legend_item_maintext">TrailRider</p>
                         </div>
                         <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/no_horses.svg">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/no_horses.svg" alt="">
                             <p class="trailmap_legend_item_maintext">No horses</p>
                         </div>
                         <div class="animal_collection_trailmap_legend_item">
-                            <img class="trailmap_legend_item_icon" src="assets/trailmap/speed_limit.svg">
+                            <img class="trailmap_legend_item_icon" src="assets/trailmap/speed_limit.svg" alt="">
                             <p class="trailmap_legend_item_maintext">Speed limit</p>
                         </div>
                     </div>
                     <div class="trailmap_legend_trail_items_wrapper">
                         <div class="animal_collection_trailmap_legend_trail_item">
-                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/welcome_wander_trail.svg">
+                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/welcome_wander_trail.svg" alt="">
                             <div class="trailmap_legend_item_text_wrapper">
                                 <p class="trailmap_legend_trail_item_maintext">Welcome Wander</p>
                             </div>
                         </div>
                         <div class="animal_collection_trailmap_legend_trail_item">
-                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/wetland_walk_trail.svg">
+                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/wetland_walk_trail.svg" alt="">
                             <div class="trailmap_legend_item_text_wrapper">
                                 <p class="trailmap_legend_trail_item_maintext">Wetland Walk</p>
                                 <p class="trailmap_legend_item_subtext">95 metres</p>
                             </div>
                         </div>
                         <div class="animal_collection_trailmap_legend_trail_item">
-                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/stone_circle_trail.svg">
+                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/stone_circle_trail.svg" alt="">
                             <div class="trailmap_legend_item_text_wrapper">
                                 <p class="trailmap_legend_trail_item_maintext">Stone Circle</p>
                                 <p class="trailmap_legend_item_subtext">190 metres</p>
                             </div>
                         </div>
                         <div class="animal_collection_trailmap_legend_trail_item">
-                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/bush_window_trail.svg">
+                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/bush_window_trail.svg" alt="">
                             <div class="trailmap_legend_item_text_wrapper">
                                 <p class="trailmap_legend_trail_item_maintext">Bush Window</p>
                                 <p class="trailmap_legend_item_subtext">270 metres</p>
                             </div>
                         </div>
                         <div class="animal_collection_trailmap_legend_trail_item">
-                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/wrens_rest_trail.svg">
+                            <img class="trailmap_legend_trail_icon" src="assets/trailmap/wrens_rest_trail.svg" alt="">
                             <div class="trailmap_legend_item_text_wrapper">
                                 <p class="trailmap_legend_trail_item_maintext">Wrens Rest</p>
                                 <p class="trailmap_legend_item_subtext">450 metres</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
             </section>
             <section class="animal_collection_wrapper">
                 <button class="animal_wrapper tabIndexToggle" id="nannakookaburra" aria-haspopup="true"
@@ -308,10 +311,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal_scrollable_content">
+                <div class="modal_scrollable_content" tabindex="0">
                     <div class='scroll_blur_top'>
                     </div>
-                    <div class="modal_story" id="modal_story">
+                    <article class="modal_story" id="modal_story">
                         <h3>My Story</h3>
                         <p class="p_top">
                             Nanna Kookaburra was perched on a signpost waiting patiently for her friend to take her
@@ -331,15 +334,15 @@
                             could
                             find, just where Nanna Kookaburra might be going.
                         </p>
-                    </div>
-                    <div class="modal_facts" id="modal_facts">
+                    </article>
+                    <article class="modal_facts" id="modal_facts">
                         <h3>Facts about me</h3>
                         <p class="p_top">
                             Laughing Kookaburras pair for life. The dad and mum take turns keeping eggs warm and
                             sometimes
                             the older brothers and sisters of a kookaburra chick will help with babysitting!
                         </p>
-                    </div>
+                    </article>
                     <div class='scroll_blur'>
                     </div>
                 </div>
@@ -351,7 +354,7 @@
                     <img src="assets/close.svg" alt="A button to close this animal clue page">
                 </button>
                 <h2 class="modal_h2_heading">Can't find me? Here's a clue!</h2>
-                <div class="modal_scrollable_content">
+                <div class="modal_scrollable_content" tabindex="0">
                     <div class='scroll_blur_top hiden_scroll_blur'></div>
                     <div class="modal_hint_wrapper">
                         <img class="modal_hint_img modal_hint_img_top" id="m_hint_img" src="assets/hints/photohint.png">
@@ -367,7 +370,6 @@
                     <img src="assets/close.svg" alt="A button to close this final ending story page">
                 </button>
                 <h2 class="modal_h2_heading">Congratulations! You found us all!</h2>
-
                 <div class="modal_sound_ending_story_outer_wrapper">
                     <div class="modal_sound_ending_story_inner_wrapper">
                         <button class="modal_sound_icons" onClick="toggleEndingStorySound()">
@@ -382,13 +384,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal_scrollable_content">
+                <div class="modal_scrollable_content" tabindex="0">
                     <div class='scroll_blur_top'></div>
                     <div class="modal_ending_story_wrapper">
                         <img class="modal_ending_story_img" src="assets/find_us_all_the_end.svg"
                             alt="A picture of a Kangaroo, Koala, Wombat, Kookaburra and Magpie sitting under a banner that reads 'The End'">
                     </div>
-                    <div class="modal_story">
+                    <article class="modal_story">
                         <h3>Story Ending</h3>
                         <p class="p_top">
                             When Nanna Kookaburra had visited all the animals
@@ -418,8 +420,8 @@
                         <p>
                             And so it was.
                         </p>
-                    </div>
-                    <div class="modal_facts">
+                    </article>
+                    <article class="modal_facts">
                         <h3>The Dementia Alliance Interactive Trail Team</h3>
                         <p class="p_top">
                             The Storybook Adventure Trail experience is a joint collaboration with Bigger Hearts
@@ -454,7 +456,7 @@
                         <p>
                             <b>Ellie Tracey</b> - Kestya Photograghy
                         </p>
-                    </div>
+                    </article>
                     <div class='scroll_blur'></div>
                 </div>
             </div>
@@ -465,16 +467,16 @@
                     <img src="assets/close.svg" alt="A button to close this locked final ending story page">
                 </button>
                 <h2 class="modal_h2_heading">Ending Story Locked</h2>
-                <div class="modal_scrollable_content">
+                <div class="modal_scrollable_content" tabindex="0">
                     <div class="modal_ending_story_wrapper">
                         <img class="modal_ending_story_img" src="assets/find_us_all.svg"
                             alt="A picture of a Kangaroo, Koala, Wombat, Kookaburra and Magpie sitting under a banner that reads 'Find Us All'">
                     </div>
-                    <div class="modal_first_scan_wrapper">
+                    <article class="modal_ending_story_bottom_wrapper">
                         <p class="p_top">
                             You will need to find and unlock all the animals along the trail to see how the story ends!
                         </p>
-                    </div>
+                    </article>
                     <div class='scroll_blur'></div>
                 </div>
             </div>
@@ -485,8 +487,8 @@
                     <img src="assets/close.svg" alt="A button to close this informational popup">
                 </button>
                 <h2 class="modal_h2_heading">Welcome to the Adventure Trail</h2>
-                <div class="modal_scrollable_content">
-                    <div class="modal_first_scan_wrapper">
+                <div class="modal_scrollable_content" tabindex="0">
+                    <article class="modal_first_scan_wrapper">
                         <p>Well done finding your first animal in the Storybook Adventure Trail!
                             You may like to see how the story begins <i>(Nanna Kookaburra)</i> or
                             learn how to play the game.
@@ -497,7 +499,7 @@
                             <input class="user_input_form_button" type="button" value="How To Play"
                                 onclick="handleUserInput(this.value)">
                         </form>
-                    </div>
+                    </article>
                 </div>
             </div>
 
@@ -508,8 +510,8 @@
                     <img src="assets/close.svg" alt="A button to close this lock status informational popup">
                 </button>
                 <h2 class="modal_h2_heading">Lock Status Confirmation</h2>
-                <div class="modal_scrollable_content">
-                    <div class="modal_lock_status_confirmation_wrapper">
+                <div class="modal_scrollable_content" tabindex="0">
+                    <article class="modal_lock_status_confirmation_wrapper">
                         <p>Are you sure you would like to change the lock status? <i class="small_font">(action
                                 overwrites all progression)</i></p>
                         <form class="user_input_form">
@@ -520,7 +522,7 @@
                                 onKeyDown="keyDownHandleLockToggle(window.event, this.value)"
                                 onclick="handleLockToggle(this.value)">
                         </form>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -534,12 +536,14 @@
                     <img class="footer_icon" src="assets/explore_the_trail.svg"
                         alt="A woman walks her grandson and their puppy along the trail">
                 </div>
-                <img class="footer_icon arrow footer_tablet_version" src="assets/arrow.svg">
+                <img class="footer_icon arrow footer_tablet_version" src="assets/arrow.svg"
+                alt="Arrow pointing towards the next instructional graphic">
                 <div class="footer_container_instruction">
                     <span class="footer_tablet_version footer_text">Spot<br>The<br>Animal</span>
                     <img class="footer_icon" src="assets/spot.svg" alt="Two eyes spot a kangaroo">
                 </div>
-                <img class="footer_icon arrow" src="assets/arrow.svg">
+                <img class="footer_icon arrow" src="assets/arrow.svg"
+                alt="Arrow pointing towards the next instructional graphic">
                 <span class="footer_tablet_version footer_text">Touch<br>The<br>Camera</span>
             </div>
             <div class="camera_button_wrapper">
@@ -548,7 +552,8 @@
                 </button>
             </div>
             <div class="footer_container_inner">
-                <img class="footer_icon arrow" src="assets/arrow.svg">
+                <img class="footer_icon arrow" src="assets/arrow.svg"
+                alt="Arrow pointing towards the next instructional graphic">
                 <div class="footer_container_instruction">
                     <span class="footer_tablet_version footer_text">Scan<br>The<br>QR</span>
                     <img class="footer_icon footer_tablet_version" src="assets/tabletqrscan.svg"
@@ -556,7 +561,8 @@
                     <img class="footer_icon footer_mobile_version" src="assets/mobileqrscan.svg"
                         alt="A mobile screen aimed at a QR code">
                 </div>
-                <img class="footer_icon arrow footer_tablet_version" src="assets/arrow.svg">
+                <img class="footer_icon arrow footer_tablet_version" src="assets/arrow.svg"
+                alt="Arrow pointing towards the next instructional graphic">
                 <div class="footer_container_instruction footer_tablet_version">
                     <span class="footer_text">Unlock<br>The<br>Animal</span>
                     <img class="footer_icon" src="assets/unlocktheanimal.svg"
