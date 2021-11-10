@@ -203,8 +203,8 @@ const animals = [
         animal_story_para2: "“Hello possum!” said Nanna Kookaburra. “I’m heading home love, but I can’t remember where it is.” “Well,” grumped Grandad Wombat who lived in a burrow. “It’s somewhere quiet and cozy, it is, it’s somewhere quiet and cozy.”",
         animal_story_para3: "Grandad Wombat gave Nanna Kookaburra some soft fur and Nanna Kookaburra continued along the trail.",
         animal_facts: "Wombats look big and slow, but they can actually run up to 40km an hour! That’s faster than most people!",
-        hint_photo: "assets/hints/photohint.png",
-        hint_map: "assets/hints/wombat_notfinal_map.svg",
+        hint_photo: "assets/hints/wombat_hint.png",
+        hint_map: "assets/hints/wombat_map.svg",
         image_alt: "The Wombat statue peeks out from his burrow under the walkway",
         hint_alt: "The hint shows the walkway in the Wetland Walk area",
         map_alt: "The trail map showing Grandad Wombat's whereabouts. He's near the walkway in the Wetlands Walk area"
