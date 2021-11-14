@@ -5,8 +5,8 @@ var setupCompleted;
 let animalArray = [];
 
 window.addEventListener("storage", storageListenerEventHandler);
-  
-document.addEventListener('DOMContentLoaded', function() {
+
+document.addEventListener('DOMContentLoaded', function () {
   setupCompleted = false;
   firstEncounterFlag = false;
   hideAllModals();
@@ -18,12 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     firstEncounterFlag = true
   }
 
-  // Information found on the QRcode for a local device(replace with webiste URL) setup is: https://192.168.115.51:5500/DAIT%20Website/animalcollection.html?animal=unclemagpie
   const animalFromUrlParams = getUrlParams();
   updateLocalStorageAnimal(animalFromUrlParams, true);
   updateAllAnimalPanels();
 
-  if (animalArray.includes(animalFromUrlParams)){
+  if (animalArray.includes(animalFromUrlParams)) {
     if (firstEncounterFlag == false) {
       displayPopup(animalFromUrlParams);
     }
@@ -37,11 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   setLockToggleStatus();
   setupCompleted = true;
-
 }, false);
 
 function updateLocalStorageAnimal(animal, trueORfalse) {
-  if(animalArray.includes(animal)) {
+  if (animalArray.includes(animal)) {
     if (trueORfalse == true && window.localStorage.getItem(animal) != "true") {
       window.localStorage.setItem(animal, true);
     }
@@ -64,7 +62,7 @@ function createAnimalArray() {
       animalArray.push(animal.name);
     }
   });
-}  
+}
 
 function populateLocalStorageWithAnimals() {
   animalArray.forEach(animal => {
@@ -77,7 +75,6 @@ function populateLocalStorageWithAnimals() {
 function updateAllAnimalPanels() {
   for (i = 0; i < allAnimalElements.length; i++) {
     id = allAnimalElements[i].id;
-
     element = document.getElementById(id);
 
     if (id != "" && window.localStorage.getItem(id) == "true") {
@@ -92,7 +89,6 @@ function updateAllAnimalPanels() {
 }
 
 function updateAnimalPanel(id) {
-
   element = document.getElementById(id);
 
   if (window.localStorage.getItem(id) == "true") {
@@ -102,12 +98,12 @@ function updateAnimalPanel(id) {
     element.children[1].style.filter = "grayscale(100%)";
     element.children[0].src = "assets/locked.svg";
   }
-  updateFinalStoryPanel();    
+  updateFinalStoryPanel();
 }
 
 function storageListenerEventHandler(event) {
-  key = event.key;  
-  if (animalArray.includes(key)){
+  key = event.key;
+  if (animalArray.includes(key)) {
     updateAnimalPanel(key)
   }
   updateFinalStoryPanel();
@@ -148,7 +144,7 @@ function setLockToggleStatus() {
   }
 }
 
-function handleLockToggle (confimation) {
+function handleLockToggle(confimation) {
   if (confimation == "Confirm") {
     if (lockToggle.checked == true) {
       unlockAllAnimals();
@@ -162,7 +158,7 @@ function handleLockToggle (confimation) {
   }
 }
 
-function keyDownHandleLockToggle (e, confimation) {
+function keyDownHandleLockToggle(e, confimation) {
   if (e.key === "Enter") {
     e.preventDefault();
     handleLockToggle(confimation);
@@ -177,7 +173,7 @@ function toggleLockStatus() {
   }
 }
 
-function unlockAllAnimals () {
+function unlockAllAnimals() {
   animalArray.forEach(animal => {
     updateLocalStorageAnimal(animal, true);
   });
@@ -185,7 +181,7 @@ function unlockAllAnimals () {
   lockToggle.setAttribute('aria-checked', "true");
 }
 
-function lockAllAnimals () {
+function lockAllAnimals() {
   animalArray.forEach(animal => {
     if (animal != animals[0].name) {
       updateLocalStorageAnimal(animal, false);

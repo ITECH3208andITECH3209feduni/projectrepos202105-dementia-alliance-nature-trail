@@ -14,12 +14,12 @@ qrcode.callback = res => {
   if (res) {
     let resAnimal = "";
 
-    resSplit = res.split("="); // used to split the qrcode information to extract the animal (updated to this approach so users don't need to have the website application already open)
+    resSplit = res.split("=");
     if (resSplit.length == 2) {
-    resAnimal = resSplit[1];
+      resAnimal = resSplit[1];
     }
 
-    if (animalArray.includes(resAnimal)){
+    if (animalArray.includes(resAnimal)) {
       updateAnimals(resAnimal);
     } else {
       setTabIndexValue(0);
@@ -36,15 +36,15 @@ qrcode.callback = res => {
 };
 
 btnScanQR.onclick = () => {
-  if (scanning){
+  if (scanning) {
     stopCamera();
     setTabIndexValue(0);
-  }else{
-    setTabIndexValue (-1);
+  } else {
+    setTabIndexValue(-1);
     btnScanQR.tabIndex = 0;
     navigator.mediaDevices
       .getUserMedia({ video: { facingMode: "environment" } })
-      .then(function(stream) {
+      .then(function (stream) {
         scanning = true;
         canvasElement.hidden = false;
         cameraIcon.src = "assets/close.svg";
@@ -73,7 +73,6 @@ function tick() {
   canvasElement.height = video.videoHeight;
   canvasElement.width = video.videoWidth;
   canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
-
   scanning && requestAnimationFrame(tick);
 }
 
@@ -85,7 +84,7 @@ function scan() {
   }
 }
 
-function cameraTimeout () {
+function cameraTimeout() {
   stopCamera();
   setTabIndexValue(0);
 }

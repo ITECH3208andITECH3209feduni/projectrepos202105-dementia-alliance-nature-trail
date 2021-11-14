@@ -19,7 +19,7 @@ const storyEndingButton = document.getElementById("storyending");
 function displayPopup(animalName) {
     const animalsIndex = animals.findIndex(item => item.name === animalName);
 
-    if (animalName != "" && window.localStorage.getItem(animalName) == "true") {    
+    if (animalName != "" && window.localStorage.getItem(animalName) == "true") {
         setupUnlockedPopup(animalsIndex);
         modalUnlockedContent.style.display = "flex";
     }
@@ -30,7 +30,7 @@ function displayPopup(animalName) {
 
     modal.style.display = "flex";
     elementToFocus = document.getElementById(animalName);
-    setTabIndexValue (-1);
+    setTabIndexValue(-1);
 }
 
 function setupLockedPopup(animalIndex) {
@@ -39,12 +39,12 @@ function setupLockedPopup(animalIndex) {
 }
 
 function setupUnlockedPopup(animalIndex) {
-   setupModalImage(animalIndex);
-   setupBio(animalIndex);
-   setupAnimalSound(animalIndex);
-   setupStorySound(animalIndex);
-   setupStory(animalIndex);
-   setupAnimalFacts(animalIndex);
+    setupModalImage(animalIndex);
+    setupBio(animalIndex);
+    setupAnimalSound(animalIndex);
+    setupStorySound(animalIndex);
+    setupStory(animalIndex);
+    setupAnimalFacts(animalIndex);
 }
 
 function setupModalImage(animalIndex) {
@@ -61,32 +61,32 @@ function setupStorySound(animalIndex) {
 }
 
 function setupBio(animalIndex) {
-    
+
     let m = modalBioInfo.getElementsByTagName('li');
     if (m.length == 5) {
-       m[0].children[0].innerText = animals[animalIndex].bio_name;
-       m[1].children[0].innerText = animals[animalIndex].bio_wadawurrung_name;
-       m[2].children[0].innerText = animals[animalIndex].bio_scientific_name;
-       m[3].children[0].innerText = animals[animalIndex].bio_size_range;
-       m[4].children[0].innerText = animals[animalIndex].bio_weight;
+        m[0].children[0].innerText = animals[animalIndex].bio_name;
+        m[1].children[0].innerText = animals[animalIndex].bio_wadawurrung_name;
+        m[2].children[0].innerText = animals[animalIndex].bio_scientific_name;
+        m[3].children[0].innerText = animals[animalIndex].bio_size_range;
+        m[4].children[0].innerText = animals[animalIndex].bio_weight;
     }
 }
 
 function setupStory(animalIndex) {
-    
+
     let m = modalAnimalStory.getElementsByTagName('p');
     if (m.length == 3) {
-       m[0].innerText = animals[animalIndex].animal_story_para1;
-       m[1].innerText = animals[animalIndex].animal_story_para2;
-       m[2].innerText = animals[animalIndex].animal_story_para3;
+        m[0].innerText = animals[animalIndex].animal_story_para1;
+        m[1].innerText = animals[animalIndex].animal_story_para2;
+        m[2].innerText = animals[animalIndex].animal_story_para3;
     }
 }
 
 function setupAnimalFacts(animalIndex) {
-    
+
     let m = modalAnimalFacts.getElementsByTagName('p');
     if (m.length == 1) {
-       m[0].innerText = animals[animalIndex].animal_facts;
+        m[0].innerText = animals[animalIndex].animal_facts;
     }
 }
 
@@ -102,7 +102,7 @@ function setupModalMapHintImage(animalIndex) {
 
 function closeModal(contentType) {
     let openModal = null;
-    
+
     switch (contentType) {
         case "unlocked":
             openModal = modalUnlockedContent;
@@ -132,27 +132,26 @@ function closeModal(contentType) {
             elementToFocus = lockToggle;
             break;
     }
-    
+
     if (openModal != null) {
-        openModal.getElementsByClassName("modal_scrollable_content")[0].scroll({top:0});
+        openModal.getElementsByClassName("modal_scrollable_content")[0].scroll({ top: 0 });
         openModal.style.display = "none";
-        
+
         if (elementToFocus != null && setupCompleted) {
-            setTabIndexValue (0);
+            setTabIndexValue(0);
         }
     }
 
     modal.style.display = "none";
 }
 
-function keyDownCloseModal (e, contentType) {
+function keyDownCloseModal(e, contentType) {
     if (e.key === "Enter") {
         e.preventDefault();
         closeModal(contentType);
     }
 }
 
-// When the user clicks anywhere outside of the modal, close it and all modal contents
 window.onclick = function (event) {
     if (event.target == modal) {
         hideAllModals();
@@ -183,7 +182,7 @@ function hideAllModals() {
 
     if (modalLockStatusConfirmationContent.style.display != "none") {
         closeModal("lock status cancel toggle");
-    } 
+    }
 }
 
 function toggleAnimalSound() {
@@ -216,8 +215,8 @@ function stopSound(sound) {
 
 function handleUserInput(inputValue) {
     closeModal("external first time");
-    
-    if(inputValue == "Starter Story") {
+
+    if (inputValue == "Starter Story") {
         displayPopup(animals[0].name);
     }
     else if (inputValue == "How To Play") {
@@ -228,7 +227,7 @@ function handleUserInput(inputValue) {
 function displayExternalFirstScanPopup() {
     modalExternalFirstScanContent.style.display = "flex";
     modal.style.display = "flex";
-    setTabIndexValue (-1);
+    setTabIndexValue(-1);
 }
 
 function keyDownDisplayLockStatusConfirmationPopup(e) {
@@ -242,7 +241,7 @@ function keyDownDisplayLockStatusConfirmationPopup(e) {
 function displayLockStatusConfirmationPopup() {
     modalLockStatusConfirmationContent.style.display = "flex";
     modal.style.display = "flex";
-    setTabIndexValue (-1);
+    setTabIndexValue(-1);
 }
 
 function displayStoryEndingPopup() {
@@ -253,5 +252,5 @@ function displayStoryEndingPopup() {
         modalLockedEndingStoryContent.style.display = "flex";
     }
     modal.style.display = "flex";
-    setTabIndexValue (-1);
+    setTabIndexValue(-1);
 }

@@ -1,22 +1,22 @@
 const menu = document.getElementById("menu");
 var elementToFocus;
 
-function menuOnclickEventHandler () {
+function menuOnclickEventHandler() {
     const nav = document.getElementById("nav");
 
     nav.classList.toggle("change");
-    document.getElementById("nav_links").scroll({top:0});
+    document.getElementById("nav_links").scroll({ top: 0 });
 
     if (nav.classList.contains('change')) {
         setTabIndexValue(-1);
     }
     else {
-        elementToFocus = menu;  
+        elementToFocus = menu;
         setTabIndexValue(0);
     }
 }
 
-function setTabIndexValue (value) {
+function setTabIndexValue(value) {
     let elementArray = [];
     elementArray = document.getElementsByClassName("tabIndexToggle");
 
