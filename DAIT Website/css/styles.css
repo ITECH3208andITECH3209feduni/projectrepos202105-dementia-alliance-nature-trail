@@ -5,6 +5,10 @@
   --theme-background-darkgrey: #C4C4C4;
   --theme-background-bluealpha: #0033491a;
   --theme-background-active: #6fd2f8;
+  --theme-background-focus: #2196F3;
+  --theme-popup-font: #000000;
+  --theme-background-popup-story: #FFFAC6;
+  --theme-background-popup-facts: #FFECC6;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.4;
@@ -36,11 +40,11 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #ffffff;
+  background: var(--theme-background-white);
   margin: 0;
 }
 
-header, footer{
+header, footer {
   background: var(--theme-background);
 }
 
@@ -495,11 +499,11 @@ footer {
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: var(--theme-background-focus);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 0.063rem #2196F3;
+  box-shadow: 0 0 0.063rem var(--theme-background-focus);
 }
 
 input:checked + .slider:before {
@@ -646,18 +650,18 @@ input:checked + .slider:before {
 }
 
 .modal_story, .modal_facts {
-  color: #000;
+  color: var(--theme-popup-font);
   border-radius: 1rem;
   padding: .1rem 1.1rem;
   width: auto;
 }
 
 .modal_story {
-  background-color: #FFFAC6;
+  background-color: var(--theme-background-popup-story);
 }
 
 .modal_facts {
-  background-color: #FFECC6;
+  background-color: var(--theme-background-popup-facts);
   margin-top: 1rem;
 }
 
@@ -751,13 +755,13 @@ h3 {
   transition-duration: 0.4s;
   background-color: var(--theme-background-alt);
   border: 2px solid var(--theme-background-white);
-  color: #fff;
+  color: var(--theme-background-white);
   border-radius: .5rem;
 }
 
 .user_input_form_button:hover {
   background-color: var(--theme-background-white); 
-  color: black;
+  color: var(--theme-popup-font); 
   cursor: pointer;
 }
 
